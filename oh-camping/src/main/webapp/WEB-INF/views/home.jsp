@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<a href="<%=request.getContextPath()%>/test.do">[작업?]</a>
+<a href="<%=request.getContextPath()%>/test.do">[이거?모?]</a>
 
 </body>
 </html>
