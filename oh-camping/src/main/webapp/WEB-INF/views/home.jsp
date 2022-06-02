@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<a href="<%=request.getContextPath()%>/test.do">테스트2</a>
+<a href="<%=request.getContextPath()%>/test.do">테스트3</a>
 
 </body>
 </html>
