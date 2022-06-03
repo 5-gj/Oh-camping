@@ -14,6 +14,11 @@ local.properties
 .loadpath
 .recommenders
 
+.root-context.xml
+MANIFEST.MF
+pom.properties
+
+
 # External tool builders
 .externalToolBuilders/
 
@@ -68,6 +73,3 @@ local.properties
 .sts4-cache/
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse
-.root-context.xml
-MANIFEST.MF
-pom.properties
