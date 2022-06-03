@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<a href="<%=request.getContextPath()%>/test.do">테스트 중입니다!!!!!!!</a>
+<a href="<%=request.getContextPath()%>/test.do">패키지 만들기 풀리케 테스트 중sun1</a>
 
 </body>
 </html>
