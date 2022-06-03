@@ -1,0 +1,87 @@
+--관리자
+create table camp_admin(
+    admin_id varchar2(30) primary key,
+    admin_pwd varchar2(30) not null,
+    admin_name varchar2(30) not null
+
+);
+
+
+--회원
+create table camp_member(
+    member_no number(5) primary key,
+    mem_id varchar2(50) not null,
+    mem_pwd varchar2(50) not null,
+    mem_name varchar2(50) not null,
+    mem_phone varchar2(50) not null,
+    mem_email varchar2(50) not null
+);
+
+--객실
+create table camp_room(
+    room_resdate varchar2(30) not null,
+    room_no number(5) primary key,
+    room_name varchar2(30) not null,
+    room_people number(5), 
+    room_mpeople number(5),
+    room_price number(10),
+    room_possible number(5) default 0,
+    
+);
+
+--결제
+create table camp_payment(
+    payment_no number(5) primary,
+    payment_roomno number(5),
+    payment_id varchar2(50),
+    payment_pname varchar2(50) not null,
+    payment_price number(10) default 0,
+    payment_resdate varchar2(30) not null,
+    payment_orderdate varchar2(30) not null
+    
+
+);
+
+
+--공지사항
+create table camp_notice(
+    notice_no number(5) primary key,
+    notice_title varchar2(300) not null,
+    notice_cont varchar2(1000),
+    notice_file varchar2(100),
+    notice_hit number(5),
+    notice_date varchar2(30)
+    
+    
+);
+
+--QNA
+create table camp_qa(
+    qa_no number(5) primary key,
+    qa_id varchar2(30)not null,
+    qa_type varchar2(30)not null,
+    qa_title varchar2(300)not null,
+    qa_cont varchar2(1000),
+    qa_pwd varchar2(30)not null,
+    qa_date varchar2(30),
+    qa_reply varchar2(1000)
+
+
+);
+
+
+--review
+create camp_review(
+    review_no number(5) primary key,
+    review_id varchar2(30),
+    review_roomno number(5),
+    review_title varchar2(300),
+    review_cont varchar2(1000),
+    review_pwd varchar2(30),
+    review date varchar2(30)
+    
+
+
+);
+
+

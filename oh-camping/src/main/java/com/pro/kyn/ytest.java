@@ -1,4 +1,4 @@
-package com.pro.ytest;
+package com.pro.kyn;
 
 public class ytest {
 	public ytest() {
