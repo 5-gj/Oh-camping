@@ -15,8 +15,8 @@ local.properties
 .recommenders
 
 .root-context.xml
-MANIFEST.MF
-pom.properties
+*.mf
+*.properties
 
 
 # External tool builders
