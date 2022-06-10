@@ -1,4 +1,4 @@
-package com.pro.ytest;
+package com.pro.yuna;
 
 public class ytest {
 
