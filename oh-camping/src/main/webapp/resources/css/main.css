@@ -7,12 +7,12 @@
 ==================== */
 
 .bg_main_1 {
-    background:url('/img/bg_main_1.jpg')no-repeat 50% 50%;
+    background:url('../img/bg_main_1.jpg')no-repeat 50% 50%;
     background-size:cover;
 }
 
 .bg_main_2 {
-    background:url('/img/bg_main_2.jpg')no-repeat 50% 50%;
+    background:url('../img/bg_main_2.jpg')no-repeat 50% 50%;
     background-size:cover;
 }
 
@@ -66,7 +66,7 @@ iframe#iframe_pc {
     position:absolute;
     top:120px; right:70px;
     width:500px; height:auto;
-    /*background:url('/img/pop2020.10.05.jpg')no-repeat 0 0;*/
+    /*background:url('../img/pop2020.10.05.jpg')no-repeat 0 0;*/
     background-size:cover;
 }
 
@@ -74,7 +74,7 @@ iframe#iframe_pc {
     position:absolute;
     top:120px; right:900px;
     width:500px; height:500px;
-    background:url('/img/popup_mob.png')no-repeat 0 0;
+    background:url('../img/popup_mob.png')no-repeat 0 0;
     background-size:cover;
 	display:none;
 }
@@ -82,7 +82,7 @@ iframe#iframe_pc {
     position:absolute;
     top:120px; right:600px;
     width:450px; height:450px;
-    background:url('/img/popup_2.png')no-repeat 0 0;
+    background:url('../img/popup_2.png')no-repeat 0 0;
     background-size:cover;
 }
 
@@ -253,19 +253,19 @@ iframe#iframe_pc {
     }
 
         .main_0 {
-            background:url('/img/main/1.jpg')no-repeat 50% 50%;
+            background:url('../img/main/1.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
         .main_1 {
-            background:url('/img/main/2.jpg')no-repeat 50% 50%;
+            background:url('../img/main/2.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
         .main_2 {
-            background:url('/img/main/3.jpg')no-repeat 50% 50%;
+            background:url('../img/main/3.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
         .main_3 {
-            background:url('/img/main/4.jpg')no-repeat 50% 50%;
+            background:url('../img/main/4.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
 
@@ -414,28 +414,28 @@ iframe#iframe_pc {
             height:30%;
         }
         .intro_img.img1 {
-            background:url('/img/main/4.jpg')no-repeat 50% 50%;
+            background:url('../img/main/4.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
         .intro_img.img2 {
-            background:url('/img/main/5.jpg')no-repeat 50% 60%;
+            background:url('../img/main/5.jpg')no-repeat 50% 60%;
             background-size:cover;
         }
         .intro_img.img3 {
-            background:url('/img/main/6.jpg')no-repeat 50% 60%;
+            background:url('../img/main/6.jpg')no-repeat 50% 60%;
             background-size:cover;
         }
 
     .ma_intro_img.ma_img_1 {
-        background:url('/img/main/1.jpg')no-repeat 50% 50%;
+        background:url('../img/main/1.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .ma_intro_img.ma_img_2 {
-        background:url('/img/main/2.jpg')no-repeat 50% 50%;
+        background:url('../img/main/2.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .ma_intro_img.ma_img_3 {
-        background:url('/img/main/3.jpg')no-repeat 50% 100%;
+        background:url('../img/main/3.jpg')no-repeat 50% 100%;
         background-size:cover;
     }
 	.wrap_popup02 img {width:100%; height:auto} 
@@ -599,45 +599,45 @@ iframe#iframe_pc {
   
 
         .main_0 {
-            background:url('/img/main/mb/1.jpg')no-repeat 50% 50%;
+            background:url('../img/main/mb1.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
         .main_1 {
-            background:url('/img/main/mb/2.jpg')no-repeat 50% 50%;
+            background:url('../img/main/mb2.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
         .main_2 {
-            background:url('/img/main/mb/3.jpg')no-repeat 50% 50%;
+            background:url('../img/main/mb3.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
         .main_3 {
-            background:url('/img/main/mb/4.jpg')no-repeat 50% 50%;
+            background:url('../img/main/mb4.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
 
         .intro_img.img1 {
-            background:url('/img/main/mb/4.jpg')no-repeat 50% 50%;
+            background:url('../img/main/mb4.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
         .intro_img.img2 {
-            background:url('/img/main/mb/5.jpg')no-repeat 50% 50%;
+            background:url('../img/main/mb5.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
         .intro_img.img3 {
-            background:url('/img/main/mb/6.jpg')no-repeat 50% 50%;
+            background:url('../img/main/mb6.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
 
         .ma_intro_img.ma_img_1 {
-            background:url('/img/main/mb/1.jpg')no-repeat 50% 50%;
+            background:url('../img/main/mb1.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
         .ma_intro_img.ma_img_2 {
-            background:url('/img/main/mb/2.jpg')no-repeat 50% 50%;
+            background:url('../img/main/mb2.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
         .ma_intro_img.ma_img_3 {
-            background:url('/img/main/mb/3.jpg')no-repeat 50% 100%;
+            background:url('../img/main/mb3.jpg')no-repeat 50% 100%;
             background-size:cover;
         }
     
@@ -800,15 +800,15 @@ iframe#iframe_pc {
 
 
     .preview_img.img_1 {
-        background:url('/img/room/room1/1.jpg')no-repeat 50% 50%;
+        background:url('../img/main/room1_1.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .preview_img.img_2 {
-        background:url('/img/room/room2/1.jpg')no-repeat 50% 50%;
+        background:url('../img/main/room2_1.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .preview_img.img_3 {
-        background:url('/img/room/room3/1.jpg')no-repeat 50% 50%;
+        background:url('../img/main/room3_1.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
 
@@ -896,65 +896,65 @@ iframe#iframe_pc {
                     }
 
             .pre_mb_img1 {
-                background:url('/img/room/room1/mb/1.jpg')no-repeat 50% 50%;
+                background:url('../img/main/room1_1_mb.jpg')no-repeat 50% 50%;
                 background-size:cover;
             }
             .pre_mb_img1_2 {
-                background:url('/img/room/room1/mb/2.jpg')no-repeat 50% 50%;
+                background:url('../img/main/room1_2_mb.jpg')no-repeat 50% 50%;
                 background-size:cover;
             }
             .pre_mb_img1_3 {
-                background:url('/img/room/room1/mb/3.jpg')no-repeat 50% 50%;
+                background:url('../img/main/room1_3_mb.jpg')no-repeat 50% 50%;
                 background-size:cover;
             }
             .pre_mb_img1_4 {
-                background:url('/img/room/room1/mb/4.jpg')no-repeat 50% 50%;
+                background:url('../img/main/room1_4_mb.jpg')no-repeat 50% 50%;
                 background-size:cover;
             }
             .pre_mb_img1_5 {
-                background:url('/img/room/room1/mb/5.jpg')no-repeat 50% 50%;
+                background:url('../img/main/room1_5_mb.jpg')no-repeat 50% 50%;
                 background-size:cover;
             }
 
             .pre_mb_img2 {
-                background:url('/img/room/room2/mb/1.jpg')no-repeat 50% 50%;
+                background:url('../img/main/room2_1_mb.jpg')no-repeat 50% 50%;
                 background-size:cover;
             }
             .pre_mb_img2_2 {
-                background:url('/img/room/room2/mb/2.jpg')no-repeat 50% 50%;
+                background:url('../img/main/room2_2_mb.jpg')no-repeat 50% 50%;
                 background-size:cover;
             }
             .pre_mb_img2_3 {
-                background:url('/img/room/room2/mb/3.jpg')no-repeat 50% 50%;
+                background:url('../img/main/room2_3_mb.jpg')no-repeat 50% 50%;
                 background-size:cover;
             }
             .pre_mb_img2_4 {
-                background:url('/img/room/room2/mb/4.jpg')no-repeat 50% 50%;
+                background:url('../img/main/room2_4_mb.jpg')no-repeat 50% 50%;
                 background-size:cover;
             }
             .pre_mb_img2_5 {
-                background:url('/img/room/room2/mb/5.jpg')no-repeat 50% 50%;
+                background:url('../img/main/room2_5_mb.jpg')no-repeat 50% 50%;
                 background-size:cover;
             }
 
             .pre_mb_img3 {
-                background:url('/img/room/room3/mb/1.jpg')no-repeat 50% 50%;
+                background:url('../img/main/room3_1_mb.jpg')no-repeat 50% 50%;
                 background-size:cover;
             }
             .pre_mb_img3_2 {
-                background:url('/img/room/room3/mb/2.jpg')no-repeat 50% 50%;
+                background:url('../img/main/room3_2_mb.jpg')no-repeat 50% 50%;
                 background-size:cover;
             }
             .pre_mb_img3_3 {
-                background:url('/img/room/room3/mb/3.jpg')no-repeat 50% 50%;
+                background:url('../img/main/room3_3_mb.jpg')no-repeat 50% 50%;
                 background-size:cover;
             }
             .pre_mb_img3_4 {
-                background:url('/img/room/room3/mb/4.jpg')no-repeat 50% 50%;
+                background:url('../img/main/room3_4_mb.jpg')no-repeat 50% 50%;
                 background-size:cover;
             }
             .pre_mb_img3_5 {
-                background:url('/img/room/room3/mb/5.jpg')no-repeat 50% 50%;
+                background:url('../img/main/room3_5_mb.jpg')no-repeat 50% 50%;
                 background-size:cover;
             }
 
@@ -1004,19 +1004,19 @@ iframe#iframe_pc {
         }
 
     .list_service.img1 {
-        background: url('/img/service/service1.jpg')no-repeat 50% 50%;
+        background: url('../img/main/service1.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .list_service.img2 {
-        background: url('/img/service/service2.jpg')no-repeat 50% 50%;
+        background: url('../img/main/service2.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .list_service.img3 {
-        background: url('/img/service/service3.jpg')no-repeat 50% 50%;
+        background: url('../img/main/service3.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .list_service.img4 {
-        background: url('/img/service/service4.jpg')no-repeat 50% 50%;
+        background: url('../img/main/service4.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
 
@@ -1063,19 +1063,19 @@ iframe#iframe_pc {
 
 
         .list_service.img1 {
-            background: url('/img/service/mb/service1.jpg')no-repeat 50% 50%;
+            background: url('../img/main/service1.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
         .list_service.img2 {
-            background: url('/img/service/mb/service2.jpg')no-repeat 50% 50%;
+            background: url('../img/main/service2.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
         .list_service.img3 {
-            background: url('/img/service/mb/service3.jpg')no-repeat 50% 50%;
+            background: url('../img/main/service3.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
         .list_service.img4 {
-            background: url('/img/service/mb/service4.jpg')no-repeat 50% 50%;
+            background: url('../img/main/service4.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
     
@@ -1173,89 +1173,89 @@ iframe#iframe_pc {
 
 
     .main_facilt_1_1 {
-        background: url('/img/facility/facil1/01_1.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil01_1.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_1_2 {
-        background: url('/img/facility/facil1/02_1.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil01_2.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_1_3 {
-        background: url('/img/facility/facil1/04_1.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil01_4.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_1_4 {
-        background: url('/img/facility/facil1/05_1.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil01_5.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_1_5 {
-        background: url('/img/facility/facil1/03_1.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil01_3.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
 
     .main_facilt_2 {
-        background: url('/img/facility/facil2/0_21.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil02_1.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_2_2 {
-        background: url('/img/facility/facil2/2_21.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil02_2.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_2_3 {
-        background: url('/img/facility/facil2/4_21.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil02_3.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_2_4 {
-        background: url('/img/facility/facil2/3_21.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil02_4.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_2_5 {
-        background: url('/img/facility/facil2/1_21.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil02_5.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
 
 
     .main_facilt_3 {
-        background: url('/img/edit/valley/2.jpg')no-repeat 50% 50%;
+        background: url('../img/main/valley2.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_3_2 {
-        background: url('/img/edit/valley/1.jpg')no-repeat 50% 50%;
+        background: url('../img/main/valley1.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_3_3 {
-        background: url('/img/edit/valley/3.jpg')no-repeat 50% 50%;
+        background: url('../img/main/valley3.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_3_4 {
-        background: url('/img/edit/valley/4.jpg')no-repeat 50% 50%;
+        background: url('../img/main/valley4.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_3_5 {
-        background: url('/img/edit/valley/5.jpg')no-repeat 50% 50%;
+        background: url('../img/main/valley5.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
 
 
 	/*놀이터*/
 	.main_facilt_4 {
-        background: url('/img/facility/facil4/mb/01.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil04_1.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_4_2 {
-        background: url('/img/facility/facil4/mb/04.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil04_2.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_4_3 {
-        background: url('/img/facility/facil4/mb/03.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil04_3.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_4_4 {
-        background: url('/img/facility/facil4/05.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil04_4.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_4_5 {
-        background: url('/img/facility/facil4/mb/02.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil04_5.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
 
@@ -1263,23 +1263,23 @@ iframe#iframe_pc {
 
 	/*사우나*/
 	.main_facilt_5 {
-        background: url('/img/facility/facil5/mb/02.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil05_1.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_5_2 {
-        background: url('/img/facility/facil5/mb/05.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil05_2.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_5_3 {
-        background: url('/img/facility/facil5/mb/03.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil05_3.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_5_4 {
-        background: url('/img/facility/facil5/mb/04.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil05_4.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .main_facilt_5_5 {
-        background: url('/img/facility/facil5/mb/01.jpg')no-repeat 50% 50%;
+        background: url('../img/main/facil05_5.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
 
@@ -1317,28 +1317,28 @@ iframe#iframe_pc {
     @media screen and (max-width: 500px) {
 
         .main_facilt_1_1 {
-            background: url('/img/facility/facil1/mb/01_1.jpg')no-repeat 50% 50%;
+            background: url('../img/main/facil01_b1_1.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
         .main_facilt_1_2 {
-            background: url('/img/facility/facil1/mb/02_1.jpg')no-repeat 50% 50%;
+            background: url('../img/main/facil01_b2_1.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
         .main_facilt_1_3 {
-            background: url('/img/facility/facil1/mb/03_1.jpg')no-repeat 50% 50%;
+            background: url('../img/main/facil01_b3_1.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
     
         .main_facilt_2 {
-			background: url('/img/facility/facil2/mb/0_21.jpg')no-repeat 50% 50%;
+			background: url('../img/main/facil02_m_21.jpg')no-repeat 50% 50%;
 			background-size:cover;
 		}
 		.main_facilt_2_2 {
-			background: url('/img/facility/facil2/mb/2_21.jpg')no-repeat 50% 50%;
+			background: url('../img/main/facil02_m_21.jpg')no-repeat 50% 50%;
 			background-size:cover;
 		}
 		.main_facilt_2_5 {
-			background: url('/img/facility/facil2/mb/1_21.jpg')no-repeat 50% 50%;
+			background: url('../img/main/facil02_m_21.jpg')no-repeat 50% 50%;
 			background-size:cover;
 		}
 
@@ -1371,7 +1371,7 @@ iframe#iframe_pc {
         position:relative;
         width:100%; height:100%;
         padding-top:20px;
-        background:url('/img/main/main_intro_5.jpg')no-repeat 50% 50%;
+        background:url('../img/main/main_intro_5.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .wrap_travel_bg::before {
@@ -1398,7 +1398,7 @@ iframe#iframe_pc {
             }
 
         .tour_img .img1 {
-            background:url('/img/main/main_intro_5.jpg')no-repeat 50% 50%;
+            background:url('../img/main/main_intro_5.jpg')no-repeat 50% 50%;
             background-size:cover;
         }
 
@@ -1443,19 +1443,19 @@ iframe#iframe_pc {
 
 
     .tour1 {
-        background:url('/img/tour/tour1.jpg')no-repeat 50% 50%;
+        background:url('../img/main/tour1.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .tour2 {
-        background:url('/img/tour/tour2.jpg')no-repeat 50% 50%;
+        background:url('../img/main/tour2.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .tour3 {
-        background:url('/img/tour/tour3.jpg')no-repeat 50% 50%;
+        background:url('../img/main/tour3.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .tour4 {
-        background:url('/img/tour/tour4.jpg')no-repeat 50% 50%;
+        background:url('../img/main/tour4.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
 
@@ -1520,7 +1520,7 @@ iframe#iframe_pc {
 }
     .img_night {
         height:250px;
-        background:url('/img/main/main_night.jpg')no-repeat 50% 50%;
+        background:url('../img/main/main_night.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
    
@@ -1536,23 +1536,23 @@ iframe#iframe_pc {
     
     .img_night {
         height:250px;
-        background:url('/img/main/mb/main_night.jpg')no-repeat 50% 50%;
+        background:url('../img/main/mbmain_night.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
 
     .img_night2 {
         height:250px;
-        background:url('/img/main/mb/main_night2.jpg')no-repeat 50% 50%;
+        background:url('../img/main/mbmain_night2.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .img_night3 {
         height:250px;
-        background:url('/img/main/mb/main_night3.jpg')no-repeat 50% 50%;
+        background:url('../img/main/mbmain_night3.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
     .img_night4 {
         height:250px;
-        background:url('/img/main/mb/main_night4.jpg')no-repeat 50% 50%;
+        background:url('../img/main/mbmain_night4.jpg')no-repeat 50% 50%;
         background-size:cover;
     }
 
