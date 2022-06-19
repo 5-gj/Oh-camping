@@ -8,7 +8,7 @@
 
     <!-- CSS Files -->
     <!-- Awesome.css -->
-<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/font.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/reset_h.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/dist/slick.css" rel="stylesheet">
@@ -23,9 +23,9 @@
 <body>
     <!-- 메뉴바(header) -->
     <header id="header" class="head_3">
-        <nav class="wrap_menu">
+        <nav id="navwrap_bg" class="wrap_menu main_wrap_menu">
             <div class="menu_logo">
-                <a href="">
+                <a href="<%=request.getContextPath() %>/camp_main.do">
                     <img src="<%=request.getContextPath() %>/resources/img/logo.png">
                 </a>
             </div>
@@ -167,7 +167,7 @@
     <section class="wrap_ma_intro">
       <div class="wrap_popup">
             <div class="close_pop"></div>
-            <img src="<%=request.getContextPath() %>/resources/img/pop20220318.png" alt="popup1" class="popup">
+            <img src="<%=request.getContextPath() %>/resources/img/pop01.png" alt="popup1" class="popup">
       </div>
 
 
@@ -343,7 +343,7 @@
           <div class="room_pre_txt">
               <h2>계곡1 ~ 11</h2>
               <p>사랑하는 연인과 함께 하세요</p>
-              <a href="#" class="btn_room_mb">
+              <a href="/room/room1.php" class="btn_room_mb">
                 View More
               </a>
             </div>
@@ -354,11 +354,30 @@
           <div class="bloxk_2 pre_mb_img1_5"></div>
       </div>
 
+<!--
+      <div class="room_pre_mb wrap_1 mt">
+        <div class="block_1 pre_mb_img2"></div>
+      </div>
+-->
+<!--
+      <div class="room_pre_mb wrap_2">
+          <div class="block_intro pre_mb_img2_2">
+          <div class="room_pre_txt">
+              <h2>대형 1</h2>
+              <p>잊을 수 없는 추억을 만들어 보세요</p>
+              <a href="/room/room2.php" class="btn_room_mb">
+                View More
+              </a>
+            </div>
+          </div>
+          <div class="bloxk_2 pre_mb_img2_3"></div>
+      </div>
+-->
       <div class="room_pre_mb wrap_2">
           <div class="bloxk_2 pre_mb_img2_4"></div>
           <div class="bloxk_3 pre_mb_img2_5"></div>
       </div>
-
+      
       <div class="room_pre_mb wrap_1">
         <div class="block_1 pre_mb_img3"></div>
       </div>
@@ -368,7 +387,7 @@
           <div class="room_pre_txt">
               <h2>대형 1,2,3,4</h2>
               <p>사랑하는 연인과 함께 하세요</p>
-              <a href="#" class="btn_room_mb">
+              <a href="/room/room3.php" class="btn_room_mb">
                 View More
               </a>
             </div>
@@ -686,7 +705,9 @@
         <div class="bg_foot_menu">
             <div id="foot_menu">
                 <ul class="clearfix ">
-                  <li><a href="<%=request.getContextPath() %>/camping_main.do">Home</a></li>
+                  <li><a href="<%=request.getContextPath() %>/camp_main.do">Home</a></li>
+                  <li><a href="<%=request.getContextPath() %>/camp_join.do">회원가입</a></li>
+                  <li><a href="<%=request.getContextPath() %>/camp_login.do">로그인</a></li>
                 </ul>
                 <div class="clear"></div>
             </div>

@@ -1,3 +1,16 @@
+$(document).ready(function() {
+	"use strict";
+  var win = $(window),
+    nav = $('#navwrap_bg'),
+    pos = nav.offset().top,
+    fixed = function(){ 
+      win.scrollTop() > pos ?
+        nav.addClass('fixed')
+      : nav.removeClass('fixed')
+    };
+
+win.scroll(fixed);
+});
 
 function Pension_Info(name,owner,address,pen_b_num,pen_bank,phone,email,entry,leave){
     this.name = name;

@@ -27,4 +27,9 @@ public class HomeController {
 		return "main";
 	}
 	
+	@RequestMapping("camp_main.do")
+	public String home() {
+		
+		return "main";
+	}
 }
