@@ -6,9 +6,13 @@ public interface CampMemberDAO {
 	
 	int joinCampMember(CampMemberDTO dto);
 	
-	int userCheck(String id, String pwd);
+	int memberCheck(String id, String pwd);
 	
-	int userPwdCheck(String id, String pwd);
+	int memberPwdCheck(String id, String pwd);
+	
+	int memberEmailCheck(String id, String email);
+	
+	String getCampMemberPassword(String id);
 	
 	CampMemberDTO getMember(String id);
 	

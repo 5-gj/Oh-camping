@@ -80,7 +80,7 @@
 
 .wrap_login #sub_wrap i {font-family: 'Font Awesome 5 Free';}
 .wrap_login #sub_wrap {padding-top: 5%;}
-#login_wrap { width: 96%; max-width: 460px; margin-left: auto; margin-right: auto; 
+#login_wrap { width: 96%; max-width: 390px; margin-left: auto; margin-right: auto; 
 text-align:  center; }
 #login_wrap h1 {
     font-size: 40px;
@@ -112,11 +112,10 @@ text-align: center;}
 #login_menu {margin: 20px auto;}
 #login_menu input {width: 100%; background: #fff; border: 1px solid #ccc; font-size: 18px; padding: 12px 2px;
 cursor: pointer; font-size: 14px; }
-#login_menu .login_b {background: #fff; border: 1px solid #fff; color: #0C1E8B; 
-margin-bottom: 20px; font-family: 'Jua', sans-serif; font-size: 18px;
-    font-weight: bold;}
-#login_menu .join_b {margin-top: 20px; background: #fff; border: 1px solid #fff; color: #0C1E8B; 
-margin-bottom: 20px; font-family: 'Jua', sans-serif; font-size: 18px;}
+#login_menu .login_b {margin-bottom: 20px; background: #fff; color: #0C1E8B; 
+ font-family: 'Jua', sans-serif; font-size: 18px; font-weight: bold; }
+#login_menu .join_b {margin-top: 20px; background: #fff; color: #0C1E8B; 
+ font-family: 'Jua', sans-serif; font-size: 18px; font-weight: bold; }
 
 table .emp {border: 0; padding: 5px;}
 #login_wrap	legend {margin: 0 auto 15px;}
@@ -130,8 +129,8 @@ table .emp {border: 0; padding: 5px;}
 
 /* 비밀번호 찾기 */
 #login_wrap.find_pwd {background: rgb(255 255 255 / 80%); padding: 20px; }
-#login_wrap.find_pwd h1 {color: #666;}
-#login_wrap.find_pwd .login_b {}
+#login_wrap.find_pwd h1 {color: #444;}
+#login_wrap.find_pwd .login_b {background: #444; color: #fff;}
 
 
 
