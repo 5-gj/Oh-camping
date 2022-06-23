@@ -3,7 +3,7 @@
 
 
 body {
-	font-family: 'Noto Sans KR_100';
+	font-family: 'Noto Sans KR_100', 나눔고딕, "Nanum Gothic", sans-serif;
 }
 article,
 aside,
@@ -292,7 +292,8 @@ a.btn_room_mb {
 #g_nav ul li:nth-child(1),
 #g_nav ul li:nth-child(2) { }
 #g_nav ul li a { width: 100%; display: inline-block; text-align: center; font-size: 13px; /*color: #6E6E6E;*/ 
-	padding:4px 7px 5px; line-height: 1em; background-color: #f5f1e5; color: #000; letter-spacing: -0.3px;}
+	padding:4px 6px 5px; line-height: 1em; background-color: #f5f1e5; color: #000; 
+	letter-spacing: -0.3px; font-weight: bold;}
 #g_nav ul li:hover a { color: #434343; }
 
 .wrap_menu {
@@ -667,69 +668,13 @@ a.btn_room_mb {
 
 
 /* 푸터 */
-
-@media (max-width:767px) {
-
-#footer {
-	padding-bottom: 15px;
-}
-
-#foot_contents { }
-
-#foot_contents .company_info {
-	display: block;
-	font-size: 12px;
-	color: #6E6E6E;
-}
-
-#foot_contents .company_info ul {
-	border-bottom: 1px solid #E8E8E8;
-	padding: 15px;
-}
-
-#foot_contents .company_info ul li:first-child { margin-bottom: 10px; }
-
-#foot_contents .company_info ul li { }
-
-#history_year {
-	float: none;
-	width: 100%;
-	min-width: 100%;
-}
-
-#bg_copy {
-	overflow-y: hidden;
-}
-
-#bg_copy .copy_year {
-	color: #6E6E6E;
-	font-size: 12px;
-	line-height: 17px;
-}
-
-#link_nav_bottom {
-	padding-top: 15px;
-	padding-bottom: 15px;
-}
-
-#link_nav_bottom li { display: inline-block; }
-
-#link_nav_bottom a { color: #6E6E6E; }
-
-#link_nav_bottom a:hover { color: #434343; }
-}
-
-@media (max-width:480px) {
-}
-
-@media (min-width:768px) {
-
 #footer {
 	width: 100%;
 	overflow: hidden;
 	padding-bottom: 15px;
 	    margin-top: 100px;
 }
+
 .footer_no_margin #footer {margin-top: 0;}
 .sub_footer {margin-top: 40px;}
 #foot_contents {
@@ -745,11 +690,10 @@ a.btn_room_mb {
 #foot_contents .company_info {
 	line-height: 18px;
 	font-size: 12px;
-	font-family: "나눔고딕", "Nanum Gothic", sans-serif;
-	color: rgba(110,110,110,1.00);
+	color: rgba(209,209,209,1.00);
 	display: block;
 }
-
+#foot_contents .company_info h5 {font-size: 15px; color: #EBEBEB;}
 #foot_contents .company_info ul {
 	float: left;
 	margin-right: 45px;/*35*/
@@ -762,83 +706,6 @@ a.btn_room_mb {
 
 #foot_contents .company_info ul li:first-child { margin-bottom: 10px; 
 }
-
-#bg_copy {
-	overflow: hidden;
-}
-
-#bg_copy .copy_year {
-	color: #6E6E6E;
-	font-size: 12px;
-	float: left;
-}
-#link_nav_bottom {
-	float: right;
-	padding-left: 15px;
-	padding-right: 75px;
-}
-
-#link_nav_bottom li { display: inline-block; }
-
-#link_nav_bottom a {
-	color: #6E6E6E;
-	font-size: 18px;
-}
-
-#link_nav_bottom a:hover { color: #434343; }
-}
-
-@media (min-width:768px) and (max-width:991px) {
-}
-
-@media (min-width:992px) {
-}
-
-/* CSS Document */
-
-@media (max-width:991px){
-
-}
-
-@media (max-width:767px){
-.bg_foot_menu { }
-
-#foot_menu {
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-#foot_menu ul {
-	margin: 0px;
-	padding: 0px;
-	width: 100%;
-}
-
-#foot_menu ul li {
-	float: left;
-	width: 50%;
-}
-
-#foot_menu ul li:after { display : none; }
-
-#foot_menu ul li a {
-	color: #6E6E6E;
-	font: 11px/30px "나눔고딕", "Nanum Gothic", sans-serif;
-	display: block;
-	text-align: left;
-	padding: 0 15px;
-	border-right: 1px solid #E8E8E8;
-	border-bottom: 1px solid #E8E8E8;
-}
-
-#foot_menu ul li a:hover { color: #434343; }
-
-}
-@media (max-width:480px){
-
-}
-@media (min-width:768px) {
-.bg_foot_menu { }
 
 #foot_menu {
 	margin-left: auto;
@@ -868,23 +735,28 @@ a.btn_room_mb {
 #foot_menu ul li:last-child:after { display: none; }
 
 #foot_menu ul li a {
+	color: rgba(224,224,224,1.00);
+    line-height: 65px;
+    font-size: 12px;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+#foot_menu a:hover { color: #dfb99a; }
+
+#bg_copy {
+	overflow: hidden;
+}
+
+#bg_copy .copy_year {
 	color: #6E6E6E;
-	line-height: 65px;
 	font-size: 12px;
-	display: block;
-	padding-left: 10px;
-	padding-right: 10px;
+	float: left;
 }
 
-#foot_menu a:hover { color: #434343; }
-}
-@media (min-width:768px) and (max-width:991px){
-
-}
-@media (min-width:992px){
-
-}
-
+.bg_foot_menu { }
 
 /* =========== 
 
@@ -923,38 +795,6 @@ footer {
     .foot_logo .tit_menu::after {
         background-color:#7b7b7b;
     }
-
-
-
-
-    @media screen and (max-width: 500px) {
-        footer {
-            margin-top:0;
-            padding:55px 0 15px 0;
-            flex-direction:column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .foot_logo {
-            width:100%;
-            height:70px;
-        }
-        .foot_info {
-            width:100%;
-            text-align:center;
-        }
-            .foot_info p {
-                font-size:0.8em;
-            }
-
-        .f_mb_block {
-                display:block;
-                margin:5px 0;
-            }
-    
-    }
-
 
 
 

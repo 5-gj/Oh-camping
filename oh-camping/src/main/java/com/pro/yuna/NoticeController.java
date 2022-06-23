@@ -17,7 +17,7 @@ public class NoticeController {
 	@Autowired
 	private CampNoticeDAO dao;
 	
-	private final int rowsize = 5;     // 한 페이지당 보여질 게시물의 수
+	private final int rowsize = 6;     // 한 페이지당 보여질 게시물의 수
 	private int totalRecord = 0;       // DB 상의 전체 게시물의 수
 	
 	

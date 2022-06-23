@@ -9,7 +9,7 @@
 
     <!-- CSS Files -->
     <!-- Awesome.css -->
-	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/font.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/reset_h.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/dist/slick.css" rel="stylesheet">
@@ -24,7 +24,7 @@
 <body>
     <!-- 메뉴바(header) -->
     <header id="header" class="head_3 main_header">
-    	<div class="top_header_bg">
+      <div class="top_header_bg">
             <div id="top_header" class="clearfix">
                 <div id="g_nav">
                     <ul class="clearfix">
@@ -35,10 +35,16 @@
                         %>    
                               <li><a href="<%=request.getContextPath() %>/camp_login.do">Login</a></li>
                               <li><a href="<%=request.getContextPath() %>/camp_join.do">Join</a></li>
-                       <%  } else{%>
-                           	<li><a href="<%=request.getContextPath() %>/camp_info.do?id=<%=(String)session.getAttribute("sessionID") %>">MyPage</a></li>
-                            <li><a href="<%=request.getContextPath() %>/camp_logout.do">Logout</a></li> 
-                        <% }  %>
+                       	<%  } else{ // 로그인 했을 때 
+                    	   		String loginId = (String)session.getAttribute("sessionID");
+                    	   		if (loginId.equals("admin")){ // 관리자 %>
+                    	   			<li><a href="<%=request.getContextPath() %>/camp_admin.do">관리자</a></li>
+                                    <li><a href="<%=request.getContextPath() %>/camp_logout.do">Logout</a></li> 
+                    	 <%  	}else{ // 일반 사용자%>
+                    	   			<!--  <li><a href="<%=request.getContextPath() %>/camp_info.do?id=<%=(String)session.getAttribute("sessionID") %>">MyPage</a></li>-->
+                                    <li><a href="<%=request.getContextPath() %>/camp_logout.do">Logout</a></li> 
+                    	 <%  	}
+                         	}  %>
                     </ul>
                     <div class="clear"></div>
                 </div>
@@ -398,7 +404,7 @@
           <div class="bloxk_2 pre_mb_img2_4"></div>
           <div class="bloxk_3 pre_mb_img2_5"></div>
       </div>
-      
+
       <div class="room_pre_mb wrap_1">
         <div class="block_1 pre_mb_img3"></div>
       </div>
@@ -726,19 +732,25 @@
         <div class="bg_foot_menu">
             <div id="foot_menu">
                 <ul class="clearfix ">
-                	<li><a href="<%=request.getContextPath() %>/camp_main.do">Home</a></li>
+                  <li><a href="<%=request.getContextPath() %>/camp_main.do">Home</a></li>
                     <!-- 로그인 메뉴 -->
-                    <%	
-                       	// 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
-                           if(session.getAttribute("sessionID")==null){ 
-                    %>		
-	                        <li><a href="<%=request.getContextPath() %>/camp_login.do">로그인</a></li>
-	                        <li><a href="<%=request.getContextPath() %>/camp_join.do">회원가입</a></li>
-                    <%  } else{%>
-	                    	<li><a href="<%=request.getContextPath() %>/camp_info.do?id=<%=(String)session.getAttribute("sessionID") %>">마이페이지</a></li>
-                        	<li><a href="<%=request.getContextPath() %>/camp_logout.do">로그아웃</a></li>	
-                   	<%	}	%>
-	                <li><a href="<%=request.getContextPath() %>/camp_admin_login.do">관리자로그인</a></li>
+                    <% 
+                        // 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
+                        if(session.getAttribute("sessionID")==null){ 
+                     %>    
+                          <li><a href="<%=request.getContextPath() %>/camp_login.do">로그인</a></li>
+                          <li><a href="<%=request.getContextPath() %>/camp_join.do">회원가입</a></li>
+                          <li><a href="<%=request.getContextPath() %>/camp_admin_login.do">관리자로그인</a></li>
+                   	 <%  } else{ // 로그인 했을 때 
+                	   		String loginId = (String)session.getAttribute("sessionID");
+                	   		if (loginId.equals("admin")){ // 관리자 %>
+                	   			<li><a href="<%=request.getContextPath() %>/camp_admin.do">관리자</a></li>
+                                <li><a href="<%=request.getContextPath() %>/camp_logout.do">로그아웃</a></li> 
+                	  <%  	}else{ // 일반 사용자%>
+                	   			<!--  <li><a href="<%=request.getContextPath() %>/camp_info.do?id=<%=loginId %>">MyPage</a></li>-->
+                                <li><a href="<%=request.getContextPath() %>/camp_logout.do">로그아웃</a></li> 
+                	  <%  	}
+                     	  }  %>
                 </ul>
                 <div class="clear"></div>
             </div>

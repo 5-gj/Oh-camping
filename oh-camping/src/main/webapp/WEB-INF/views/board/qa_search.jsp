@@ -61,7 +61,7 @@
                 </div>
             </div>
     
-            <p class="sub_title">이용문의<span class="sub_title2">Q&A</span></p>
+            <p class="sub_title">이용문의 검색결과 <span class="sub_title2">Q&A</span></p>
             
             <!-- 본문 시작 -->
             <div id="sub_contents">        
@@ -76,7 +76,7 @@
                             <th>조회수</th>
                         </tr>
             
-                        <c:set var="list" value="${QaList }" />
+                        <c:set var="list" value="${searchPageList }" />
                         <c:set var="paging" value="${Paging }" />
                         
                         <c:if test="${!empty list }">
@@ -130,44 +130,29 @@
                                 <td colspan="6"><h4>게시글이 없습니다.</h4></td>
                             </tr>
                         </c:if>
-                   		<tr>
-                            <td colspan="6" align="right" class="table_btn">
-                            	<%	// 로그인 안되었을 경우 
-			                        if(session.getAttribute("sessionID")==null){ %>
-			                        	<input type="button" value="글쓰기"
-                                       			onclick="loginAlert()">
-			                   	<%  } else { // 로그인 됐을 때
-			                    	   	String id = (String)session.getAttribute("sessionID");
-			                    %> 
-		                            	<input type="button" value="글쓰기"
-                                      			onclick="location.href='camp_qa_write.do?id=<%=id %>&page=${paging.page }'">
-		                       	<%  } %>	
-                                
-                            </td>
-                        </tr>
                     </table>
         
                     <div class="ext_paging" style="margin-top: 20px;">
                     	<%-- 페이징 처리 부분 --%>
 					   <c:if test="${paging.getPage() > paging.getBlock() }">
-					      <a href="camp_qa.do?page=1">◀◀</a>
-					      <a href="camp_qa.do?page=${paging.getStartBlock() - 1 }"> &lt;<span class="page_s">이전</span> | </a>&nbsp;
+					      <a href="camp_qa_search.do?page=1">◀◀</a>
+					      <a href="camp_qa_search.do?page=${paging.getStartBlock() - 1 }"> &lt;<span class="page_s">이전</span> | </a>&nbsp;
 					   </c:if>
 					   
 					   <c:forEach begin="${paging.getStartBlock() }"
 					          				end="${paging.getEndBlock() }" var="i">
 					      <c:if test="${i == paging.getPage() }">
-					         <b> <a href="camp_qa.do?page=${i }">[${i }]</a></b>
+					         <b> <a href="camp_qa_search.do?page=${i }">[${i }]</a></b>
 					      </c:if>
 					   
 					   	  <c:if test="${i != paging.getPage() }">
-					         <a href="camp_qa.do?page=${i }">[${i }]</a>
+					         <a href="camp_qa_search.do?page=${i }">[${i }]</a>
 					      </c:if>
 					   </c:forEach>
 				
 					   <c:if test="${paging.getEndBlock() < paging.getAllPage() }">&nbsp;
-					      <a href="camp_qa.do?page=${paging.getEndBlock() + 1 }"> | <span class="page_s">다음</span>&gt; </a>
-					      <a href="camp_qa.do?page=${paging.getAllPage() }">▶▶</a>
+					      <a href="camp_qa_search.do?page=${paging.getEndBlock() + 1 }"> | <span class="page_s">다음</span>&gt; </a>
+					      <a href="camp_qa_search.do?page=${paging.getAllPage() }">▶▶</a>
 					   </c:if>
                     </div>
                     
@@ -189,6 +174,10 @@
 					      	<input type="submit" value="검색"  class="search_input_btn">
 					   	</form>
 					   	
+                    </div>
+                    <div class="list_btn_wrap">
+                    	<input type="button" value="목록으로 돌아가기" class="list_btn board_btn"
+					      	 	onclick="location.href='camp_qa.do?page=${paging.page }'">
                     </div>
                 </div>
                     

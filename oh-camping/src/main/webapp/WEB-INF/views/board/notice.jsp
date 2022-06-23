@@ -35,7 +35,7 @@
             </div>
             <div class="mid_nav">
                 <ul class="mid_menu">
-                    <li><a href="<%=request.getContextPath() %>/camp_notice.do"  class="nav_on"><i class="fa fa-caret-right"></i>공지사항</a></li>                  
+                    <li><a href="<%=request.getContextPath() %>/camp_notice.do" class="nav_on"><i class="fa fa-caret-right"></i>공지사항</a></li>                  
                     <li><a href="<%=request.getContextPath() %>/camp_qa.do"><i class="fa fa-caret-right"></i>이용문의</a></li>
                     <li><a href="#">숙박후기</a></li> <!-- -->
                 </ul>
@@ -75,7 +75,7 @@
 				         	<c:forEach items="${list }" var="i">
 				            	<tr>
 				               		<td> ${i.notice_no } </td>
-				               		<td> 
+				               		<td class="board_title"> 
 				                  		<a href="<%=request.getContextPath() %>/camp_notice_content.do?no=${i.notice_no }&page=${paging.page }">
 				               							${i.notice_title } </a>
 				               		</td>

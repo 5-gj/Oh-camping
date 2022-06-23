@@ -50,10 +50,16 @@
                         %>    
                               <li><a href="<%=request.getContextPath() %>/camp_login.do">Login</a></li>
                               <li><a href="<%=request.getContextPath() %>/camp_join.do">Join</a></li>
-                       <%  } else{%>
-                           	<li><a href="<%=request.getContextPath() %>/camp_info.do?id=<%=(String)session.getAttribute("sessionID") %>">MyPage</a></li>
-                            <li><a href="<%=request.getContextPath() %>/camp_logout.do">Logout</a></li> 
-                        <% }  %>
+                       	<%  } else{ // 로그인 했을 때 
+                    	   		String loginId = (String)session.getAttribute("sessionID");
+                    	   		if (loginId.equals("admin")){ // 관리자 %>
+                    	   			<li><a href="<%=request.getContextPath() %>/camp_admin.do">관리자</a></li>
+                                    <li><a href="<%=request.getContextPath() %>/camp_logout.do">Logout</a></li> 
+                    	 <%  	}else{ // 일반 사용자%>
+                    	   			<!--  <li><a href="<%=request.getContextPath() %>/camp_info.do?id=<%=(String)session.getAttribute("sessionID") %>">MyPage</a></li>-->
+                                    <li><a href="<%=request.getContextPath() %>/camp_logout.do">Logout</a></li> 
+                    	 <%  	}
+                         	}  %>
                     </ul>
                     <div class="clear"></div>
                 </div>

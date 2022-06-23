@@ -35,7 +35,7 @@
             </div>
             <div class="mid_nav">
                 <ul class="mid_menu">
-                    <li><a href="<%=request.getContextPath() %>/camp_notice.do"  class="nav_on"><i class="fa fa-caret-right"></i>공지사항</a></li>                  
+                    <li><a href="<%=request.getContextPath() %>/camp_notice.do" class="nav_on"><i class="fa fa-caret-right"></i>공지사항</a></li>                  
                     <li><a href="<%=request.getContextPath() %>/camp_qa.do"><i class="fa fa-caret-right"></i>이용문의</a></li>
                     <li><a href="#">숙박후기</a></li> <!-- -->
                 </ul>
@@ -75,7 +75,7 @@
 				         	<c:forEach items="${list }" var="i">
 				            	<tr>
 				               		<td> ${i.notice_no } </td>
-				               		<td> 
+				               		<td class="board_title">  
 				                  		<a href="<%=request.getContextPath() %>/camp_notice_content.do?no=${i.notice_no }&page=${paging.page }">
 				               							${i.notice_title } </a></td>
 				               		<td> ${i.notice_date } </td>
@@ -95,24 +95,24 @@
                     <div class="ext_paging" style="margin-top: 20px;">
                     	<%-- 페이징 처리 부분 --%>
 					   <c:if test="${paging.getPage() > paging.getBlock() }">
-					      <a href="camp_search.do?page=1">◀◀</a>
-					      <a href="camp_search.do?page=${paging.getStartBlock() - 1 }"> &lt;<span class="page_s">이전</span> | </a>&nbsp;
+					      <a href="camp_notice_search.do?page=1">◀◀</a>
+					      <a href="camp_notice_search.do?page=${paging.getStartBlock() - 1 }"> &lt;<span class="page_s">이전</span> | </a>&nbsp;
 					   </c:if>
 					   
 					   <c:forEach begin="${paging.getStartBlock() }"
 					          				end="${paging.getEndBlock() }" var="i">
 					      <c:if test="${i == paging.getPage() }">
-					         <b> <a href="camp_search.do?page=${i }">[${i }]</a></b>
+					         <b> <a href="camp_notice_search.do?page=${i }">[${i }]</a></b>
 					      </c:if>
 					   
 					   	  <c:if test="${i != paging.getPage() }">
-					         <a href="camp_search.do?page=${i }">[${i }]</a>
+					         <a href="camp_notice_search.do?page=${i }">[${i }]</a>
 					      </c:if>
 					   </c:forEach>
 				
 					   <c:if test="${paging.getEndBlock() < paging.getAllPage() }">&nbsp;
-					      <a href="camp_search.do?page=${paging.getEndBlock() + 1 }"> | <span class="page_s">다음</span>&gt; </a>
-					      <a href="camp_search.do?page=${paging.getAllPage() }">▶▶</a>
+					      <a href="camp_notice_search.do?page=${paging.getEndBlock() + 1 }"> | <span class="page_s">다음</span>&gt; </a>
+					      <a href="camp_notice_search.do?page=${paging.getAllPage() }">▶▶</a>
 					   </c:if>
                     </div>
                     

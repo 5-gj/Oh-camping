@@ -86,6 +86,15 @@ public class MemberController {
 	}
 	
 	
+	// 로그아웃
+	@RequestMapping("camp_logout.do")
+	public String login(HttpServletRequest request, HttpServletResponse response) {		
+		HttpSession session = request.getSession();
+		session.invalidate();
+		return "main";
+	}
+		
+	
 	@RequestMapping("camp_find_password.do")
 	public String findPwd() {
 		return "member/member_find_pwd";
