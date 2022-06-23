@@ -354,7 +354,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 07 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 07 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -394,7 +394,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 08 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 08 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -433,7 +433,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 09 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 09 }">
 							<c:if test="${room.room_possible == 1 }">
 							<li class="roomNameLayer" title="${room.room_name }">
 								<div class="iconLayer">
@@ -474,7 +474,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 10 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 10 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -514,7 +514,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 11 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 11 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -554,7 +554,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 12 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 12 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -594,7 +594,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 13 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 13 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -634,7 +634,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 14 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 14 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -674,7 +674,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 15 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 15 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -713,7 +713,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 16 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 16 }">
 							<c:if test="${room.room_possible == 1 }">
 							<li class="roomNameLayer" title="${room.room_name }">
 								<div class="iconLayer">
@@ -754,7 +754,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 17 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 17 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -794,7 +794,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 18 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 18 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -834,7 +834,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 19 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 19 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -874,7 +874,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 20 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 20 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -914,7 +914,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 21 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 21 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -954,7 +954,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 22 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 22 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -993,7 +993,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 23 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 23 }">
 							<c:if test="${room.room_possible == 1 }">
 							<li class="roomNameLayer" title="${room.room_name }">
 								<div class="iconLayer">
@@ -1034,7 +1034,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 24 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 24 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -1074,7 +1074,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 25 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 25 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -1114,7 +1114,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 26 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 26 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -1154,7 +1154,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 27 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 27 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -1194,7 +1194,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 28 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 28 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -1234,7 +1234,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 29 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 29 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -1273,7 +1273,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 30 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 30 }">
 							<c:if test="${room.room_possible == 1 }">
 							<li class="roomNameLayer" title="${room.room_name }">
 								<div class="iconLayer">
@@ -1314,7 +1314,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 07 && room.room_resdate.substring(6, 8) == 31 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 07 && room.room_resdate.substring(8, 10) == 31 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -1354,7 +1354,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 08 && room.room_resdate.substring(6, 8) == 01 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 08 && room.room_resdate.substring(8, 10) == 01 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -1394,7 +1394,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 08 && room.room_resdate.substring(6, 8) == 02 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 08 && room.room_resdate.substring(8, 10) == 02 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -1434,7 +1434,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 08 && room.room_resdate.substring(6, 8) == 03 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 08 && room.room_resdate.substring(8, 10) == 03 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -1474,7 +1474,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 08 && room.room_resdate.substring(6, 8) == 04 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 08 && room.room_resdate.substring(8, 10) == 04 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -1514,7 +1514,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 08 && room.room_resdate.substring(6, 8) == 05 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 08 && room.room_resdate.substring(8, 10) == 05 }">
 							<c:if test="${room.room_possible == 1 }">
 							
 							<li class="roomNameLayer" title="${room.room_name }">
@@ -1553,7 +1553,7 @@
 						
 						<c:if test="${!empty roomList}">
 						<c:forEach items="${roomList }" var="room">
-							<c:if test="${room.room_resdate.substring(3, 5) == 08 && room.room_resdate.substring(6, 8) == 06 }">
+							<c:if test="${room.room_resdate.substring(5, 7) == 08 && room.room_resdate.substring(8, 10) == 06 }">
 							<c:if test="${room.room_possible == 1 }">
 							<li class="roomNameLayer" title="${room.room_name }">
 								<div class="iconLayer">
