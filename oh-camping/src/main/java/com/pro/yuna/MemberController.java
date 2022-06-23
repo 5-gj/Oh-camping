@@ -9,7 +9,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,6 +33,7 @@ public class MemberController {
 		
 		int res = this.dao.campIdCheck(user_id);
 		
+		response.setContentType("text/html; charset=UTF-8");		
 		PrintWriter out = response.getWriter();
 		
 		if (res == 0) {
@@ -98,6 +98,7 @@ public class MemberController {
 			HttpServletResponse response) throws IOException {
 		
 		int res = this.dao.memberEmailCheck(mem_id, mem_email);
+		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		String pwd = "";
 		if (res > 0) {
@@ -129,9 +130,10 @@ public class MemberController {
 			HttpServletRequest request,
 			HttpServletResponse response, HttpSession session)  throws IOException {	
 		
-		int check = dao.memberPwdCheck(mem_id, mem_pwd);
+		int check = dao.loginCampMember(mem_id, mem_pwd);
 		
 		PrintWriter out = response.getWriter();
+		response.setContentType("text/html; charset=UTF-8");
 		session = request.getSession();
 		
 		if (check > 0) {

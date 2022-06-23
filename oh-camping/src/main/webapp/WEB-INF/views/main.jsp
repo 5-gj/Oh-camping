@@ -1,5 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" pageEncoding="UTF-8"%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -22,7 +23,27 @@
 
 <body>
     <!-- 메뉴바(header) -->
-    <header id="header" class="head_3">
+    <header id="header" class="head_3 main_header">
+    	<div class="top_header_bg">
+            <div id="top_header" class="clearfix">
+                <div id="g_nav">
+                    <ul class="clearfix">
+                        <li class="hidden-xs"><a href="<%=request.getContextPath() %>/camp_main.do">Home</a></li>
+                        <% 
+                           // 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
+                            if(session.getAttribute("sessionID")==null){ 
+                        %>    
+                              <li><a href="<%=request.getContextPath() %>/camp_login.do">Login</a></li>
+                              <li><a href="<%=request.getContextPath() %>/camp_join.do">Join</a></li>
+                       <%  } else{%>
+                           	<li><a href="<%=request.getContextPath() %>/camp_info.do?id=<%=(String)session.getAttribute("sessionID") %>">MyPage</a></li>
+                            <li><a href="<%=request.getContextPath() %>/camp_logout.do">Logout</a></li> 
+                        <% }  %>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </div>
+         </div>
         <nav id="navwrap_bg" class="wrap_menu main_wrap_menu">
             <div class="menu_logo">
                 <a href="<%=request.getContextPath() %>/camp_main.do">
@@ -116,10 +137,10 @@
                     <a href="#">Community</a>
                     <ul class="menu_inner">
                         <li class="inner_list">
-                            <a href="#">공지사항</a>
+                            <a href="<%=request.getContextPath() %>/camp_notice.do">공지사항</a>
                         </li>
                         <li class="inner_list">
-                            <a href="#">이용문의</a>
+                            <a href="<%=request.getContextPath() %>/camp_qa.do">이용문의</a>
                         </li>
                         <li class="inner_list">
                             <a href="#">숙박후기</a>
@@ -705,9 +726,19 @@
         <div class="bg_foot_menu">
             <div id="foot_menu">
                 <ul class="clearfix ">
-                  <li><a href="<%=request.getContextPath() %>/camp_main.do">Home</a></li>
-                  <li><a href="<%=request.getContextPath() %>/camp_join.do">회원가입</a></li>
-                  <li><a href="<%=request.getContextPath() %>/camp_login.do">로그인</a></li>
+                	<li><a href="<%=request.getContextPath() %>/camp_main.do">Home</a></li>
+                    <!-- 로그인 메뉴 -->
+                    <%	
+                       	// 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
+                           if(session.getAttribute("sessionID")==null){ 
+                    %>		
+	                        <li><a href="<%=request.getContextPath() %>/camp_login.do">로그인</a></li>
+	                        <li><a href="<%=request.getContextPath() %>/camp_join.do">회원가입</a></li>
+                    <%  } else{%>
+	                    	<li><a href="<%=request.getContextPath() %>/camp_info.do?id=<%=(String)session.getAttribute("sessionID") %>">마이페이지</a></li>
+                        	<li><a href="<%=request.getContextPath() %>/camp_logout.do">로그아웃</a></li>	
+                   	<%	}	%>
+	                <li><a href="<%=request.getContextPath() %>/camp_admin_login.do">관리자로그인</a></li>
                 </ul>
                 <div class="clear"></div>
             </div>

@@ -19,7 +19,7 @@
 	                    	<li><a href="<%=request.getContextPath() %>/camp_info.do?id=<%=(String)session.getAttribute("sessionID") %>">마이페이지</a></li>
                         	<li><a href="<%=request.getContextPath() %>/camp_logout.do">로그아웃</a></li>	
                    	<%	}	%>
-	                
+	                <li><a href="<%=request.getContextPath() %>/camp_admin_login.do">관리자로그인</a></li>
                 </ul>
                 <div class="clear"></div>
             </div>
@@ -55,7 +55,6 @@
         
     </footer>
 
-    <script src="<%=request.getContextPath() %>/resources/dist/slick.min.js"></script>
     <script src="<%=request.getContextPath() %>/resources/dist/aos.min.js"></script>
     <script src="<%=request.getContextPath() %>/resources/js/main.js"></script>
     <script src="<%=request.getContextPath() %>/resources/js/common.js"></script>
