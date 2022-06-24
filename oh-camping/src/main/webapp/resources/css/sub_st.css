@@ -175,8 +175,7 @@ padding: 4px 10px;}
 #board_wrap table .qa_reply span {display: inline-block; margin-left:10px;
 	background: #c4c8cc; padding: 1px 5px;  color:#fff; font-size: 14px;}
 
-#freeListH2{
-font-size: 24px;
+#freeListH2{ font-size: 24px;
 font-family: sans-serif;
 color:gray;
 line-height: 40px;
