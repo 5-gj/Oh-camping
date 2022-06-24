@@ -7,6 +7,81 @@
 <title>Insert title here</title>
 <style type="text/css">
 
+	
+	.res_header {
+		width: 100%;
+		text-align: center;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		z-index: 11;
+		background-color: rgb(255, 255, 255);
+		font-family: Noto sans kr;
+		padding: 18px 0px 8px;
+		border-bottom: 1px solid rgb(230, 229, 229);
+	}
+	
+	.res_header .res_headerLayer {
+		width: 1024px;
+		text-align: left;
+		margin: 0px auto;
+		position: relative;
+		padding: 0px;
+	}
+	
+	.res_header_right {
+		float: right;
+	}
+	
+	.headerLink {
+		position: relative;
+		font-weight: 700;
+		padding: 7px 14px 8px 14px;
+		font-size: 13px;
+		color: #aaa;
+		cursor: pointer;
+		display: inline-block;
+	}
+	
+	.headerLink:hover {
+		color: #333;
+	}
+	
+	.headerLink.on {
+		color: #333;
+	}
+	
+	.linebar {
+		color: #aaa;
+		padding: 0px;
+		font-weight: 300;
+		display: inline-block;
+	}
+
+	.admin_button {
+		border: 1px solid #aaa;
+		color: #aaa;
+		font-size: 12px;
+		padding: 6px 8px;
+		cursor: pointer;
+		margin-top: -5px;
+		margin-left: 10px;
+		display: inline-block;
+	}
+	
+	.admin_button:hover {
+		color:#333; 
+		border:1px solid #333;
+	}
+	
+	.header_title {
+		font-size: 16px;
+		color: #333;
+		font-weight: 700;
+	}
+
+
+
 	.wrapper {
 		display: flex;
 		flex-direction: column;
@@ -15,10 +90,12 @@
 		align-items: center;
 		font-size: 12pt;
 		font-family: Noto sans kr;
+
 	}
 	
 	.wrapper2 {
 		width: 1024px;
+		padding: 57px 0px 0px;
 	}
 
 	.button_group {
@@ -302,6 +379,36 @@
 </head>
 <body>
 
+	
+	<div class="res_header">
+	
+	<div class="res_headerLayer">
+		
+		<div class="res_header_right">
+			
+			<div class="headerLink" onclick="location.href='calendar_iframe7.do'">예약달력</div>
+			<label class="linebar">|</label>
+			
+			<div class="headerLink">예약하기</div>
+			<label class="linebar">|</label>
+			
+			<div class="headerLink" onclick="location.href='reserveinfo.do'">예약확인</div>
+			<label class="linebar">|</label>
+			
+			<div class="headerLink on" onclick="location.href='payinfo.do'">요금안내</div>
+			<label class="linebar">|</label>
+			
+			<div class="admin_button">사장님페이지</div>
+			
+		</div>
+		
+		<div class="header_title">가평 oh-camping 펜션&글램핑</div>
+		
+		
+	</div>
+	
+	</div>
+	
 	
 
 	<div class="wrapper">
