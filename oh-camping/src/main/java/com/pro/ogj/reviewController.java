@@ -189,6 +189,15 @@ public class reviewController {
 		
 	}
 	
+	@RequestMapping("location.do")
+	public String location () {
+		
+
+		
+		return "ogj/location";
+		
+	}
+	
 	
 	
 	

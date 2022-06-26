@@ -138,7 +138,7 @@
                     </ul>
                 </div>
                 <div class="menu_list">
-                    <a href="#">Location</a>
+                    <a href="<%=request.getContextPath()%>/location.do">Location</a>
                 </div>
                 <div class="menu_list">
                     <a href="" class="link_reser">Reservation</a>
