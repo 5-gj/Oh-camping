@@ -14,6 +14,8 @@
 </head>
 <body>
 
+ <jsp:include page="../inc/oh_camping_top2.jsp" />
+
 	<section class="main_facility">
 		<div class="top">
 			<h1>Barbecue</h1>
@@ -164,7 +166,7 @@
 		</div>
 
 	</section>
-
+<jsp:include page="../inc/oh_camping_bottom.jsp" />
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

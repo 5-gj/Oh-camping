@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+  
+  <configuration>
+  	<typeAliases>
+  		<typeAlias type="com.pro.yuna.CampAdminDAO" alias="campAdminDao"/>
+  		<typeAlias type="com.pro.yuna.CampAdminDTO" alias="campAdminDto"/>
+  		<typeAlias type="com.pro.yuna.CampMemberDAO" alias="campMemberDao"/>
+  		<typeAlias type="com.pro.yuna.CampMemberDTO" alias="campMemberDto"/>
+  		<typeAlias type="com.pro.yuna.CampNoticeDAO" alias="campNoticeDao"/>
+  		<typeAlias type="com.pro.yuna.CampNoticeDTO" alias="campNoticeDto"/>
+  		<typeAlias type="com.pro.yuna.CampQaDTO" alias="campQaDao"/>
+  		<typeAlias type="com.pro.yuna.CampQaDAO" alias="campQaDto"/>
+  		<typeAlias type="com.pro.yuna.PageDTO" alias="pageDto"/>
+  	</typeAliases>
+  </configuration>

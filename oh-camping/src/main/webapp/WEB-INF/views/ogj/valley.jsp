@@ -23,7 +23,7 @@
 
 </head>
 <body>
-
+<jsp:include page="../inc/oh_camping_top2.jsp" /> 
 	<section class="slick-section">
 		<div class="slick-btn-main">
 			<div class="slick-btn left big-next">
@@ -45,12 +45,14 @@
 
 
 <section class="section1">
+
 	<div class="section1-div1" ></div>
 	<div class="section1-div2">
 	<script>
 	AOS.init();
 	</script>
 		<div class="main-int" data-aos="fade-left"  >
+			
 			<h1>계곡 1~4</h1>
 			<p>아름다운 경치, 깨끗한 자연, 상쾌한 피톤치드와 함께 힐링해보세요</p>
 		</div>
@@ -171,6 +173,8 @@
 		</div>
 
 </section>
+
+<jsp:include page="../inc/oh_camping_bottom.jsp" />
 
 
 

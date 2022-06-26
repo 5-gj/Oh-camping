@@ -65,40 +65,40 @@
                         </li>
                     </ul>
                 </div>
-                <div class="menu_list">
-                    <a href="#">Room</a>
+                               <div class="menu_list">
+                    <a href="<%=request.getContextPath()%>/ogj_room.do">Room</a>
                     <ul class="menu_inner">
                         <li class="inner_list">
-                            <a href="#">미리보기</a>
+                            <a href="<%=request.getContextPath()%>/ogj_room.do">미리보기</a>
                         </li>
                         <li class="inner_list">
-                            <a href="#">계곡 1 ~ 11</a>
+                            <a href="<%=request.getContextPath()%>/valley.do">계곡 1 ~ 11</a>
                         </li>
                         <li class="inner_list">
-                            <a href="#">대형 1,2,3,4</a>
+                            <a href="<%=request.getContextPath()%>/bigroom.do">대형 1,2,3,4</a>
                         </li>
                     </ul>
                 </div>
                 <div class="menu_list">
-                    <a href="#">Facility</a>
+                    <a href="<%=request.getContextPath()%>/facility.do?">Facility</a>
                     <ul class="menu_inner">
                         <li class="inner_list">
-                            <a href="#">미리보기</a>
+                            <a href="<%=request.getContextPath()%>/facility.do?">미리보기</a>
                         </li>
                         <li class="inner_list">
-                            <a href="#">바베큐</a>
+                            <a href="<%=request.getContextPath()%>/facility_sub.do?no=1">바베큐</a>
                         </li>
                         <li class="inner_list">
-                            <a href="#">수영장</a>
+                            <a href="<%=request.getContextPath()%>/facility_sub.do?no=2">수영장</a>
                         </li>
                         <li class="inner_list">
-                              <a href="#">계곡</a>
+                              <a href="<%=request.getContextPath()%>/facility_sub.do?no=3">계곡</a>
                         </li>
                         <li class="inner_list">
-                              <a href="#">놀이터</a>
+                              <a href="<%=request.getContextPath()%>/facility_sub.do?no=4">놀이터</a>
                         </li>
                         <li class="inner_list">
-                              <a href="#">사우나</a>
+                              <a href="<%=request.getContextPath()%>/facility_sub.do?no=5">사우나</a>
                         </li>
                     </ul>
                 </div>

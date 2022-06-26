@@ -55,6 +55,12 @@ public class reviewController {
 		
 		return "ogj/review_list";
 	}
+	@RequestMapping("ogj_room.do")
+	public String ogj_room () {
+		return "ogj/room";
+		
+	}
+	
 	
 	@RequestMapping("review_write.do")
 	public String review_write () {

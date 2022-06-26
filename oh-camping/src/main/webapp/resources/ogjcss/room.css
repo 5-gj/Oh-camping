@@ -102,11 +102,15 @@
 
 .top{
 	position: relative;
-    padding-top: 150px;
+    
     text-align: center;
     font-family: "Nanum Gothic";
     background: url(../images/main_top.jpg)no-repeat 50% 50%;
     background-size: 100%;
+}
+
+.top2{
+	padding-top: 150px;
 }
 
 .wrap_preview {

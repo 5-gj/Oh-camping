@@ -26,7 +26,7 @@
 
 <body>
 
-
+ <jsp:include page="../inc/oh_camping_top2.jsp" />
 	<section class="slick-section">
 		<div class="slick-btn-main">
 			<div class="slick-btn left big-next">
@@ -82,7 +82,7 @@
 </section>
 
 
-
+<jsp:include page="../inc/oh_camping_bottom.jsp" />
 
 
 

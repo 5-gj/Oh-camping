@@ -21,13 +21,18 @@
 </head>
 <body>
 
+   
+	<section>
 	<div align="center">
 		<div class="top">
+		    <jsp:include page="../inc/oh_camping_top2.jsp" />  
+		    <div class="top2">
 			<h1>Room Previes</h1>
 			<h3>저희 펜션의 객실을 한눈에 확인해보세요.</h3>
 			<div class="roombtn">
 				<a type="button" class="nextbtn">계곡1,2,3,4</a> <a type="button"
 					class="prevbtn">대형1,2,3,4</a>
+			</div>
 			</div>
 		</div>
 
@@ -72,10 +77,12 @@
 			</div>
 		</div>
 	</div>
+	</section>
+	
 
 
 
-
+<jsp:include page="../inc/oh_camping_bottom.jsp" />
 
 
 	<script
