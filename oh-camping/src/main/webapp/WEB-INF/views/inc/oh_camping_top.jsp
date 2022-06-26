@@ -118,25 +118,25 @@
                     </ul>
                 </div>
                 <div class="menu_list">
-                    <a href="#">Travel</a>
+                    <a href="<%=request.getContextPath()%>/travel.do">Travel</a>
                     <ul class="menu_inner">
                         <li class="inner_list">
-                              <a href="#">미리보기</a>
+                              <a href="<%=request.getContextPath()%>/travel.do">미리보기</a>
                         </li>
                         <li class="inner_list">
-                              <a href="#">아침고요수목원</a>
+                              <a href="<%=request.getContextPath()%>/travel_sub.do?no=1">아침고요수목원</a>
                         </li>
                         <li class="inner_list">
-                              <a href="#">쁘띠 프랑스</a>
+                              <a href="<%=request.getContextPath()%>/travel_sub.do?no=2">쁘띠 프랑스</a>
                         </li>
                         <li class="inner_list">
-                              <a href="#">남이섬</a>
+                              <a href="<%=request.getContextPath()%>/travel_sub.do?no=3">남이섬</a>
                         </li>
                         <li class="inner_list">
-                              <a href="#">포천아트밸리</a>
+                              <a href="<%=request.getContextPath()%>/travel_sub.do?no=4">포천아트밸리</a>
                         </li>
                         <li class="inner_list">
-                              <a href="#">베어스타운스키장</a>
+                              <a href="<%=request.getContextPath()%>/travel_sub.do?no=5">베어스타운스키장</a>
                         </li>
                     </ul>
                 </div>

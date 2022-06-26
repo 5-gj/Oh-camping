@@ -103,25 +103,25 @@
                     </ul>
                 </div>
                 <div class="menu_list">
-                    <a href="#">Travel</a>
+                    <a href="<%=request.getContextPath()%>/travel.do">Travel</a>
                     <ul class="menu_inner">
                         <li class="inner_list">
-                              <a href="#">미리보기</a>
+                              <a href="<%=request.getContextPath()%>/travel.do">미리보기</a>
                         </li>
                         <li class="inner_list">
-                              <a href="#">아침고요수목원</a>
+                              <a href="<%=request.getContextPath()%>/travel_sub.do?no=1">아침고요수목원</a>
                         </li>
                         <li class="inner_list">
-                              <a href="#">쁘띠 프랑스</a>
+                              <a href="<%=request.getContextPath()%>/travel_sub.do?no=2">쁘띠 프랑스</a>
                         </li>
                         <li class="inner_list">
-                              <a href="#">남이섬</a>
+                              <a href="<%=request.getContextPath()%>/travel_sub.do?no=3">남이섬</a>
                         </li>
                         <li class="inner_list">
-                              <a href="#">포천아트밸리</a>
+                              <a href="<%=request.getContextPath()%>/travel_sub.do?no=4">포천아트밸리</a>
                         </li>
                         <li class="inner_list">
-                              <a href="#">베어스타운스키장</a>
+                              <a href="<%=request.getContextPath()%>/travel_sub.do?no=5">베어스타운스키장</a>
                         </li>
                     </ul>
                 </div>
@@ -316,7 +316,7 @@
                   <p class="room_de_size"></p>
                   <p class="room_de_type"></p>
                   <p class="room_de_peo"></p>
-                  <a href="#" class="btn_room_pre mt_main2">
+                  <a href="<%=request.getContextPath()%>/valley.do" class="btn_room_pre mt_main2">
                     View more
                   </a>
                 </div>
@@ -344,7 +344,7 @@
                     <p class="room_de_size"></p>
                     <p class="room_de_type"></p>
                     <p class="room_de_peo"></p>
-                    <a href="#" class="btn_room_pre mt_main2">
+                    <a href="<%=request.getContextPath()%>/bigroom.do" class="btn_room_pre mt_main2">
                       View more
                     </a>
                   </div>
@@ -509,7 +509,7 @@
                 <div class="wrap_facil_txt">
                     <h1>바베큐</h1>
                     <h2>Barbecue</h2>
-                    <a href="#" class="btn_facil">
+                    <a href="<%=request.getContextPath()%>/facility_sub.do?no=1" class="btn_facil">
                       View More
                     </a>
                 </div>
@@ -562,7 +562,7 @@
                 <div class="wrap_facil_txt">
                     <h1>수영장</h1>
                     <h2>Swimming pool</h2>
-                    <a href="#" class="btn_facil">
+                    <a href="<%=request.getContextPath()%>/facility_sub.do?no=2" class="btn_facil">
                         View More
                     </a>
                 </div>
@@ -604,7 +604,7 @@
                 <div class="wrap_facil_txt">
                     <h1>계곡</h1>
                     <h2>Valley</h2>
-                    <a href="#" class="btn_facil">
+                    <a href="<%=request.getContextPath()%>/facility_sub.do?no=3" class="btn_facil">
                         View More
                     </a>
                 </div>
@@ -648,7 +648,7 @@
                 <div class="wrap_facil_txt">
                     <h1>놀이터</h1>
                     <h2>Playground</h2>
-                    <a href="#" class="btn_facil">
+                    <a href="<%=request.getContextPath()%>/facility_sub.do?no=4" class="btn_facil">
                         View More
                     </a>
                 </div>
@@ -693,7 +693,7 @@
                 <div class="wrap_facil_txt">
                     <h1>사우나</h1>
                     <h2>Sauna</h2>
-                    <a href="#" class="btn_facil">
+                    <a href="<%=request.getContextPath()%>/facility_sub.do?no=5" class="btn_facil">
                         View More
                     </a>
                 </div>
