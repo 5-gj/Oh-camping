@@ -12,19 +12,61 @@
 	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/font.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/reset_h.css" rel="stylesheet">
-    <link href="<%=request.getContextPath() %>/resources/dist/slick.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/dist/aos.min.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/dist/icon.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/dist/animate.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/common.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/sub_st.css" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <!-- slick 적용 -->
+   	<link href="<%=request.getContextPath() %>/resources/dist/slick.css" rel="stylesheet">
+   	<link href="<%=request.getContextPath() %>/resources/dist/slick-theme.css" rel="stylesheet">
+   	<script src="<%=request.getContextPath() %>/resources/dist/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="<%=request.getContextPath() %>/resources/dist/slick.min.js"></script>
+    <script type="text/javascript">
+	    $(document).on('ready', function() {
+	      $(".m_slick").slick({
+	        dots: true,
+	        autoplay: true,
+	        autoplaySpeed: 3000,
+	      });
+	    });
+	</script>
 </head>
 <body>
 	<!-- 메뉴바(header) -->
     <header id="header" class="head_3">
-        <nav id="navwrap_bg" class="wrap_menu">
-            <div class="menu_logo">
+    	<div class="top_header_bg">
+            <div id="top_header" class="clearfix">
+                <div id="g_nav">
+                    <ul class="clearfix">
+                        <li class="hidden-xs"><a href="<%=request.getContextPath() %>/camp_main.do">Home</a></li>
+                        <% 
+                           // 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
+                            if(session.getAttribute("sessionID")==null){ 
+                        %>    
+                              <li><a href="<%=request.getContextPath() %>/camp_login.do">Login</a></li>
+                              <li><a href="<%=request.getContextPath() %>/camp_join.do">Join</a></li>
+                       	<%  } else{ // 로그인 했을 때 
+                    	   		String loginId = (String)session.getAttribute("sessionID");
+                    	   		if (loginId.equals("admin")){ // 관리자 %>
+                    	   			<li><a href="<%=request.getContextPath() %>/camp_admin.do">관리자</a></li>
+                                    <li><a href="<%=request.getContextPath() %>/camp_logout.do">Logout</a></li> 
+                    	 <%  	}else{ // 일반 사용자%>
+                    	   			<!--  <li><a href="<%=request.getContextPath() %>/camp_info.do?id=<%=(String)session.getAttribute("sessionID") %>">MyPage</a></li>-->
+                                    <li><a href="<%=request.getContextPath() %>/camp_logout.do">Logout</a></li> 
+                    	 <%  	}
+                         	}  %>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </div>
+         </div>
+         <nav id="navwrap_bg" class="wrap_menu">
+         	<div class="menu_logo">
                 <a href="<%=request.getContextPath() %>/camp_main.do">
                     <img src="<%=request.getContextPath() %>/resources/img/logo.png">
                 </a>
@@ -116,10 +158,10 @@
                     <a href="#">Community</a>
                     <ul class="menu_inner">
                         <li class="inner_list">
-                            <a href="#">공지사항</a>
+                            <a href="<%=request.getContextPath() %>/camp_notice.do">공지사항</a>
                         </li>
                         <li class="inner_list">
-                            <a href="#">이용문의</a>
+                            <a href="<%=request.getContextPath() %>/camp_qa.do">이용문의</a>
                         </li>
                         <li class="inner_list">
                             <a href="#">숙박후기</a>
