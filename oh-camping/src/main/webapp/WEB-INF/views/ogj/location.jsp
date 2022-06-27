@@ -42,7 +42,7 @@
 			<div class="wrap_find_place car mt">
 				<div class="find_img_1"></div>
 				<div class="find_txt left">
-					<b>주소지는 "경기도 가평군 상면 물골길 111" 로 검색해서 찾아와 주세요</b>
+					<b>주소지는 "서울 중구 남대문로 120 대일빌딩 " 로 검색해서 찾아와 주세요</b>
 				</div>
 			</div>
 		</div>
@@ -69,7 +69,7 @@
 		<script>
 		var container = document.getElementById('map');
 		var options = {
-			center: new kakao.maps.LatLng(37.832921, 127.316900),
+			center: new kakao.maps.LatLng(37.567932, 126.978947),
 			level: 3
 		};
 
@@ -77,7 +77,7 @@
 		
 		var marker = new kakao.maps.Marker({
 		    map: map, 
-		    position: new kakao.maps.LatLng(37.832921, 127.316900)
+		    position: new kakao.maps.LatLng( 37.567932, 126.978947)
 		});
 		
 		marker.setMap(map);
@@ -85,7 +85,7 @@
 		var content = '<div class ="label"><span class="left"></span><span class="center" style="font-weight:bold;">오캠핑 캠핑장</span><span class="right"></span></div>';
 
 		// 커스텀 오버레이가 표시될 위치입니다 
-		var position = new kakao.maps.LatLng(37.832821, 127.316900);  
+		var position = new kakao.maps.LatLng(37.567922, 126.978947);  
 
 		// 커스텀 오버레이를 생성합니다
 		var customOverlay = new kakao.maps.CustomOverlay({
