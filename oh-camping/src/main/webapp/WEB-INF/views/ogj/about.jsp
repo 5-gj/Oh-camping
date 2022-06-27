@@ -88,10 +88,10 @@
 			
 			<div class="ma_intro_txt" data-aos="fade-right">
 				<div class="intro_txt">
-					<h2>아늑한 인테리어</h2>
-					<h1>Cozy Interior</h1>
-					<p>아늑한 인테리어,아늑한 공간이 당신을 맞이합니다.<br>
-					수 많은 새소리로 가득찬 핀란드 캠핑성이 당신을 기다립니다</p>
+					<h2>확 트인 전망</h2>
+					<h1>Beautiful View</h1>
+					<p>확 트인 전망을 즐길 수 있는 저희 펜션으로 놀러오세요<br>
+					미세먼지를 피해 푸르른 숲의 맑은 공기가 가득한곳.</p>
 				</div>
 				<div class="intro_img img2"></div>
 				
