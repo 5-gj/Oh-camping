@@ -198,6 +198,15 @@ public class reviewController {
 		
 	}
 	
+	@RequestMapping("about.do")
+	public String about () {
+		
+
+		
+		return "ogj/about";
+		
+	}
+	
 	
 	
 	

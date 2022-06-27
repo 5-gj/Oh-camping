@@ -70,10 +70,10 @@
             </div>
             <div class="menu_items sub">
                 <div class="menu_list">
-                    <a href="#">About</a>
+                    <a href="<%=request.getContextPath()%>/about.do">About</a>
                     <ul class="menu_inner">
                         <li class="inner_list">
-                            <a href="#">펜션소개</a>
+                            <a href="<%=request.getContextPath()%>/about.do">펜션소개</a>
                         </li>
                     </ul>
                 </div>
