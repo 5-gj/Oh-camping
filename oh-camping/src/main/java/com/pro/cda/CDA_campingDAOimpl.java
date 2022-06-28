@@ -48,7 +48,12 @@ public class CDA_campingDAOimpl implements CDA_campingDAO{
 		
 		return this.sqlSession.insert("orderDetail", paymentdetailDTO);
 	}
-	
+
+	@Override
+	public int cda_changeRoomToImpossi(int no) {
+		
+		return this.sqlSession.update("roomimposs", no);
+	}
 	
 	
 	@Override
@@ -60,7 +65,22 @@ public class CDA_campingDAOimpl implements CDA_campingDAO{
 	@Override
 	public int cda_paymentCancel(int no) {
 		return this.sqlSession.delete("paymentRemove",no);
+	}	
+
+	@Override
+	public List<Integer> cda_getroomno(int no) {
+		
+		return this.sqlSession.selectList("getroomno", no);
 	}
+	
+	@Override
+	public int cda_changeRoomToPossi(int no) {
+		return this.sqlSession.update("roomposs", no);
+	}
+	
+	
+
+	
 
 	////////////////////////////////////////////////////////////////////
 	//id 세션으로 정보 받아오기(나중에 삭제!!!!!)

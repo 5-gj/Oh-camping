@@ -35,19 +35,21 @@ public class DongahController {
 	CDA_campingDAO dao;
 	
 	
-	//세션 로그인 test
-	@RequestMapping("login_test.do")
-	public String logintest(HttpServletRequest request) {
-		String test_id = (String) request.getParameter("mem_id");
-		
-		HttpSession session = request.getSession();
-		session.setAttribute("testId",test_id );
-		
-		System.out.println("id>>" + test_id);
-		
-		return "cda/dongad_1";
-		
-	}
+	
+	 //세션 로그인 test
+	 
+	 @RequestMapping("login_test.do") public String logintest(HttpServletRequest
+	 request) { String test_id = (String) request.getParameter("mem_id");
+	  
+	 HttpSession session = request.getSession();
+	 session.setAttribute("testId",test_id );
+	 
+	 System.out.println("id>>" + test_id);
+	 
+	 return "cda/dongad_1";
+	 
+	 }
+	 
 
 	@RequestMapping("dong.do")
 	public String test() {
@@ -114,7 +116,7 @@ public class DongahController {
 	//해당 날짜에 따른 객실 리스트 가져오기
 	//주말 : 10% 할인
 	@RequestMapping("reserve_getInfo_weekend.do")
-	public String getroomWeekend(@RequestParam("calYear") int year,@RequestParam("calMonth") int month,@RequestParam("calDate") int date,@RequestParam("roomno") int roomno, Model model) {
+	public String getroomWeekend(@RequestParam("calYear") int year,@RequestParam("calMonth") int month,@RequestParam("calDate") int date, Model model) {
 		List<CDA_roomDTO> room_list = new ArrayList<CDA_roomDTO>();
 
 		CDA_roomDTO dto = new CDA_roomDTO();
@@ -137,9 +139,9 @@ public class DongahController {
 		
 		System.out.println("room_list>>" + room_list);
 		
-		model.addAttribute("roomno", roomno);
+		//model.addAttribute("roomno", roomno);
 
-		System.out.println("roomno>>" +roomno);
+		//System.out.println("roomno>>" +roomno);
 		return "cda/reserve_roomOfDayList_ajax";	
 
 	}
@@ -151,7 +153,7 @@ public class DongahController {
 
 		CDA_roomDTO dto = new CDA_roomDTO();
 
-		System.out.println(year+"-"+month+"-"+date);	
+		System.out.println("weekday>>"+year+"-"+month+"-"+date);	
 		
 		  Calendar cal = Calendar.getInstance();
 		  
@@ -161,41 +163,16 @@ public class DongahController {
 		  
 		  String dayday = msdf.format(cal.getTime());
 		  
-		  //System.out.println("dayday>>"+dayday);
+		
 		  
 		room_list = this.dao.cda_getRoomList(dayday);
 
 		model.addAttribute("room_list", room_list);
-		
-		//System.out.println("room_list>>" + room_list);
 
 		return "cda/reserve_roomOfDayList_weekday_ajax";	
 
 	}
 	
-	
-	
-	/*	
-	 * 
-  	public String getroomofday(@RequestParam("dayofcalendar") Long num, Model model) {
-		List<CDA_roomDTO> room_list = new ArrayList<CDA_roomDTO>();
-
-		CDA_roomDTO dto = new CDA_roomDTO();
-
-	
-		
- 		
-		room_list = this.dao.cda_getRoomList(num);
-
-		model.addAttribute("room_list", room_list);
-		System.out.println("num>>" + num);
-		System.out.println("room_list>>" + room_list);
-
-		return "cda/reserve_roomOfDayList_ajax";	
-
-	}
-	
-	*/
 	
 
 	@RequestMapping("reserve_payment.do")
@@ -204,19 +181,10 @@ public class DongahController {
 		// @ModelAttribute : @RequestParam과 다르게
 
 		List<CDA_roomDTO> roomList = new ArrayList<CDA_roomDTO>();
-		//List<CDA_reserveInfoDTO> reserveList = new ArrayList<CDA_reserveInfoDTO>();
-
-		// List<HashMap<String, Integer>> list = new
-		// ArrayList<HashMap<String,Integer>>();
+		
 		for (CDA_reserveInfoDTO reservedto : reserveInfoDTO.getReserveInfoDTO()) {
 
-			/*
-			 * HashMap<String, Integer> result = new HashMap<String, Integer>();
-			 * result.put("room_no",reservedto.getRoom_no());
-			 * result.put("addpeople",reservedto.getAddpeople()); //
-			 * result.put("addday",
-			 * dto.getAddday());
-			 */
+	
 
 			// 넘겨주는 것은 객실 리스트와 ㅈ
 			// 룸번호에 해댕하는 값을 가져오기 DTO로 받아서 나중에 list에 넣는으로 하자
@@ -232,8 +200,6 @@ public class DongahController {
 			roomdto.setRoom_price(reservedto.getDiscountprice());
 			
 			roomList.add(roomdto);
-			
-			//reserveList.add(reservedto);
 
 			
 		}//for문 end
@@ -294,11 +260,14 @@ public class DongahController {
 			this.dao.cda_reserveComfirmdetail(paymentdetilDTO);
 			detailDTOList.add(paymentdetilDTO);
 			
-			System.out.println("paymentdetail>>"+paymentdetilDTO );
-		}
-		
-		//System.out.println("paymentList>>"+detailDTOList );
-		
+			
+			//room테이블 room_poss 1으로 변경
+			//System.out.println("roomno>>" +paymentdetilDTO.getPaymentDetail_roomno());
+			int check = this.dao.cda_changeRoomToImpossi(paymentdetilDTO.getPaymentDetail_roomno());
+			//System.out.println("check>>"+check);
+			
+			
+		}			
 		model.addAttribute("paymentDTO",paymentDTO );
 		model.addAttribute("detailList",detailDTOList );
 		
@@ -312,24 +281,30 @@ public class DongahController {
 	@ResponseBody
 	public void reservecancel(@RequestParam("paymentno") int paymentno) {
 		
+		//roomno가져오기
+		List<Integer> roomnoList = new ArrayList<Integer>();
+		
+		roomnoList = this.dao.cda_getroomno(paymentno);
+		System.out.println("roomList>"+roomnoList);
+		for(int i=0; i<roomnoList.size(); i++) {
+			System.out.println("roomnoList.get(i)>" +roomnoList.get(i));
+			this.dao.cda_changeRoomToPossi(roomnoList.get(i));
+		}
+		
 		System.out.println("paymentno>"+paymentno);
 		//paymentdetail 삭제
-		this.dao.cda_paymentDetailremCancel(paymentno);
-		
+		this.dao.cda_paymentDetailremCancel(paymentno);		
 		
 		//payment 삭제
 		this.dao.cda_paymentCancel(paymentno);
+		
+		
+		
+		
+		
+		//room테이블 room_poss 0으로 변경
+		
 	}
-	
-	
-	
-	
-	//location 위치 정보
-	@RequestMapping("camping_location.do")
-	public String campingLocation() {
-		return "cda/camping_location";
-	}
-	
 	
 	
 
