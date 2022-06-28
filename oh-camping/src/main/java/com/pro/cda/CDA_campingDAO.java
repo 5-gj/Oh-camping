@@ -24,12 +24,21 @@ public interface CDA_campingDAO {
 	public int cda_getpatmentno();
 	//결제 디테일
 	public int cda_reserveComfirmdetail(CDA_paymentdetailDTO paymentdetailDTO);
+	//결제 삭제시 camp_room table 객실유무 변경
+	public int cda_changeRoomToImpossi(int no);
 	
+	
+	//예약 취소시
 	//결제 디테일 삭제
-	public int cda_paymentDetailremCancel(int no);
-	
+	public int cda_paymentDetailremCancel(int no);	
 	//결제 삭제
 	public int cda_paymentCancel(int no);
+	//roomno가져오기
+	public List<Integer> cda_getroomno(int no);
+	//예약 취소시  camp_room table 객실유무 변경
+	public int cda_changeRoomToPossi(int no);
+	
+	
 	
 	
 	//로그인 세션 정보(나중에 병합시 삭제!!!!!)

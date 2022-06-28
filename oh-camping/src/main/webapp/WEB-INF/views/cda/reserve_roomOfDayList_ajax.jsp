@@ -20,12 +20,8 @@
 				<div class="roomofdayContainer">
 					<!-- 넘어갈 값 : 룸번호, 추가 인원수-->
 					<div class="checkSe" >
-						<%-- <input type="checkbox" name="chk_lang" value="${dto.room_no }"> --%>		
-						
-						
+						<%-- <input type="checkbox" name="chk_lang" value="${dto.room_no }"> --%>
 						<input type="checkbox" name="chk_lang" class="chk_lang" value="${dto.room_no }" onclick="checkclick()">
-						
-						
 						<input type="hidden" name="roomno" class="roomno" value="${dto.room_no }">								
 					</div>
 				
@@ -202,17 +198,8 @@
 					</div>
 				</div>
 			</c:if>	
-		</c:forEach>				
-			
-			
+		</c:forEach>										
 	</c:if>
-
-	
-	
-	
-	
-
-	
 
 </body>
 </html>

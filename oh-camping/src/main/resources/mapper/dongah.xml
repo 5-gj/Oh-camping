@@ -16,9 +16,12 @@
     		select * from camp_room where room_no=#{num}
     	</select>
     	
+    	
+    	<!-- sesstionid 가져오기 -->
     	<select id="testid" parameterType="String" resultType="com.pro.cda.testidDTO">
     		select * from camp_member where mem_id=#{id}
-    	</select>
+    	</select> 	
+    	<!--  -->
     	
     	<!-- 결제 완료 -->
     	<select id="getmemno" parameterType="String" resultType="int">
@@ -40,6 +43,10 @@
 	
     	</insert> 
     	
+    	<update id="roomimposs" parameterType="int">
+    		update camp_room set ROOM_POSSIBLE = 1 where ROOM_NO = #{no}
+    	</update>
+    	
     	
     	<!-- 예약취소 -->
 		<delete id="detailRemove" parameterType="int">
@@ -51,6 +58,14 @@
 			delete from camp_payment where PAYMENT_NO=#{no}
 		
 		</delete>
+		
+		<select id="getroomno" parameterType="int" resultType="int">
+			select paymentDetail_roomno from camp_paymentDetail where paymentDetail_paymentno=#{no}
+		</select>
+		
+		<update id="roomposs" parameterType="int">
+    		update camp_room set room_possible = 0 where room_no = #{no}
+    	</update>
     
     
     

@@ -102,20 +102,19 @@
 		let roomday = $("#roomday").val();
 		let roomno = $("#roomno").val();
 		
-		alert(roomday);
 		//넘어온값 넣고 넘어온 값이 없으면 오늘 날짜 입력 되도록.
-		//next_calendar(2022,6);
-		//getInfoList(2022,6,7);
 		
-		if(roomday ==null){
-			next_calendar(2022,6);
-			getInfoList(2022,6,7);
+		
+		//alert(roomday);
+		 if(roomday ==""){
+			next_calendar($("#todayyear").val(),$("#todaymonth").val());
+			getInfoList($("#todayyear").val(),$("#todaymonth").val(),$("#todaydate").val());
 		}else{
-			next_calendar(2022,roomday.substring(5,7));
-			getInfoList(2022,parseInt(roomday.substring(5,7)),parseInt(roomday.substring(8,10)));
+			next_calendar(2022,roomday.substring(5,7)-1);
+			getInfoList(2022,parseInt(roomday.substring(5,7))-1,parseInt(roomday.substring(8,10)));
 			
 			console.log(roomday.substring(5,7));
-		}
+		} 
 		
 	});
 
@@ -152,6 +151,7 @@
 	
 	
 	/* 클릭한 날짜에 해당하는 예약정보 리스트 출력 */
+	//주말(30%)
 	function getInfoList(num1, num2, num3){
 		
 		let calYear = num1;
@@ -159,7 +159,7 @@
 		let calDate = num3;
 		var calAll= ""+num1+num2+num3;
 		
-		let roomno = $("#roomno").val();
+		//let roomno = $("#roomno").val();
 		
 		
 		$.ajax({
@@ -167,7 +167,7 @@
 			type: "post",
 			url: "reserve_getInfo_weekend.do",
 			dataType: "text",			
-			data: {"calYear":calYear, "calMonth":calMonth, "calDate":calDate ,"roomno":roomno},			
+			data: {"calYear":calYear, "calMonth":calMonth, "calDate":calDate},			
 			success: function(data){
 				
 				//alert('성공');
@@ -422,8 +422,13 @@
 </head>
 <body>
 
+	<c:set var="today" value="${calendarInfo }"/>
 	<c:set var="roomday" value="${roomDay }"/>
 	<c:set var="roomno" value="${roomNo }"/>
+	
+	<input type="hidden" value="${today.year }" id="todayyear">
+	<input type="hidden" value="${today.month }" id="todaymonth">
+	<input type="hidden" value="${today.date }" id="todaydate">
 	
 	<input type="hidden" value="${roomday}" id="roomday" >	
 	<input type="hidden" value="${roomno}" id="roomno">
@@ -435,7 +440,7 @@
 			<!-- 달력 들어가는 공간 -->	
 		</div>
 				
-		<c:set var="today" value="${calendarInfo }"/>	
+			
 		<div class="reserve_info">	
 			<h5 class="info_today"> 오늘 날짜 : ${today.year }년 ${today.month+1 }월 ${today.date }일</h5>		
 			
