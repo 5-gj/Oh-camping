@@ -18,7 +18,7 @@
     	
     	
     	<!-- sesstionid 가져오기 -->
-    	<select id="testid" parameterType="String" resultType="com.pro.cda.testidDTO">
+    	<select id="testid" parameterType="String" resultType="campMemberDto">
     		select * from camp_member where mem_id=#{id}
     	</select> 	
     	<!--  -->
@@ -30,7 +30,7 @@
     	
     	<insert id="reservePayment" parameterType="CDA_paymentDTO">
     		insert into camp_payment values((select max(payment_no) from camp_payment)+1,
-    		#{payment_memno},#{payment_pname},#{payment_pphone},#{payment_price},sysdate,#{paymeny_request})
+    		#{payment_memno},#{payment_pname},#{payment_pphone},#{payment_price},sysdate,#{payment_request})
     	</insert>
     	
     	<select id="getpaymentno" resultType="int">

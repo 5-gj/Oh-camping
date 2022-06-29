@@ -106,6 +106,12 @@
 	
 	$(document).ready(function(){
 		
+		//alert($("input[name=payment_pname]").val());
+		if($("input[name=payment_pname]").val()==""){
+			alert('로그인을 해주세요');
+			location.href="camp_login.do";
+		}
+		
 		
 	  
 		//전체 금액 가져오는 기능
@@ -315,7 +321,7 @@
 		
 		<div class="people_payContainer">
 			<div class="peopleInfoContainer">
-				<c:set var="memberinfo" value="${testiddto }"/>
+				<c:set var="memberinfo" value="${sessionIddto }"/>
 			
 				<div class="word">예약자 정보 입력<div class="checktext">✔표시는 필수 작성</div></div>
 				
@@ -393,7 +399,7 @@
 						<tr>
 							<th>요청사항</th>
 							<th></th>
-							<td><textarea cols="30" rows="20" name="paymeny_request">요청사항을 입력해 주세요.</textarea></td>
+							<td><textarea cols="30" rows="20" name="payment_request">요청사항을 입력해 주세요.</textarea></td>
 						</tr>													
 					</table>				
 				</div>

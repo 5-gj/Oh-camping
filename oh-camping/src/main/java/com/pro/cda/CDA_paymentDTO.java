@@ -12,7 +12,7 @@ public class CDA_paymentDTO {
 	private String payment_pphone;	//주문자 전호번호
 	private int payment_price;	//주문 총 가격
 	//private int  payment_state;	//주문 상태?
-	private String paymeny_request;	//주문자 요청사항
+	private String payment_request;	//주문자 요청사항
 	
 	
 	//db에 없는 내용

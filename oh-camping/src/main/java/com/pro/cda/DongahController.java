@@ -5,10 +5,8 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
-import java.util.StringTokenizer;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,6 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.pro.cda.CalendarDTO;
+import com.pro.yuna.CampMemberDTO;
 
 @Controller
 @SessionAttributes
@@ -33,30 +32,8 @@ public class DongahController {
 
 	@Autowired
 	CDA_campingDAO dao;
-	
-	
-	
-	 //세션 로그인 test
 	 
-	 @RequestMapping("login_test.do") public String logintest(HttpServletRequest
-	 request) { String test_id = (String) request.getParameter("mem_id");
-	  
-	 HttpSession session = request.getSession();
-	 session.setAttribute("testId",test_id );
-	 
-	 System.out.println("id>>" + test_id);
-	 
-	 return "cda/dongad_1";
-	 
-	 }
-	 
-
-	@RequestMapping("dong.do")
-	public String test() {
-		System.out.println("test로 이동");
-		return "cda/login_test";
-	}
-
+	//예약 페이지로 이동
 	@RequestMapping("reserve_reserve.do")
 	public String reserve_confirm(Model model, CalendarDTO dateDTO) {
 
@@ -69,12 +46,11 @@ public class DongahController {
 
 		model.addAttribute("calendarInfo", calendarData);
 		
-		
-		//
 
 		return "cda/reserv_reserve";
 	}
 	
+	//예약페이지 이동2 -> 해당 날짜를 클릭했을 떄
 	@RequestMapping("reserve_confirm2.do")
 	public String reserve_confirm2(Model model, CalendarDTO dateDTO, @RequestParam("roomNo") int roomNo, @RequestParam("roomDay") String roomDay) {
 
@@ -174,10 +150,10 @@ public class DongahController {
 	}
 	
 	
-
+	//결제 페이지로 이동
 	@RequestMapping("reserve_payment.do")
 	// @ResponseBody
-	public String payment(Model model, CDA_reserveInfoDTO reserveInfoDTO, HttpServletRequest request) {
+	public String payment(Model model, CDA_reserveInfoDTO reserveInfoDTO, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// @ModelAttribute : @RequestParam과 다르게
 
 		List<CDA_roomDTO> roomList = new ArrayList<CDA_roomDTO>();
@@ -205,25 +181,27 @@ public class DongahController {
 		}//for문 end
 
 		
-		//////////////////////////////////////////////////////////
+		
 		//session으로 id 가져오기
 		HttpSession session = request.getSession();
 		
 		
-		String testId = (String) session.getAttribute("testId");
-		System.out.println("testid>>" + testId);
+		String sessionId = (String) session.getAttribute("sessionID");
+		System.out.println("sessionId>>" + sessionId);
 		
-		//session으로 가져오 id로 회원 이름 전화번호 찾기
-		testidDTO testiddto = new testidDTO();
-		testiddto = this.dao.gettestid(testId);	
+		PrintWriter out = response.getWriter();
 		
-		model.addAttribute("testiddto", testiddto);
-		
-		System.out.println("testiddot>>" +testiddto);
-		/////////////////////////////////////////////////
-
-		
-		  System.out.println("roomlist>>"+roomList);
+		if(sessionId==null) { //로그인이 안되어 있다면 roomlist만 넘어감
+			
+			 
+		}else {
+			//session으로 가져오 id로 회원 이름 전화번호 찾기
+			CampMemberDTO sessionIddto = new CampMemberDTO();
+			sessionIddto = this.dao.getsessionid(sessionId);
+			model.addAttribute("sessionIddto", sessionIddto);
+		}
+					
+		  //System.out.println("roomlist>>"+roomList);
 		  //System.out.println("reserveList>>"+reserveList);		  
 		 			
 		 model.addAttribute("roomList",roomList);			 
@@ -238,9 +216,9 @@ public class DongahController {
 		//결제	
 		
 		HttpSession session = request.getSession();	
-		String testId = (String) session.getAttribute("testId");		
+		String sessionId = (String) session.getAttribute("sessionID");	
 
-		paymentDTO.setPayment_memno(this.dao.cda_getmemmo(testId));
+		paymentDTO.setPayment_memno(this.dao.cda_getmemmo(sessionId));
 		
 		this.dao.cda_paymentConfirm(paymentDTO);
 		
@@ -297,12 +275,7 @@ public class DongahController {
 		
 		//payment 삭제
 		this.dao.cda_paymentCancel(paymentno);
-		
-		
-		
-		
-		
-		//room테이블 room_poss 0으로 변경
+	
 		
 	}
 	
