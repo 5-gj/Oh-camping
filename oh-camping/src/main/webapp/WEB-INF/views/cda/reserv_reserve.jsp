@@ -102,6 +102,8 @@
 		let roomday = $("#roomday").val();
 		let roomno = $("#roomno").val();
 		
+		//alert(roomno);
+		
 		//넘어온값 넣고 넘어온 값이 없으면 오늘 날짜 입력 되도록.
 		
 		
@@ -113,8 +115,8 @@
 			next_calendar(2022,roomday.substring(5,7)-1);
 			getInfoList(2022,parseInt(roomday.substring(5,7))-1,parseInt(roomday.substring(8,10)));
 			
-			console.log(roomday.substring(5,7));
 		} 
+		 
 		
 	});
 
@@ -304,9 +306,9 @@
 			$('input.listattri').remove();
 			for(let i=0; i<checked_roomno.length; i++){
 				$('#sendList').prepend("<input type='hidden' class='listattri' name='reserveInfoDTO["+i+"].room_no' value='"+checked_roomno[i]+"'>");
-				$('#sendList').prepend("<input type='hidden' class='listattri' name='reserveInfoDTO["+i+"].addpeople' value='"+checked_addpeople[i]+"'>'");
-				$('#sendList').prepend("<input type='hidden' class='listattri' name='reserveInfoDTO["+i+"].addprice' value='"+checked_addprice[i]+"'>'");
-				$('#sendList').prepend("<input type='hidden' class='listattri' name='reserveInfoDTO["+i+"].discountprice' value='"+checked_discountprice[i]+"'>'");
+				$('#sendList').prepend("<input type='hidden' class='listattri' name='reserveInfoDTO["+i+"].addpeople' value='"+checked_addpeople[i]+"'>");
+				$('#sendList').prepend("<input type='hidden' class='listattri' name='reserveInfoDTO["+i+"].addprice' value='"+checked_addprice[i]+"'>");
+				$('#sendList').prepend("<input type='hidden' class='listattri' name='reserveInfoDTO["+i+"].discountprice' value='"+checked_discountprice[i]+"'>");
 			}//for문 end
 	
 			
@@ -509,22 +511,7 @@
 				
 				
 				<div class="total_price_check"> 
-					<!-- <table>
-						<tr>
-							<th>총 결제금액</th>										
-							<td><input class="totalPriceText" value="0">원</td>
-						</tr>
-						
-						<tr>
-							<th>입실 시 현장 결제 금액</th>										
-							<td><input class="sitePriceText" value="0">원</td>
-						</tr>
-						
-						<tr>
-							<th>지금 즉시 결제 금액</th>										
-							<td><input class="nowPriceText" value="0">원</td>
-						</tr>										
-					</table> -->
+					
 					
 					<div class="reserveBtncontainer">													
 						<form method="post" id="sendList" action="<%=request.getContextPath() %>/reserve_payment.do">

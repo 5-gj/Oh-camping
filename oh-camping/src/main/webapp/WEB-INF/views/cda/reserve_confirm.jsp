@@ -162,7 +162,7 @@
 					
 					<tr>
 						<th>요청사항</th>
-						<td>${paymentDTO.paymeny_request }</td>
+						<td>${paymentDTO.payment_request }</td>
 					</tr>
 					
 				</table>

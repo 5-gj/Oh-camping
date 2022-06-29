@@ -6,6 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.pro.yuna.CampMemberDTO;
+
 @Repository
 public class CDA_campingDAOimpl implements CDA_campingDAO{
 
@@ -85,9 +87,10 @@ public class CDA_campingDAOimpl implements CDA_campingDAO{
 	////////////////////////////////////////////////////////////////////
 	//id 세션으로 정보 받아오기(나중에 삭제!!!!!)
 	@Override
-	public testidDTO gettestid(String id) {
+	public CampMemberDTO getsessionid(String id) {
 		
 		return this.sqlSession.selectOne("testid", id);
 	}
+	
 	
 }

@@ -2,6 +2,8 @@ package com.pro.cda;
 
 import java.util.List;
 
+import com.pro.yuna.CampMemberDTO;
+
 public interface CDA_campingDAO {
 
 	//예약 리스트 보여주기
@@ -42,6 +44,6 @@ public interface CDA_campingDAO {
 	
 	
 	//로그인 세션 정보(나중에 병합시 삭제!!!!!)
-	public testidDTO gettestid(String id);
+	public CampMemberDTO getsessionid(String id);
 	
 }
