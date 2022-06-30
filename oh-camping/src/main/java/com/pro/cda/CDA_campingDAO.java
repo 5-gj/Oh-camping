@@ -41,6 +41,13 @@ public interface CDA_campingDAO {
 	public int cda_changeRoomToPossi(int no);
 	
 	
+	// 동찬 - 예약 확인 페이지 로직
+	public CDA_paymentDTO getpaymentInfo(int no);
+	
+	public List<CDA_paymentdetailDTO> getpaymentdetailInfo(int no);
+	
+	public int resnoCheck(int no);
+	
 	
 	
 	//로그인 세션 정보(나중에 병합시 삭제!!!!!)

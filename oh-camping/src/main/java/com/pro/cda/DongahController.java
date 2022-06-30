@@ -254,6 +254,76 @@ public class DongahController {
 		
 	}
 	
+	
+    // 예약 확인 페이지 연결
+    @RequestMapping("reserve_info.do")
+    public String reserve_info(Model model, HttpServletRequest request, HttpServletResponse response,
+            @RequestParam("res_no") int res_no, @RequestParam("res_name") String res_name, @RequestParam("res_phone") String res_phone) throws IOException {
+
+        int res = this.dao.resnoCheck(res_no);
+        
+        System.out.print(res);
+        
+        String phone1 = res_phone.substring(0,3);
+        String phone2 = res_phone.substring(3,7);
+        String phone3 = res_phone.substring(7,11);
+        String phone = phone1 + "-" + phone2 + "-" + phone3;
+        
+        response.setContentType("text/html; charset=UTF-8");
+        
+        PrintWriter out = response.getWriter();
+        
+        
+        
+        if(res == 0) {
+            out.println("<script>");
+            out.println("alert('예약 내역이 없습니다. 예약 번호를 확인해주세요.')");
+            out.println("history.back()");
+            out.println("</script>");
+            
+        }else {
+            
+            CDA_paymentDTO dto = this.dao.getpaymentInfo(res_no);
+            
+            if(dto.getPayment_pname().equals(res_name)) {
+                
+                if(dto.getPayment_pphone().equals(phone)) {
+                    
+                    CDA_paymentDTO dto1 = this.dao.getpaymentInfo(res_no);
+                    List<CDA_paymentdetailDTO> dto2 = this.dao.getpaymentdetailInfo(res_no);
+                    
+                    model.addAttribute("paymentDTO",dto1 );
+                    model.addAttribute("detailList",dto2 );
+                    
+                    return "cda/reserve_confirm";
+                    
+                }else {
+                    out.println("<script>");
+                    out.println("alert('휴대폰 번호를 확인해주세요.')");
+                    out.println("history.back()");
+                    out.println("</script>");
+                    
+                }
+                
+                
+            }else {
+                out.println("<script>");
+                out.println("alert('작성한 이름을 확인해주세요.')");
+                out.println("history.back()");
+                out.println("</script>");
+
+                
+            }
+        }
+        
+        
+        return "kdc/reserveinfo";
+
+    }
+    
+    
+	
+	
 	//예약 취소
 	@RequestMapping("reserve_cancel.do")
 	@ResponseBody
