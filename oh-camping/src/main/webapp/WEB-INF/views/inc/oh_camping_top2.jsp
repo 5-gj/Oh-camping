@@ -154,7 +154,7 @@
                             <a href="<%=request.getContextPath() %>/camp_qa.do">이용문의</a>
                         </li>
                         <li class="inner_list">
-                            <a href="#">숙박후기</a>
+                            <a href="<%=request.getContextPath() %>/review.do">숙박후기</a>
                         </li>
                     </ul>
                 </div>

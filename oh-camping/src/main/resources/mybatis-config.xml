@@ -25,5 +25,10 @@
 		<typeAlias type="com.pro.cda.CalendarDTO" alias="CalendarDTO"/>
 		<typeAlias type="com.pro.cda.CDA_paymentdetailDTO" alias="CDA_paymentdetailDTO"/>
 		<typeAlias type="com.pro.cda.CDA_paymentDTO" alias="CDA_paymentDTO"/>
+		
+		<!-- 리뷰 -->
+		<typeAlias type="com.pro.ogjmodel.ReviewDAO" alias="reviewdao"/>
+		<typeAlias type="com.pro.ogjmodel.ReviewDTO" alias="reviewdto"/>
+		<typeAlias type="com.pro.ogjmodel.ReviewPageDTO" alias="reviewpagedto"/>
   	</typeAliases>
   </configuration>
