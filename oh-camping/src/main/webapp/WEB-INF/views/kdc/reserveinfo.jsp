@@ -10,9 +10,11 @@
 	.res_header {
 		width: 100%;
 		text-align: center;
-		position: fixed;
-		top: 0px;
-		left: 0px;
+		/* position: fixed;
+		 top: 0px; */
+		left: 0px; 
+		margin-top : 50px;
+		
 		z-index: 11;
 		background-color: rgb(255, 255, 255);
 		font-family: Noto sans kr;
@@ -77,6 +79,7 @@
 		font-size: 16px;
 		color: #333;
 		font-weight: 700;
+		cursor: pointer;
 	}
 
 
@@ -161,6 +164,10 @@
 </head>
 <body>
 
+<section>
+
+<jsp:include page="../inc/oh_camping_top3.jsp" />
+
 	<div class="res_header">
 	
 	<div class="res_headerLayer">
@@ -183,7 +190,7 @@
 			
 		</div>
 		
-		<div class="header_title">가평 oh-camping 펜션&글램핑</div>
+		<div class="header_title" onclick="location.href='camp_main.do'">가평 oh-camping 펜션&글램핑</div>
 		
 		
 	</div>
@@ -231,6 +238,10 @@
 	</div>
 	
 	</div>
+	
+	<jsp:include page="../inc/oh_camping_bottom.jsp" />
+	
+	</section>
 
 </body>
 </html>

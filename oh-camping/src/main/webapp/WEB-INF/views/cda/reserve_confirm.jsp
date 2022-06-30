@@ -91,7 +91,7 @@
 				alert('예약이 취소되었습니다.');
 				
 				//메인 페이지로 이동.
-				let url1="<%=request.getContextPath()%>/dong.do";
+				let url1="<%=request.getContextPath()%>/";
 				location.replace(url1);
 				
 				
@@ -225,7 +225,7 @@
 		</div>
 		
 		<div class="btnContainer">
-			<div class="gohome" onclick="location.href='<%=request.getContextPath()%>/dong.do'">홈으로</div>
+			<div class="gohome" onclick="location.href='<%=request.getContextPath()%>/'">홈으로</div>
 			<div class="cancel" onclick="openPopup()">예약 취소하기</div>
 		</div>
 	</div>

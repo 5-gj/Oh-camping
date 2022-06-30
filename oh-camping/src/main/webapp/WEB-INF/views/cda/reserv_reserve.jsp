@@ -32,7 +32,7 @@
 	.sunday{color:red;}
 	.saturday{color:blue;}	
 	div.calendar_calendar>table tr td{line-height: 2.6; border-radius:10px; padding:1px; }
-	
+	div.calendar_calendar>table tr td span{cursor: pointer; }
 	
 	
 	
@@ -95,8 +95,12 @@
 	.res_header {
 		width: 100%;
 		text-align: center;
-		position: fixed;
-		top: 0px;
+		
+		
+		/* position: fixed;
+		top: 0px; */
+		margin-top : 50px;
+		
 		left: 0px;
 		z-index: 11;
 		background-color: rgb(255, 255, 255);
@@ -162,6 +166,7 @@
 		font-size: 16px;
 		color: #333;
 		font-weight: 700;
+		cursor: pointer;
 	}
 
 
@@ -502,16 +507,22 @@
 
 <body>
 
+	<section>
+	
+	  <jsp:include page="../inc/oh_camping_top3.jsp" /> 
+  
+
+
 	<div class="res_header">
 	
 	<div class="res_headerLayer">
 		
 		<div class="res_header_right">
 			
-			<div class="headerLink on" onclick="location.href='calendar_iframe7.do'">예약달력</div>
+			<div class="headerLink" onclick="location.href='calendar_iframe7.do'">예약달력</div>
 			<label class="linebar">|</label>
 			
-			<div class="headerLink" onclick="location.href='<%=request.getContextPath()%>/reserve_reserve.do'">예약하기</div>
+			<div class="headerLink on" onclick="location.href='<%=request.getContextPath()%>/reserve_reserve.do'">예약하기</div>
 			<label class="linebar">|</label>
 			
 			<div class="headerLink" onclick="location.href='reserveinfo.do'">예약확인</div>
@@ -520,11 +531,11 @@
 			<div class="headerLink" onclick="location.href='payinfo.do'">요금안내</div>
 			<label class="linebar">|</label>
 			
-			<div class="admin_button">사장님페이지</div>
+			<div class="admin_button" onclick="location.href='camp_main.do'">사장님페이지</div>
 			
 		</div>
 		
-		<div class="header_title">가평 oh-camping 펜션&글램핑</div>
+		<div class="header_title" onclick="location.href='camp_main.do'">가평 oh-camping 펜션&글램핑</div>
 		
 		
 	</div>
@@ -626,7 +637,7 @@
 							<!-- 넘어갈 정보가 저장되는 공간(list형식으로 객실번호와 성인 인원수가 넘어감) -->
 							<!-- dto로 넘겨주는 것이기 때문에 name을 dto와 맞춰줘야 하는데 -->				
 							
-							<input type="submit" value="예약하기" class="reserve_btn">						
+							<input type="submit" value="예약하기" class="reserve_btn ">						
 						</form>	
 					</div>
 				</div>
@@ -636,6 +647,10 @@
 			
 	
 	</div><!-- class="reserve_main" -->
+	
+	<jsp:include page="../inc/oh_camping_bottom.jsp" />
+	
+	</section>
 	
 
 </body>
