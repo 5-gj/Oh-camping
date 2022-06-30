@@ -77,12 +77,13 @@
 			</div>
 		</div>
 	</div>
+	<jsp:include page="../inc/oh_camping_bottom.jsp" />
 	</section>
 	
 
 
 
-<jsp:include page="../inc/oh_camping_bottom.jsp" />
+
 
 
 	<script
