@@ -646,6 +646,8 @@
 	
 	</div><!-- class="reserve_main" -->
 	
+	<jsp:include page="../inc/oh_camping_bottom.jsp" />
+	
 	</section>
 	
 
