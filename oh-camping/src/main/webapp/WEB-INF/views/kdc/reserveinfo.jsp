@@ -93,12 +93,17 @@
 		font-family: Dotum, 돋움;
 	}
 	
-	.content {
+	.form {
 		width: 600px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		border: 1px solid #aaa;
+	}
+	
+	.content {
+		align-items: center;
+		width: 100%;
 	}
 	
 	.title_bar {
@@ -117,7 +122,8 @@
 	
 	.search {
 		margin-top: 15px;
-		width: 80%;
+		width: 84%;
+		padding: 30px 50px;
 	}
 	
 	.search_text {
@@ -141,7 +147,8 @@
 		margin-bottom: 40px;
 	}
 	
-	.button {
+	
+	input[type="submit"] {
 		width: 100%;
 		height: 50px;
 		background-color: #fff;
@@ -201,6 +208,7 @@
 	<div class="wrapper">
 
 
+	<form method="post" action="<%=request.getContextPath()%>/reserve_info.do" class="form">
 	<div class="content">
 	<div class="title_bar">
 		<div class="title_content">예약조회</div>
@@ -222,16 +230,17 @@
 		
 		<div class="search_text">휴대폰번호</div>
 		<div class="search_input">
-		<input type="text" name="res_no" class="input_text" maxlength="10"
+		<input type="text" name="res_phone" class="input_text" maxlength="11"
 			placeholder="'-'없이 입력해 주세요.">
 		</div>
 		</div>
 		
 		<div class="search_button">
-		<input type="button" value="조회하기" class="button"> 
+		<input type="submit" value="조회하기" class="button"> 
 		</div>
 	</div>
 	</div>
+	</form>
 
 	<div style="padding-top: 2rem; color: #333; font-size: 12px;">
 	※ 입실일 이후 최대 30일까지의 예약건만 조회 가능합니다.

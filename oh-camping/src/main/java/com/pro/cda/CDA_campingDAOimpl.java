@@ -81,7 +81,38 @@ public class CDA_campingDAOimpl implements CDA_campingDAO{
 	}
 	
 	
+	
+	// 동찬 - 예약 확인 로직
+	@Override
+	public int resnoCheck(int no) {
+		int result = 0;
+		int db_resno = this.sqlSession.selectOne("resnoCheck", no);
+		
+		if (db_resno == 0) {
+			result = 0;		
+		}else {
+			
+			result = 1;
+		}
+		return result;
+	}
 
+	
+	@Override
+	public CDA_paymentDTO getpaymentInfo(int no) {
+		
+		return this.sqlSession.selectOne("paymentinfo", no);
+		
+	}
+	
+	@Override
+	public List<CDA_paymentdetailDTO> getpaymentdetaifInfo(int no) {
+		
+		return this.sqlSession.selectList("detailInfo", no);
+		
+	}
+
+	
 	
 
 	////////////////////////////////////////////////////////////////////
@@ -91,6 +122,10 @@ public class CDA_campingDAOimpl implements CDA_campingDAO{
 		
 		return this.sqlSession.selectOne("testid", id);
 	}
+
+	
+	
+
 	
 	
 }

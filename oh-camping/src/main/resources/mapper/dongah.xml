@@ -66,7 +66,20 @@
 		<update id="roomposs" parameterType="int">
     		update camp_room set room_possible = 0 where room_no = #{no}
     	</update>
-    
+    	
+    	
+    	<!-- 동찬 - 예약확인 로직 -->
+    	<select id="resnoCheck" parameterType="int" resultType="int">
+    		select count(*) from camp_payment where payment_no = #{no}
+    	</select>
+    	
+    	<select id="paymentinfo" parameterType="int" resultType="CDA_paymentDTO">
+    		select * from camp_payment where payment_no = #{no}
+    	</select>
+    	
+    	<select id="detailInfo" parameterType="int" resultType="CDA_paymentdetailDTO">
+    		select * from camp_paymentdetail where paymentdetail_paymentno = #{no}
+    	</select>
     
     
  </mapper>

@@ -6,4 +6,5 @@ public interface campingDAO {
 
 	List<campingDTO> getRoomList();
 	
+	
 }
