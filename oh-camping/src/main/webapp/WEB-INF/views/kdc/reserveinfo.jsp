@@ -10,9 +10,11 @@
 	.res_header {
 		width: 100%;
 		text-align: center;
-		position: fixed;
-		top: 0px;
-		left: 0px;
+		/* position: fixed;
+		 top: 0px; */
+		left: 0px; 
+		margin-top : 50px;
+		
 		z-index: 11;
 		background-color: rgb(255, 255, 255);
 		font-family: Noto sans kr;
@@ -162,6 +164,10 @@
 </head>
 <body>
 
+<section>
+
+<jsp:include page="../inc/oh_camping_top3.jsp" />
+
 	<div class="res_header">
 	
 	<div class="res_headerLayer">
@@ -232,6 +238,8 @@
 	</div>
 	
 	</div>
+	
+	</section>
 
 </body>
 </html>

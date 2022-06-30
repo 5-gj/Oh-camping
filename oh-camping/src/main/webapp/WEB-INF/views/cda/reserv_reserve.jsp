@@ -95,8 +95,12 @@
 	.res_header {
 		width: 100%;
 		text-align: center;
-		position: fixed;
-		top: 0px;
+		
+		
+		/* position: fixed;
+		top: 0px; */
+		margin-top : 50px;
+		
 		left: 0px;
 		z-index: 11;
 		background-color: rgb(255, 255, 255);
@@ -501,6 +505,12 @@
 
 <body>
 
+	<section>
+	
+	  <jsp:include page="../inc/oh_camping_top3.jsp" /> 
+  
+
+
 	<div class="res_header">
 	
 	<div class="res_headerLayer">
@@ -625,7 +635,7 @@
 							<!-- 넘어갈 정보가 저장되는 공간(list형식으로 객실번호와 성인 인원수가 넘어감) -->
 							<!-- dto로 넘겨주는 것이기 때문에 name을 dto와 맞춰줘야 하는데 -->				
 							
-							<input type="submit" value="예약하기" class="reserve_btn">						
+							<input type="submit" value="예약하기" class="reserve_btn ">						
 						</form>	
 					</div>
 				</div>
@@ -635,6 +645,8 @@
 			
 	
 	</div><!-- class="reserve_main" -->
+	
+	</section>
 	
 
 </body>
