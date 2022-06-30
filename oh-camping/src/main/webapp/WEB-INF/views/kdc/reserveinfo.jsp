@@ -239,6 +239,8 @@
 	
 	</div>
 	
+	<jsp:include page="../inc/oh_camping_bottom.jsp" />
+	
 	</section>
 
 </body>
