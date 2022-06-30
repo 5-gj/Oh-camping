@@ -170,7 +170,7 @@
 			<div class="headerLink" onclick="location.href='calendar_iframe7.do'">예약달력</div>
 			<label class="linebar">|</label>
 			
-			<div class="headerLink">예약하기</div>
+			<div class="headerLink" onclick="location.href='<%=request.getContextPath()%>/reserve_reserve.do'">예약하기</div>
 			<label class="linebar">|</label>
 			
 			<div class="headerLink on" onclick="location.href='reserveinfo.do'">예약확인</div>
