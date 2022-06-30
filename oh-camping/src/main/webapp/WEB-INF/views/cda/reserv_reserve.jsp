@@ -25,7 +25,7 @@
 		width:45%; position:relative; text-align:center; display:inline-block; }
 	div.yearAndMonth{margin-bottom: 2px;}	
 	div.yearAndMonth>span { font-size:18px; weight: bold; margin:2px; }
-	div.yearAndMonth>span.move_month{border:1px solid #8F8F90; padding:0 4px 1px 4px; margin: 0 3px; color:#8F8F90;}
+	div.yearAndMonth>span.move_month{border:1px solid #8F8F90; padding:0 4px 1px 4px; margin: 0 3px; color:#8F8F90; cursor: pointer;}
 	div.calendar_calendar{display:inline-block; width:100%;     vertical-align: bottom;}
 	div.calendar_calendar>table{border:1px solid #8F8F90; width:100%; border-spacing:0; }
 	div.calendar_calendar>table tr th{line-height: 3; background-color:#E4E4E4; font-size: 10; }
@@ -180,7 +180,13 @@
 		let roomday = $("#roomday").val();
 		let roomno = $("#roomno").val();
 		
-		//alert(roomno);
+		//alert(roomday);
+		//요일 알아내기
+		let date = new Date(roomday);		
+		let whatday = date.getDay();
+		
+		
+	
 		
 		//넘어온값 넣고 넘어온 값이 없으면 오늘 날짜 입력 되도록.
 		
@@ -190,8 +196,17 @@
 			next_calendar($("#todayyear").val(),$("#todaymonth").val());
 			getInfoList($("#todayyear").val(),$("#todaymonth").val(),$("#todaydate").val());
 		}else{
-			next_calendar(2022,roomday.substring(5,7)-1);
-			getInfoList(2022,parseInt(roomday.substring(5,7))-1,parseInt(roomday.substring(8,10)));
+			
+			if(whatday>4){
+				next_calendar(2022,roomday.substring(5,7)-1);
+				getInfoList(2022,parseInt(roomday.substring(5,7))-1,parseInt(roomday.substring(8,10)));
+				
+			}else{
+				next_calendar(2022,roomday.substring(5,7)-1);
+				getInfoListWeekday(2022,parseInt(roomday.substring(5,7))-1,parseInt(roomday.substring(8,10)));
+				
+			}
+			
 			
 		} 
 		 
