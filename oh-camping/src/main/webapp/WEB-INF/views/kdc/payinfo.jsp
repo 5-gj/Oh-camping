@@ -78,6 +78,7 @@
 		font-size: 16px;
 		color: #333;
 		font-weight: 700;
+		cursor: pointer;
 	}
 
 
@@ -402,7 +403,7 @@
 			
 		</div>
 		
-		<div class="header_title">가평 oh-camping 펜션&글램핑</div>
+		<div class="header_title" onclick="location.href='camp_main.do'">가평 oh-camping 펜션&글램핑</div>
 		
 		
 	</div>

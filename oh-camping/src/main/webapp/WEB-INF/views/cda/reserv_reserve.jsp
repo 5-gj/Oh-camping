@@ -32,7 +32,7 @@
 	.sunday{color:red;}
 	.saturday{color:blue;}	
 	div.calendar_calendar>table tr td{line-height: 2.6; border-radius:10px; padding:1px; }
-	
+	div.calendar_calendar>table tr td span{cursor: pointer; }
 	
 	
 	
@@ -162,6 +162,7 @@
 		font-size: 16px;
 		color: #333;
 		font-weight: 700;
+		cursor: pointer;
 	}
 
 
@@ -506,10 +507,10 @@
 		
 		<div class="res_header_right">
 			
-			<div class="headerLink on" onclick="location.href='calendar_iframe7.do'">예약달력</div>
+			<div class="headerLink" onclick="location.href='calendar_iframe7.do'">예약달력</div>
 			<label class="linebar">|</label>
 			
-			<div class="headerLink" onclick="location.href='<%=request.getContextPath()%>/reserve_reserve.do'">예약하기</div>
+			<div class="headerLink on" onclick="location.href='<%=request.getContextPath()%>/reserve_reserve.do'">예약하기</div>
 			<label class="linebar">|</label>
 			
 			<div class="headerLink" onclick="location.href='reserveinfo.do'">예약확인</div>
@@ -518,11 +519,11 @@
 			<div class="headerLink" onclick="location.href='payinfo.do'">요금안내</div>
 			<label class="linebar">|</label>
 			
-			<div class="admin_button">사장님페이지</div>
+			<div class="admin_button" onclick="location.href='camp_main.do'">사장님페이지</div>
 			
 		</div>
 		
-		<div class="header_title">가평 oh-camping 펜션&글램핑</div>
+		<div class="header_title" onclick="location.href='camp_main.do'">가평 oh-camping 펜션&글램핑</div>
 		
 		
 	</div>
