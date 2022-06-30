@@ -28,7 +28,7 @@ public class reviewController {
 	private int totalRecord = 0;
 	
 
-	@RequestMapping("test.do")
+	@RequestMapping("review.do")
 	public String ogjReviewList(HttpServletRequest request, Model model) {
 		
 		int page; // 현재 페이지 변수

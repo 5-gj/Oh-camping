@@ -10,7 +10,7 @@ public class ReviewDTO {
 	private int review_roomno;
 	private String review_title;
 	private String review_cont;
-	private String date;
+	private String review_date;
 	private int views;
 
 }
