@@ -8,7 +8,7 @@ public class CampPopupDTO {
 	private String popup_title;
 	private String popup_file;
 	private int popup_top;
-	private int popup_left;
+	private int popup_right;
 	private String popup_date;
 	private int popup_use;
 }

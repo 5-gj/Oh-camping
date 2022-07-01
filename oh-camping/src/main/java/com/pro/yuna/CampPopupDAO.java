@@ -20,4 +20,6 @@ public interface CampPopupDAO {
 	
 	public void updatePopupSequence(int no);
 	
+	public List<CampPopupDTO> getCampPopupList();
+	
 }

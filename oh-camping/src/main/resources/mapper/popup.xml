@@ -24,7 +24,7 @@
 		</selectKey>
 		insert into camp_popup values(#{popup_no} + 1,
 			#{popup_title}, #{popup_file}, #{popup_top}, 
-			#{popup_left}, sysdate, #{popup_use} )
+			#{popup_right}, sysdate, #{popup_use} )
 	</insert>
 	
 	
@@ -36,7 +36,7 @@
 	<update id="popupModify" parameterType="campPopupDto">
 		update camp_popup set popup_title = #{popup_title},
 			popup_file = #{popup_file}, popup_top = #{popup_top}, 
-			popup_left = #{popup_left},  popup_use = #{popup_use}
+			popup_right = #{popup_right},  popup_use = #{popup_use}
 			where popup_no = #{popup_no}
 	</update>
 	
@@ -52,4 +52,9 @@
 			where popup_no > #{no}
 		]]>	
 	</update>
+	
+	
+	<select id="popupListMain" resultType="campPopupDto">
+		<![CDATA[select * from camp_popup where popup_use = 1 order by popup_no desc]]>
+	</select>
 </mapper>

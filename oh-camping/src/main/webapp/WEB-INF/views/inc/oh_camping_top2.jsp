@@ -40,7 +40,7 @@
             <div id="top_header" class="clearfix">
                 <div id="g_nav">
                     <ul class="clearfix">
-                        <li class="hidden-xs"><a href="<%=request.getContextPath() %>/camp_main.do">Home</a></li>
+                        <li class="hidden-xs"><a href="<%=request.getContextPath() %>/">Home</a></li>
                         <% 
                            // 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
                             if(session.getAttribute("sessionID")==null){ 
@@ -64,7 +64,7 @@
          </div>
          <nav id="navwrap_bg" class="wrap_menu">
          	<div class="menu_logo">
-                <a href="<%=request.getContextPath() %>/camp_main.do">
+                <a href="<%=request.getContextPath() %>/">
                     <img src="<%=request.getContextPath() %>/resources/img/logo.png">
                 </a>
             </div>

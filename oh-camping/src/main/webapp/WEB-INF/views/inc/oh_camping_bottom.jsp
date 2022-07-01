@@ -7,7 +7,7 @@
         <div class="bg_foot_menu">
             <div id="foot_menu">
                 <ul class="clearfix ">
-                	<li><a href="<%=request.getContextPath() %>/camp_main.do">Home</a></li>
+                	<li><a href="<%=request.getContextPath() %>/">Home</a></li>
                     <!-- 로그인 메뉴 -->
                     <% 
                         // 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.

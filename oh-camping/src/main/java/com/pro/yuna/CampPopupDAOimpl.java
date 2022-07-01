@@ -54,6 +54,11 @@ public class CampPopupDAOimpl implements CampPopupDAO{
 		
 	}
 
+	@Override
+	public List<CampPopupDTO> getCampPopupList() {
+		return this.sqlSession.selectList("popupListMain");
+	}
+
 	
 
 }

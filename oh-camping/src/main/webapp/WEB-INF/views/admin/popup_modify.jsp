@@ -76,10 +76,10 @@ $(document).ready(function(){
       pform.popup_top.focus();
       return false;
     }
-    if(pform.popup_left.value.length == 0 || pform.popup_left.value < 0)
+    if(pform.popup_right.value.length == 0 || pform.popup_right.value < 0)
     {
       alert('팝업창의 LEFT위치를 입력하세요.');
-      pform.popup_left.focus();
+      pform.popup_right.focus();
       return false;
     }
 
@@ -181,8 +181,8 @@ $(document).ready(function(){
 										onkeyup="check_value(document.popup.popup_top, 'int')">&nbsp;pixel
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									LEFT
-									<input type="text" size="3" id="border" name="popup_left" value="${dto.popup_left }" 
-										onkeyup="check_value(document.popup.popup_left, 'int')">&nbsp;pixel
+									<input type="text" size="3" id="border" name="popup_right" value="${dto.popup_right }" 
+										onkeyup="check_value(document.popup.popup_right, 'int')">&nbsp;pixel
 								</td>
                             </tr>
 							<tr>
