@@ -22,6 +22,11 @@ public class ReviewDAOImpl implements ReviewDAO {
 	public List<ReviewDTO> getReviewList(ReviewPageDTO dto) { //리뷰 불러오기
 		return this.sqlSession.selectList("getReviewList",dto);
 	}
+	
+	
+	public void setSqlSession(SqlSessionTemplate sqlSession) {
+		this.sqlSession = sqlSession;
+	}
 
 	@Override
 	public int insertReview(ReviewDTO dto) {
@@ -31,14 +36,14 @@ public class ReviewDAOImpl implements ReviewDAO {
 
 	@Override
 	public void readCount(int no) {
-		// TODO Auto-generated method stub
+		this.sqlSession.update("reviewReadCount", no);
 		
 	}
 
 	@Override
 	public ReviewDTO ReviewCont(int no) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.sqlSession.selectOne("getReviewCont",no);
 	}
 
 	@Override
@@ -58,5 +63,19 @@ public class ReviewDAOImpl implements ReviewDAO {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public List<ReviewSubDTO> getReviewSubData(String id) {
+		// TODO Auto-generated method stub
+		return this.sqlSession.selectList("getReviewSubData",id);
+	}
+
+	@Override
+	public ReviewSubDTO getReviewSubData2(ReviewSubDTO subdto) {
+		// TODO Auto-generated method stub
+		return this.sqlSession.selectOne("getReviewSubData2",subdto);
+	}
+
+
 
 }

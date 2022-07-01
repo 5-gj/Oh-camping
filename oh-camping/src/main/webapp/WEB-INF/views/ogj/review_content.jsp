@@ -35,9 +35,9 @@
             </div>
             <div class="mid_nav">
                 <ul class="mid_menu">
-                    <li><a href="<%=request.getContextPath() %>/camp_notice.do" class="nav_on"><i class="fa fa-caret-right"></i>공지사항</a></li>                  
+                    <li><a href="<%=request.getContextPath() %>/camp_notice.do"><i class="fa fa-caret-right"></i>공지사항</a></li>                  
                     <li><a href="<%=request.getContextPath() %>/camp_qa.do"><i class="fa fa-caret-right"></i>이용문의</a></li>
-                    <li><a href="<%=request.getContextPath() %>/review.do">숙박후기</a></li> <!-- -->
+                    <li><a href="<%=request.getContextPath() %>/review.do"  class="nav_on">숙박후기</a></li> <!-- -->
                 </ul>
             </div>
         </div>
@@ -63,26 +63,31 @@
                     <table cellspacing="0" width="100%">
 					    <tr>
 					        <th>글 제목</th>
-					        <td> ${dto.notice_title } </td>
+					        <td> ${dto.review_title } </td>
+					    </tr>
+					    <tr>
+					        <th>객실</th>
+					        <td> ${dto.review_roomname } </td>
+					    </tr>
+					    <tr>
+					    	<th>작성자</th>
+					    	<td>${dto.review_id }</td>
 					    </tr>
 					   	<tr>
 					        <th>작성일자</th>
-					        <td> ${dto.notice_date } </td>
+					        <td> ${dto.review_date } </td>
 					    </tr>
 					    <tr>
 					        <th>조회수</th>
-					        <td> ${dto.notice_hit } </td>
+					        <td> ${dto.views } </td>
 					    </tr>
 					    <tr>
 					        <th>글 내용</th>
 					        <td class="board_cont"> 
-					         	<textarea readonly>${dto.notice_cont }</textarea>
+					         	<textarea readonly>${dto.review_cont }</textarea>
 					        </td>
 					    </tr>
-					    <tr>
-					        <th>첨부파일</th>
-					        <td> ${dto.notice_file } </td>
-					    </tr>  
+
 					    <c:if test="${empty dto }">
 					    	<tr>
 					            <td colspan="2" align="center">
@@ -92,7 +97,7 @@
 					    </c:if>
                         <tr>
                             <td align="center" colspan="2" class="board_btn">
-                                <input type="button" value="목록" onclick="location.href='camp_notice.do?page=${Page }'">
+                                <input type="button" value="목록" onclick="location.href='review.do?page=${Page }'">
                             </td>
                         </tr>
                    
@@ -104,7 +109,7 @@
     
         </div>
         <div class="clear"></div>
-    </div sub_wrap>
+    </div>
     <jsp:include page="../inc/oh_camping_bottom.jsp" />
 </body>
 </html>

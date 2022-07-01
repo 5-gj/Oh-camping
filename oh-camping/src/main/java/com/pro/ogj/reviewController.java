@@ -3,6 +3,7 @@ package com.pro.ogj;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.pro.ogjmodel.ReviewDAO;
 import com.pro.ogjmodel.ReviewDTO;
 import com.pro.ogjmodel.ReviewPageDTO;
+import com.pro.ogjmodel.ReviewSubDTO;
 
 
 /**
@@ -29,7 +31,7 @@ public class reviewController {
 	
 
 	@RequestMapping("review.do")
-	public String ogjReviewList(HttpServletRequest request, Model model) {
+	public String ogjReviewList(HttpServletRequest request, Model model,HttpSession session) {
 		
 		int page; // 현재 페이지 변수
 		if (request.getParameter("page") != null) {
@@ -46,6 +48,23 @@ public class reviewController {
 		// 페이지에 해당하는 게시물을 가져오는 메서드 호출
 
 		List<ReviewDTO> list = this.dao.getReviewList(dto);
+		
+		 if(session.getAttribute("sessionID")!=null){
+			 String id = (String) session.getAttribute("sessionID");
+			 List<ReviewSubDTO> sublist =  this.dao.getReviewSubData(id);
+			 
+			 if(sublist.isEmpty()) {
+				 model.addAttribute("subList",null);
+			 }else {
+				 for(ReviewSubDTO subdto : sublist) {
+					 subdto = this.dao.getReviewSubData2(subdto);
+				 }
+				 model.addAttribute("subList",sublist);
+			 }
+			 
+		 }
+		
+
 
 		model.addAttribute("List", list);
 
@@ -53,7 +72,26 @@ public class reviewController {
 		
 
 		
-		return "ogj/review_list";
+		return "ogj/review";
+	}
+	
+	@RequestMapping("review_content.do")
+	public String reviewContent(@RequestParam("no") int no,
+			@RequestParam("page") int nowPage, Model model) {
+		
+		// 조회수를 증가시켜 주는 메서드 호출
+		this.dao.readCount(no);
+		
+		// 게시글 상세 내역을 조회하는 메서드 호출
+		ReviewDTO dto = this.dao.ReviewCont(no);
+
+
+		
+		model.addAttribute("Cont", dto);
+		
+		model.addAttribute("Page", nowPage);
+		
+		return "ogj/review_content";
 	}
 	@RequestMapping("ogj_room.do")
 	public String ogj_room () {

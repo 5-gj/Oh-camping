@@ -18,8 +18,24 @@
 					over(order by review_no desc) rnum from camp_review b)
 					where rnum >= #{startNo} and rnum <= #{endNo}
 	    ]]>
+	    
+	   
+	</select>
+	<select id="getReviewCont" parameterType="int" resultType="reviewdto">
+		select * from camp_review where review_no = #{no}
 	</select>
 	
+	
+	<select id="reviewReadCount" parameterType="int">
+		update camp_review set views = views+1 where review_no = #{no}
+	</select>
+	<select id="getReviewSubData" parameterType="String" resultType="reviewsubdto">
+		select  payment_no,payment_orderdate  from camp_payment where payment_memno = (select member_no from camp_member where mem_id = #{id}) order by payment_orderdate desc
+	</select>
+	
+	<select id="getReviewSubData2" parameterType="reviewsubdto" resultType="reviewsubdto">
+		select  room_name from camp_room where room_no = (select paymentdetail_roomno from camp_paymentdetail where paymentdetail_paymentno = #{payment_no})
+	</select>
 	
 
 </mapper>

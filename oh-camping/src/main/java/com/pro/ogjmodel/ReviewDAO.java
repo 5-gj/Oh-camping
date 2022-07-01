@@ -14,10 +14,11 @@ public interface ReviewDAO {
 	//리뷰 작성
 	public int insertReview(ReviewDTO dto);
 	
-	//
+	//조회수
 	public void readCount(int no);
 	
 	
+	//상세내역
 	public ReviewDTO ReviewCont(int no);
 	
 	// 리뷰 수정
@@ -28,5 +29,8 @@ public interface ReviewDAO {
 	
 	// 리뷰번호 최신화
 	public void updateSequence(int no);
+	
+	public List<ReviewSubDTO> getReviewSubData(String id);
+	public ReviewSubDTO getReviewSubData2(ReviewSubDTO subdto);
 
 }

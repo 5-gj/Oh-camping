@@ -30,5 +30,6 @@
 		<typeAlias type="com.pro.ogjmodel.ReviewDAO" alias="reviewdao"/>
 		<typeAlias type="com.pro.ogjmodel.ReviewDTO" alias="reviewdto"/>
 		<typeAlias type="com.pro.ogjmodel.ReviewPageDTO" alias="reviewpagedto"/>
+		<typeAlias type="com.pro.ogjmodel.ReviewSubDTO" alias="reviewsubdto"/>
   	</typeAliases>
   </configuration>
