@@ -18,7 +18,35 @@
 					over(order by review_no desc) rnum from camp_review b)
 					where rnum >= #{startNo} and rnum <= #{endNo}
 	    ]]>
+	    
+	   
 	</select>
+	<select id="getReviewCont" parameterType="int" resultType="reviewdto">
+		select * from camp_review where review_no = #{no}
+	</select>
+	
+	
+	<update id="reviewReadCount" parameterType="int">
+		update camp_review set views = views+1 where review_no = #{no}
+	</update>
+	<select id="getReviewSubData" parameterType="String" resultType="reviewsubdto">
+		select  payment_no,payment_orderdate  from camp_payment where payment_memno = (select member_no from camp_member where mem_id = #{id}) order by payment_orderdate desc
+	</select>
+	
+	<select id="getReviewSubData2" parameterType="int" resultType="String">
+		select  room_name from camp_room where room_no = (select paymentdetail_roomno from camp_paymentdetail where paymentdetail_paymentno = #{pay_no})
+	</select>
+	
+	<insert id="insertReview" parameterType="reviewdto">
+				<selectKey resultType="int" keyProperty="review_no" order="BEFORE">
+			select max(review_no) from camp_review
+		</selectKey>
+		insert into camp_review values(#{review_no} + 1,
+			#{review_id}, #{review_roomname}, 
+				#{review_title}, #{review_cont},
+				sysdate,#{review_orderdate}, 0)
+	</insert>
+	
 	
 	
 
