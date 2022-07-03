@@ -31,7 +31,7 @@ public class ReviewDAOImpl implements ReviewDAO {
 	@Override
 	public int insertReview(ReviewDTO dto) {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.sqlSession.insert("insertReview", dto);
 	}
 
 	@Override
@@ -71,9 +71,9 @@ public class ReviewDAOImpl implements ReviewDAO {
 	}
 
 	@Override
-	public ReviewSubDTO getReviewSubData2(ReviewSubDTO subdto) {
+	public String getReviewSubData2(int pay_no) {
 		// TODO Auto-generated method stub
-		return this.sqlSession.selectOne("getReviewSubData2",subdto);
+		return this.sqlSession.selectOne("getReviewSubData2",pay_no);
 	}
 
 

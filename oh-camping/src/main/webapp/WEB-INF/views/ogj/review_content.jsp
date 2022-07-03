@@ -78,6 +78,10 @@
 					        <td> ${dto.review_date } </td>
 					    </tr>
 					    <tr>
+					        <th>다녀간일자</th>
+					        <td> ${dto.review_orderdate } </td>
+					    </tr>
+					    <tr>
 					        <th>조회수</th>
 					        <td> ${dto.views } </td>
 					    </tr>
@@ -96,9 +100,20 @@
 					        </tr>
 					    </c:if>
                         <tr>
+                        
+                        
                             <td align="center" colspan="2" class="board_btn">
                                 <input type="button" value="목록" onclick="location.href='review.do?page=${Page }'">
+                                <c:if test="${dto.review_id == sessionID }">
+                                <input type="button" value="삭제" onclick="location.href='review.do?page=${Page }'">
+								<input type="button" value="수정" onclick="location.href='review.do?page=${Page }'">
+                                </c:if>
+                                
+
+								
+								
                             </td>
+                            
                         </tr>
                    
                     </table>

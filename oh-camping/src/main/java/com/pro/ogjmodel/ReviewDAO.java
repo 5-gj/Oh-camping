@@ -31,6 +31,6 @@ public interface ReviewDAO {
 	public void updateSequence(int no);
 	
 	public List<ReviewSubDTO> getReviewSubData(String id);
-	public ReviewSubDTO getReviewSubData2(ReviewSubDTO subdto);
+	public String getReviewSubData2(int pay_no);
 
 }
