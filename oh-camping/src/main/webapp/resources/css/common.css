@@ -1,9 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=Cute+Font|Great+Vibes|Quicksand|Cinzel|Gothic+A1|Nanum+Gothic|Poiret+One|Oswald&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR&display=swap');
 
 body {
-    font-family: 'Noto Sans KR_100', 나눔고딕, "Nanum Gothic", sans-serif;
+    font-family: 'Noto Sans KR', '나눔고딕, 'Nanum Gothic', sans-serif;
 }
 article,
 aside,

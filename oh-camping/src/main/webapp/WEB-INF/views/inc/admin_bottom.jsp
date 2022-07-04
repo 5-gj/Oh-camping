@@ -7,7 +7,7 @@
 		<div class="container">    
 		    <div class="col-md-4 d-flex align-items-center">
 		      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-		        oh-camping 펜션&글램핑
+		        Oh Camping 펜션&글램핑
 		      </a>
 		      <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Company, Inc</span>
 		    </div>

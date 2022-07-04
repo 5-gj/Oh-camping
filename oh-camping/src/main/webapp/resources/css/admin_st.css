@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans');
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR&display=swap');
 
 .img_box {text-align: center; vertical-align: middle; }
 .img_box_l {text-align: left; vertical-align: middle;}
@@ -18,7 +18,10 @@
 
 input { border-color: #F2F2F2; border-width: 1px; border-style: solid;}
 
-
+.admin_header .nav1 {text-align: right;}
+.admin_header .nav1 a {font-size: 14px;}
+.admin_header .nav2 ul li a {padding: 0.5rem 0.7rem;}
+.admin_header .nav2 ul li a:hover {font-weight: bold;}
 #admin_wrap {margin-top: 150px;}
 #admin_wrap:after{display: block; content: ""; clear: both;}
 #admin_wrap #aside {width:20%; max-width:200px; float:left; background: #353535;

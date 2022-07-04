@@ -26,9 +26,9 @@
     <!-- 메뉴바(header) -->
     <div class="fixed-top border-bottom admin_header">
       	<nav class="bg-light border-bottom">
-          	<div class="container d-flex flex-wrap">
-             	<ul class="nav">
-                	<li class="nav-item">
+          	<div class="container nav1"><!-- d-flex flex-wrap -->
+             	<ul class=""> <!-- nav -->
+                	<li class="nav-item"> <!-- nav-item -->
                 		<a href="<%=request.getContextPath() %>/" class="nav-link link-dark px-2">
                 			<i class="fa fa-caret-right"></i> 내사이트 바로가기
                 		</a>
@@ -36,19 +36,19 @@
               	</ul>
           	</div>
       	</nav>
-      	<div class="container">
+      	<div class="container nav2">
           	<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
               	<a href="<%=request.getContextPath() %>/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
                   	<img src="<%=request.getContextPath() %>/resources/img/logo.png">
               	</a>
               	<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                  	<li><a href="#" class="nav-link px-2 link-secondary">예약관리</a></li>
-                  	<li><a href="#" class="nav-link px-2 link-dark">매출관리</a></li>
-                  	<li><a href="#" class="nav-link px-2 link-dark">회원관리</a></li>
-                  	<li><a href="#" class="nav-link px-2 link-dark">공지사항</a></li>
-                  	<li><a href="#" class="nav-link px-2 link-dark">문의답변</a></li>
-                  	<li><a href="<%=request.getContextPath() %>/admin_popup.do" class="nav-link px-2 link-dark">팝업관리</a></li>
-                  	<li><a href="#" class="nav-link px-2 link-dark">리뷰관리</a></li>
+                  	<li><a href="#" class="nav-link link-secondary">예약관리</a></li>
+                  	<li><a href="#" class="nav-link link-dark">매출관리</a></li>
+                  	<li><a href="#" class="nav-link link-dark">회원관리</a></li>
+                  	<li><a href="#" class="nav-link link-dark">공지사항</a></li>
+                  	<li><a href="#" class="nav-link link-dark">문의답변</a></li>
+                  	<li><a href="<%=request.getContextPath() %>/admin_popup.do" class="nav-link link-dark">팝업관리</a></li>
+                  	<li><a href="#" class="nav-link link-dark">리뷰관리</a></li>
               	</ul>
 
               	<div class="col-md-3 text-end">
