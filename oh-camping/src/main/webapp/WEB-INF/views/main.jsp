@@ -9,7 +9,7 @@
 
     <!-- CSS Files -->
     <!-- Awesome.css -->
-  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/font.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/reset_h.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/dist/slick.css" rel="stylesheet">
@@ -19,6 +19,7 @@
     <link href="<%=request.getContextPath() %>/resources/css/main.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/common.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	
 </head>
 
 <body>
@@ -28,7 +29,7 @@
             <div id="top_header" class="clearfix">
                 <div id="g_nav">
                     <ul class="clearfix">
-                        <li class="hidden-xs"><a href="<%=request.getContextPath() %>/camp_main.do">Home</a></li>
+                        <li class="hidden-xs"><a href="<%=request.getContextPath() %>/">Home</a></li>
                         <% 
                            // 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
                             if(session.getAttribute("sessionID")==null){ 
@@ -52,7 +53,7 @@
          </div>
         <nav id="navwrap_bg" class="wrap_menu main_wrap_menu">
             <div class="menu_logo">
-                <a href="<%=request.getContextPath() %>/camp_main.do">
+                <a href="<%=request.getContextPath() %>/">
                     <img src="<%=request.getContextPath() %>/resources/img/logo.png">
                 </a>
             </div>
@@ -129,7 +130,15 @@
                     <a href="<%=request.getContextPath()%>/location.do">Location</a>
                 </div>
                 <div class="menu_list">
-                    <a href="<%=request.getContextPath()%>/calendar_iframe7.do">Reservation</a>
+                    <a href="<%=request.getContextPath()%>/calendar_iframe7.do" class="link_reser">Reservation</a>
+                    <ul class="menu_inner">
+                        <li class="inner_list">
+                            <a href="<%=request.getContextPath()%>/calendar_iframe7.do">실시간 예약</a>
+                        </li>
+                        <li class="inner_list">
+                            <a href="#">예약안내</a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="menu_list">
                     <a href="#">Community</a>
@@ -141,7 +150,7 @@
                             <a href="<%=request.getContextPath() %>/camp_qa.do">이용문의</a>
                         </li>
                         <li class="inner_list">
-                            <a href="<%=request.getContextPath() %>/review.do">숙박후기</a>
+                            <a href="#">숙박후기</a>
                         </li>
                     </ul>
                 </div>
@@ -182,13 +191,29 @@
     <div id="NmKe3nO2WVc" class="wrap_mb_iframe">
 
     </div>
-
+	
+	
     <section class="wrap_ma_intro">
-      <div class="wrap_popup">
-            <div class="close_pop"></div>
-            <img src="<%=request.getContextPath() %>/resources/img/pop01.png" alt="popup1" class="popup">
-      </div>
-
+    	<!-- 팝업 -->
+		<c:set var="list" value="${PopupList }" />
+		
+		<c:if test="${!empty list }">                    
+        	<c:forEach items="${list }" var="i">
+        		<div class="wrap_popup wrap_popup${i.popup_no }" style="
+        			position:absolute;
+				    top:${i.popup_top }px; right:${i.popup_right }px;
+				    width:500px; height:auto;
+				    background-size:cover;
+        		">
+		            <div class="close_pop close_pop${i.popup_no }"></div>
+		            <img src="<%=request.getContextPath() %>/resources/img/pop/${i.popup_file }" alt="popup" class="popup popup${i.popup_no }">
+		      	</div>   
+        	</c:forEach>
+        </c:if>
+                
+    	<c:if test="${empty list }">
+            
+        </c:if>
 
 
       <div class="bg_main_1">
