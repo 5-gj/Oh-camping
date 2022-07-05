@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="adminqadao">
+
+	<select id="adminqagetcount" resultType="int">
+		select count(*) from camp_qa
+	</select>
+	<select id="adminQaGetList" parameterType="pageDto" resultType="adminqadto" >
+		<![CDATA[
+			select * from 
+				(select b.*, row_number()
+					over(order by qa_group desc, qa_indent) rnum from camp_qa b)
+					where rnum >=#{startNo} and rnum <=#{endNo}	
+		]]>					
+	</select>
+	
+	<update id="adminqaupcount" parameterType="int">
+		update camp_qa set qa_hit = (select qa_hit from camp_qa where qa_no=#{no})+1 where qa_no=#{no}
+	</update>
+	
+	<select id="admingetcont" resultType="adminqadto" parameterType="int">
+		select * from camp_qa where qa_no =#{no}
+	
+	</select>
+	
+	<insert id="adminqawrite" parameterType="adminqadto">
+		
+		<selectKey resultType="int" keyProperty="qa_no" order="BEFORE">
+			select max(qa_no) from camp_qa
+		
+		</selectKey>
+		insert into camp_qa values(#{qa_no}+1,#{qa_writer}, #{qa_userid}, #{qa_type}, 
+					#{qa_title}, #{qa_cont}, sysdate, default, #{qa_group}, 1)
+		
+	</insert>
+	
+	<update id="adminqaupdate" parameterType="adminqadto">
+		update camp_qa set qa_cont=#{qa_cont} where qa_no=#{qa_no}
+	</update>
+	
+	<delete id="adminqadelete" parameterType="int">
+		delete camp_qa where qa_group=#{no}
+	</delete>
+	
+	<delete id="adminqareplydelete" parameterType="int">
+		delete camp_qa where qa_no=#{no}
+	</delete>
+	
+	
+	
+	
+
+
+
+</mapper>
