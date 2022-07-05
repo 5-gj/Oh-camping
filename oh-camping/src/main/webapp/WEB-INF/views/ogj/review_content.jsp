@@ -12,27 +12,27 @@
    <jsp:include page="../inc/oh_camping_top.jsp" />   
    <!-- 서브 슬라이드  -->
     <section class="m_slick s_slick slider board_head">
-        <div class="b_h_bg b_h_bg1">
-         <h1> 공지사항   </h1>
-         <h3> Oh Camping의 소식을 알려드립니다. </h3>
-        </div>
-        <div class="b_h_bg b_h_bg2">
-         <h1> 공지사항   </h1>
-         <h3> Oh Camping의 소식을 알려드립니다. </h3>
-        </div>
-        <div class="b_h_bg b_h_bg3">
-         <h1> 공지사항   </h1>
-         <h3> Oh Camping의 소식을 알려드립니다. </h3>
-        </div>
-    </section>
-    <!-- // 서브 슬라이드  -->
-    <div id="sub_wrap" class="webfont">
-        <div id="aside">
-            <div class="left_title">
-                <p class="big_title">Community</p>
-                <p class="small_title">Notice</p>
-                <p class="bl_lt">▼</p>
-            </div>
+       <div class="b_h_bg b_h_bg1">
+			<h1>숙박후기</h1>
+			<h3>저희 펜션은 어떠셨나요? 후기를 남겨주세요</h3>
+		</div>
+		<div class="b_h_bg b_h_bg2">
+			<h1>숙박후기</h1>
+			<h3>저희 펜션은 어떠셨나요? 후기를 남겨주세요</h3>
+		</div>
+		<div class="b_h_bg b_h_bg3">
+			<h1>숙박후기</h1>
+			<h3>저희 펜션은 어떠셨나요? 후기를 남겨주세요</h3>
+		</div>
+	</section>
+	<!-- // 서브 슬라이드  -->
+	<div id="sub_wrap" class="webfont">
+		<div id="aside">
+			<div class="left_title">
+				<p class="big_title">Community</p>
+				<p class="small_title">Review</p>
+				<p class="bl_lt">▼</p>
+			</div>
             <div class="mid_nav">
                 <ul class="mid_menu">
                     <li><a href="<%=request.getContextPath() %>/camp_notice.do"><i class="fa fa-caret-right"></i>공지사항</a></li>                  
@@ -105,8 +105,12 @@
                             <td align="center" colspan="2" class="board_btn">
                                 <input type="button" value="목록" onclick="location.href='review.do?page=${Page }'">
                                 <c:if test="${dto.review_id == sessionID }">
-                                <input type="button" value="삭제" onclick="location.href='review.do?page=${Page }'">
-								<input type="button" value="수정" onclick="location.href='review.do?page=${Page }'">
+                                
+                                <input type="button" value="삭제"
+					onclick="if(confirm('정말로 삭제하시겠습니까?')){
+					location.href='review_delete.do?num=${dto.review_no }'}
+					else{return;}">
+								<input type="button" value="수정" onclick="location.href='review_update.do?num=${dto.review_no }&page=${Page }'">
                                 </c:if>
                                 
 

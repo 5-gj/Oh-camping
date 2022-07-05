@@ -21,65 +21,79 @@
 </head>
 <body>
 
-   
+
 	<section>
-	<div align="center">
-		<div class="top">
-		    <jsp:include page="../inc/oh_camping_top2.jsp" />  
-		    <div class="top2">
-			<h1>Room Previes</h1>
-			<h3>저희 펜션의 객실을 한눈에 확인해보세요.</h3>
-			<div class="roombtn">
-				<a type="button" class="nextbtn">계곡1,2,3,4</a> <a type="button"
-					class="prevbtn">대형1,2,3,4</a>
-			</div>
-			</div>
-		</div>
-
-		<div class="wrap_preview">
-			<div class="slick-btn-main">
-				<div class="slick-btn left next">
-					<span class="material-symbols-outlined"> chevron_left </span>
-				</div>
-				<div class="slick-btn right prev">
-					<span class="material-symbols-outlined"> chevron_right </span>
-				</div>
-			</div>
-			<div class="main-slick">
-				<div class="room1">
-					<div class="roomtxt">
-						<div class="pretxt">
-							<h2>계곡1,2,3,4</h2>
-							<p>
-								평수 : 약42m<sup>2</sup>(13평)
-							</p>
-							<p>객실형태 : 침대1,소파,화장실,싱크대,계곡 뷰</p>
-							<p>이용인원 : 기준 2명/ 최대 4명</p>
-							<a href="<%=request.getContextPath()%>/valley.do">View more</a>
-						</div>
+		<div align="center">
+			<div class="top">
+				<jsp:include page="../inc/oh_camping_top2.jsp" />
+				<div class="top2">
+					<h1>Room Previes</h1>
+					<h3>저희 펜션의 객실을 한눈에 확인해보세요.</h3>
+					<div class="roombtn">
+						<a type="button" class="nextbtn">계곡1,2,3,4
+							<div><span class="nextsub"></span></div>
+						</a> <a type="button"
+							class="prevbtn">대형1,2,3,4
+							<div><span class="prevsub"></span></div>
+							</a>
 					</div>
 				</div>
-				<div class="room2">
-					<div class="roomtxt">
-						<div class="pretxt">
-							<h2>대형 1,2,3,4</h2>
-							<p>
-								평수 : 약52<sup>2</sup>(16평)
-							</p>
-							<p>객실형태 : 침대2,화장실,싱크대,수영장 뷰</p>
-							<p>이용인원 : 기준 2명/ 최대 6명</p>
-							<a href="<%=request.getContextPath()%>/bigroom.do">View more</a>
-						</div>
+			</div>
 
+			<div class="wrap_preview">
+
+			
+
+
+				<div class="slick-btn-main">
+					<div class="slick-btn left next">
+						<span class="material-symbols-outlined"> chevron_left </span>
+					</div>
+					<div class="slick-btn right prev">
+						<span class="material-symbols-outlined"> chevron_right </span>
 					</div>
 				</div>
 
+
+				<div class="main-slick">
+				
+				
+
+
+					<div class="room1">
+						<div class="roomtxt">
+							<div class="pretxt">
+								<h2>계곡1,2,3,4</h2>
+								<p>
+									평수 : 약42m<sup>2</sup>(13평)
+								</p>
+								<p>객실형태 : 침대1,소파,화장실,싱크대,계곡 뷰</p>
+								<p>이용인원 : 기준 2명/ 최대 4명</p>
+								<a href="<%=request.getContextPath()%>/valley.do">View more</a>
+							</div>
+						</div>
+					</div>
+					<div class="room2">
+						<div class="roomtxt">
+							<div class="pretxt">
+								<h2>대형 1,2,3,4</h2>
+								<p>
+									평수 : 약52<sup>2</sup>(16평)
+								</p>
+								<p>객실형태 : 침대2,화장실,싱크대,수영장 뷰</p>
+								<p>이용인원 : 기준 2명/ 최대 6명</p>
+								<a href="<%=request.getContextPath()%>/bigroom.do">View more</a>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
 			</div>
 		</div>
-	</div>
-	<jsp:include page="../inc/oh_camping_bottom.jsp" />
+		<jsp:include page="../inc/oh_camping_bottom.jsp" />
 	</section>
-	
+
 
 
 
@@ -115,6 +129,14 @@
 				$('.nextbtn').css("color", "#ebb68c");
 
 				$('.prevbtn').css("color", "black");
+				
+				$('.prevsub').css("width", "0");
+				
+				$('.nextsub').css("width", "93px");
+				
+				
+				
+				
 			});
 
 			$('.prevbtn').click(function() {
@@ -124,6 +146,11 @@
 				$('.prevbtn').css("color", "#ebb68c");
 
 				$('.nextbtn').css("color", "black");
+				
+				$('.prevsub').css("width", "93px");
+				
+				$('.nextsub').css("width", "0");
+				
 			});
 
 			$('.next, .prev').click(function() {

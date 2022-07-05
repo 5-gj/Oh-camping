@@ -6,6 +6,9 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.pro.yuna.CampNoticeDTO;
+import com.pro.yuna.PageDTO;
+
 @Repository
 public class ReviewDAOImpl implements ReviewDAO {
 	
@@ -48,19 +51,19 @@ public class ReviewDAOImpl implements ReviewDAO {
 
 	@Override
 	public int updateReview(ReviewDTO dto) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return this.sqlSession.update("updateReview", dto);
 	}
 
 	@Override
 	public int deleteReview(int no) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return this.sqlSession.delete("deleteReview", no);
 	}
 
 	@Override
 	public void updateSequence(int no) {
-		// TODO Auto-generated method stub
+		this.sqlSession.update("updateSequence", no);
 		
 	}
 
@@ -74,6 +77,18 @@ public class ReviewDAOImpl implements ReviewDAO {
 	public String getReviewSubData2(int pay_no) {
 		// TODO Auto-generated method stub
 		return this.sqlSession.selectOne("getReviewSubData2",pay_no);
+	}
+
+	@Override
+	public int searchReview(String field, String keyword) {
+		// TODO Auto-generated method stub
+		return this.sqlSession.selectOne(field, keyword);
+	}
+
+	@Override
+	public List<ReviewDTO> searchReviewList(ReviewPageDTO dto) {
+		// TODO Auto-generated method stub
+		return this.sqlSession.selectList(dto.getField()+"1", dto);
 	}
 
 

@@ -21,7 +21,9 @@ import com.pro.ogjmodel.ReviewDAO;
 import com.pro.ogjmodel.ReviewDTO;
 import com.pro.ogjmodel.ReviewPageDTO;
 import com.pro.ogjmodel.ReviewSubDTO;
+import com.pro.yuna.CampNoticeDTO;
 import com.pro.yuna.CampQaDTO;
+import com.pro.yuna.PageDTO;
 
 /**
  * Handles requests for the application home page.
@@ -162,6 +164,126 @@ public class reviewController {
 
 		return "ogj/review_content";
 	}
+	
+	@RequestMapping("review_delete.do")
+	public void reviewDelete(@RequestParam("num") int no, HttpServletResponse response) throws IOException {
+
+		 
+		
+
+		
+		response.setContentType("text/html; charset=UTF-8");
+		
+		PrintWriter out = response.getWriter();
+		
+		// 게시글 삭제
+		int check = this.dao.deleteReview(no);
+		
+		this.dao.updateSequence(no);
+		
+		if(check > 0) {
+			out.println("<script>");
+			out.println("alert('게시물 삭제 완료')");
+			out.println("location.href='review.do'");
+			out.println("</script>");
+		}else {
+			out.println("<script>");
+			out.println("alert('게시물 삭제 실패')");
+			out.println("history.back()");
+			out.println("</script>");
+		}	
+		
+		
+	}
+	
+	@RequestMapping("review_update_ok.do")
+	public void review_update_ok(ReviewDTO dto ,
+			@RequestParam("Page") int nowPage, HttpServletResponse response) throws IOException {
+		
+		response.setContentType("text/html; charset=UTF-8");
+		
+		PrintWriter out = response.getWriter();
+		
+		int check = this.dao.updateReview(dto);
+		
+		
+		
+		if(check > 0) {
+			out.println("<script>");
+			out.println("alert('게시물 수정 완료')");
+			out.println("location.href='review_content.do?no="+dto.getReview_no()+"&page="+nowPage+"'");
+			out.println("</script>");
+		}else {
+			out.println("<script>");
+			out.println("alert('게시물 수정 실패')");
+			out.println("history.back()");
+			out.println("</script>");
+		}		
+	}
+	
+	@RequestMapping("review_update.do")
+	public String reviewUpdate(@RequestParam("num") int no, @RequestParam("page") int nowPage, Model model) {
+
+
+
+		// 게시글 상세 내역을 조회하는 메서드 호출
+		ReviewDTO dto = this.dao.ReviewCont(no);
+
+		model.addAttribute("Cont", dto);
+
+		model.addAttribute("Page", nowPage);
+		
+		
+
+		return "ogj/review_update";
+	}
+	
+	@RequestMapping("camp_review_search.do")
+	public String search(@RequestParam("field") String field,
+			@RequestParam("keyword") String keyword,
+			@RequestParam("page") int nowPage, Model model,HttpSession session) {
+		
+		// 검색분류와 검색어에 해당하는 게시글의 수를 DB에서 확인하는 작업
+		totalRecord = this.dao.searchReview(field, keyword);
+		
+		ReviewPageDTO pdto = 
+				new ReviewPageDTO(nowPage, rowsize, totalRecord, field, keyword);
+		
+		System.out.println("검색 게시물 수 >>> " + pdto.getTotalRecord());
+		
+		System.out.println("검색 전체 페이지 수 >>> " + pdto.getAllPage());
+		
+		// 검색 시 한페이지당 보여질 게시물의 수만큼 검색한 게시물을 List로 가져오는 메서드.
+		List<ReviewDTO> list = this.dao.searchReviewList(pdto);
+		
+		model.addAttribute("List", list);
+		
+		model.addAttribute("Paging", pdto);
+		
+		if (session.getAttribute("sessionID") != null) {
+			String id = (String) session.getAttribute("sessionID");
+			List<ReviewSubDTO> sublist = this.dao.getReviewSubData(id);
+
+			if (sublist.isEmpty()) {
+				model.addAttribute("subList", null);
+			} else {
+				for (ReviewSubDTO subdto : sublist) {
+					int pay_no = subdto.getPayment_no();
+					String room_name = this.dao.getReviewSubData2(pay_no);
+					subdto.setRoom_name(room_name);
+				}
+				model.addAttribute("subList", sublist);
+			}
+
+		}
+		
+		return "ogj/review_search";
+		
+	}
+	
+	
+	
+	
 
 	@RequestMapping("ogj_room.do")
 	public String ogj_room() {
