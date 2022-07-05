@@ -41,7 +41,7 @@
 		<!-- 회원 관리 -->
 		<typeAlias type="com.pro.shim.model.member.CampMemberDAO" alias="memberDao" />
 		<typeAlias type="com.pro.shim.model.member.CampMemberDTO" alias="memberDto" />
-		<typeAlias type="com.pro.shim.model.CampPageDTO" alias="pageDto" />
+		<typeAlias type="com.pro.shim.model.CampPageDTO" alias="shimpageDto" />
 		
 		<!-- 매출 관리 -->
 		<typeAlias type="com.pro.shim.model.sales.CampSalesDAO" alias="salesDao" />

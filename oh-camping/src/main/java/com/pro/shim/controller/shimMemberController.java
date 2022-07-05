@@ -19,7 +19,7 @@ import com.pro.shim.model.member.CampReserveInquiryPageDTO;
 import com.pro.shim.model.reserve.CampReserveDTO;
 
 @Controller
-public class MemberController {
+public class shimMemberController {
 
 	@Autowired
 	private CampMemberDAO dao;
