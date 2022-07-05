@@ -1,9 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=Cute+Font|Great+Vibes|Quicksand|Cinzel|Gothic+A1|Nanum+Gothic|Poiret+One|Oswald&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR&display=swap');
 
 body {
-	font-family: 'Noto Sans KR_100', 나눔고딕, "Nanum Gothic", sans-serif;
+    font-family: 'Noto Sans KR', '나눔고딕, 'Nanum Gothic', sans-serif;
 }
 article,
 aside,
@@ -292,8 +295,8 @@ a.btn_room_mb {
 #g_nav ul li:nth-child(1),
 #g_nav ul li:nth-child(2) { }
 #g_nav ul li a { width: 100%; display: inline-block; text-align: center; font-size: 13px; /*color: #6E6E6E;*/ 
-	padding:4px 6px 5px; line-height: 1em; background-color: #f5f1e5; color: #000; 
-	letter-spacing: -0.3px; font-weight: bold;}
+    padding:4px 6px 5px; line-height: 1em; background-color: #f5f1e5; color: #000; 
+    letter-spacing: -0.3px; font-weight: bold;}
 #g_nav ul li:hover a { color: #434343; }
 
 .wrap_menu {
@@ -405,12 +408,12 @@ a.btn_room_mb {
 
 
 @media screen and (max-width:976px) {
-	 .tit_menu::before {		
-		width:130%;	
-	}
-	.tit_menu::after {		
-		width:130%;		
-	}
+     .tit_menu::before {        
+        width:130%; 
+    }
+    .tit_menu::after {      
+        width:130%;     
+    }
 }
 
 /* ==================== 
@@ -508,16 +511,16 @@ a.btn_room_mb {
 
 /* ================ Responsive ================ */
 @media screen and (max-width: 1200px) {
-	.menu_logo {
-		margin-top: 20px;
-		margin-left: 15px;
-	}
-	.menu_list > a{
-		padding:10px 20px;
-	}
+    .menu_logo {
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+    .menu_list > a{
+        padding:10px 20px;
+    }
 }
 @media screen and (max-width: 900px) {
-	 .head_3 .tit_menu::before {
+     .head_3 .tit_menu::before {
         content:'';
         position:absolute;
         top:-15px; left:-10px;
@@ -669,35 +672,35 @@ a.btn_room_mb {
 
 /* 푸터 */
 #footer {
-	width: 100%;
-	overflow: hidden;
-	padding-bottom: 15px;
-	    margin-top: 100px;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 15px;
+        margin-top: 100px;
 }
 
 .footer_no_margin #footer {margin-top: 0;}
 .sub_footer {margin-top: 40px;}
 #foot_contents {
-	margin-left: auto;
-	margin-right: auto;
-	position: relative;
-	max-width: 1100px;
-	display: block;
-	padding-left: 15px;
-	padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    max-width: 1100px;
+    display: block;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #foot_contents .company_info {
-	line-height: 18px;
-	font-size: 12px;
-	color: rgba(209,209,209,1.00);
-	display: block;
+    line-height: 18px;
+    font-size: 12px;
+    color: rgba(209,209,209,1.00);
+    display: block;
 }
 #foot_contents .company_info h5 {font-size: 15px; color: #EBEBEB;}
 #foot_contents .company_info ul {
-	float: left;
-	margin-right: 45px;/*35*/
-	margin-bottom: 15px;
+    float: left;
+    margin-right: 45px;/*35*/
+    margin-bottom: 15px;
 }
 
 #foot_contents .company_info ul:last-child { margin-right: 0px; }
@@ -708,34 +711,34 @@ a.btn_room_mb {
 }
 
 #foot_menu {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 1100px;
-	padding-left: 15px;
-	padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1100px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #foot_menu ul { margin-bottom: 0px; }
 
 #foot_menu ul li {
-	float: left;
-	position: relative;
+    float: left;
+    position: relative;
 }
 
 #foot_menu ul li:after {
-	content: "";
-	position: absolute;
-	height: 8px;
-	right: 0px;
-	background-color: #6a6a6a;
-	top: 29px;
-	width: 1px;
+    content: "";
+    position: absolute;
+    height: 8px;
+    right: 0px;
+    background-color: #6a6a6a;
+    top: 29px;
+    width: 1px;
 }
 
 #foot_menu ul li:last-child:after { display: none; }
 
 #foot_menu ul li a {
-	color: rgba(224,224,224,1.00);
+    color: rgba(224,224,224,1.00);
     line-height: 65px;
     font-size: 12px;
     display: block;
@@ -747,13 +750,13 @@ a.btn_room_mb {
 #foot_menu a:hover { color: #dfb99a; }
 
 #bg_copy {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 #bg_copy .copy_year {
-	color: #6E6E6E;
-	font-size: 12px;
-	float: left;
+    color: #6E6E6E;
+    font-size: 12px;
+    float: left;
 }
 
 .bg_foot_menu { }
@@ -885,7 +888,9 @@ footer {
 
 
 @media only screen and (max-width: 600px) {
-	.list_mb_menu_3 > a {		
-		font-size: 3vw;		
-	}
+    .list_mb_menu_3 > a {       
+        font-size: 3vw;     
+    }
 }
+
+
