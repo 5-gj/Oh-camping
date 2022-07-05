@@ -173,7 +173,6 @@
 								<%
 									}else { // 로그인 됐을 때
 								%> 
-								<input type="button" value="나의 리뷰 보기" onclick="location.href ='<%=request.getContextPath()%>/camp_review_search.do?field=reviewId&keyword=${sessionID }&page=${paging.page }'" >
 								<c:if test="${empty sublist }">
 									<input type="button" value="글쓰기" onclick="reviewAlert()">
 								</c:if>
@@ -234,6 +233,10 @@
 						</form>
 
 					</div>
+					 <div class="list_btn_wrap">
+                    	<input type="button" value="목록으로 돌아가기" class="list_btn board_btn"
+					      	 	onclick="location.href='review.do'">
+                    </div>
 				</div>
 
 			</div>

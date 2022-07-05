@@ -51,6 +51,14 @@ public class ReviewPageDTO {
 		
 	} //인자 생성자
 	
+	// 검색 처리 페이징 생성자
+	public ReviewPageDTO(int page, int rowsize, int totalRecord,
+			String field, String keyword) {
+		this(page, rowsize, totalRecord);
+		this.field = field;
+		this.keyword = keyword;
+	}  // 인자 생성자
+	
 	
 	
 

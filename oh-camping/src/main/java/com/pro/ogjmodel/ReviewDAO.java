@@ -2,6 +2,9 @@ package com.pro.ogjmodel;
 
 import java.util.List;
 
+import com.pro.yuna.CampNoticeDTO;
+import com.pro.yuna.PageDTO;
+
 
 public interface ReviewDAO {
 	
@@ -30,7 +33,13 @@ public interface ReviewDAO {
 	// 리뷰번호 최신화
 	public void updateSequence(int no);
 	
+	// 검색
+	public int searchReview(String field, String keyword);
+	public List<ReviewDTO> searchReviewList(ReviewPageDTO dto);
+	
 	public List<ReviewSubDTO> getReviewSubData(String id);
+	
+	
 	public String getReviewSubData2(int pay_no);
 
 }
