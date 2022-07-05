@@ -219,15 +219,87 @@ $('.mb_list_tit').on('click',function(e){
 
 })
 
-$('.close_pop').on('click',function(){
-    $('.wrap_popup').css('display','none');
+
+
+$('.close_pop1').on('click',function(){
+    $('.wrap_popup1').css('display','none');
 })
 
-$('.close_pop02').on('click',function(){
-    $('.wrap_popup02').css('display','none');
+$('.close_pop2').on('click',function(){
+    $('.wrap_popup2').css('display','none');
 })
 
-$('.close_pop03').on('click',function(){
-    $('.wrap_popup03').css('display','none');
+$('.close_pop3').on('click',function(){
+    $('.wrap_popup3').css('display','none');
 })
 
+$('.close_pop4').on('click',function(){
+    $('.wrap_popup4').css('display','none');
+})
+
+$('.close_pop5').on('click',function(){
+    $('.wrap_popup5').css('display','none');
+})
+
+$('.close_pop6').on('click',function(){
+    $('.wrap_popup6').css('display','none');
+})
+
+$('.close_pop7').on('click',function(){
+    $('.wrap_popup7').css('display','none');
+})
+
+$('.close_pop8').on('click',function(){
+    $('.wrap_popup8').css('display','none');
+})
+
+$('.close_pop9').on('click',function(){
+    $('.wrap_popup9').css('display','none');
+})
+
+
+$('.close_pop10').on('click',function(){
+    $('.wrap_popup10').css('display','none');
+})
+
+
+$('.close_pop11').on('click',function(){
+    $('.wrap_popup11').css('display','none');
+})
+
+$('.close_pop12').on('click',function(){
+    $('.wrap_popup12').css('display','none');
+})
+
+$('.close_pop13').on('click',function(){
+    $('.wrap_popup13').css('display','none');
+})
+
+$('.close_pop14').on('click',function(){
+    $('.wrap_popup14').css('display','none');
+})
+
+$('.close_pop15').on('click',function(){
+    $('.wrap_popup15').css('display','none');
+})
+
+$('.close_pop16').on('click',function(){
+    $('.wrap_popup16').css('display','none');
+})
+
+$('.close_pop17').on('click',function(){
+    $('.wrap_popup17').css('display','none');
+})
+
+$('.close_pop18').on('click',function(){
+    $('.wrap_popup18').css('display','none');
+})
+
+$('.close_pop19').on('click',function(){
+    $('.wrap_popup19').css('display','none');
+})
+
+
+$('.close_pop20').on('click',function(){
+    $('.wrap_popup20').css('display','none');
+})

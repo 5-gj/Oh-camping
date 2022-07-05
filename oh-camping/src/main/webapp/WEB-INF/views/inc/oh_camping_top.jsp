@@ -43,7 +43,7 @@
             <div id="top_header" class="clearfix">
                 <div id="g_nav">
                     <ul class="clearfix">
-                        <li class="hidden-xs"><a href="<%=request.getContextPath() %>/camp_main.do">Home</a></li>
+                        <li class="hidden-xs"><a href="/">Home</a></li>
                         <% 
                            // 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
                             if(session.getAttribute("sessionID")==null){ 
@@ -67,7 +67,7 @@
          </div>
          <nav id="navwrap_bg" class="wrap_menu">
          	<div class="menu_logo">
-                <a href="<%=request.getContextPath() %>/camp_main.do">
+                <a href="<%=request.getContextPath() %>/">
                     <img src="<%=request.getContextPath() %>/resources/img/logo.png">
                 </a>
             </div>
@@ -144,8 +144,15 @@
                     <a href="<%=request.getContextPath()%>/location.do">Location</a>
                 </div>
                 <div class="menu_list">
-                    <a href="<%=request.getContextPath()%>/calendar_iframe7.do">Reservation</a>
-
+                    <a href="" class="link_reser">Reservation</a>
+                    <ul class="menu_inner">
+                        <li class="inner_list">
+                            <a href="" class="link_reser">실시간 예약</a>
+                        </li>
+                        <li class="inner_list">
+                            <a href="#">예약안내</a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="menu_list">
                     <a href="#">Community</a>
@@ -157,7 +164,7 @@
                             <a href="<%=request.getContextPath() %>/camp_qa.do">이용문의</a>
                         </li>
                         <li class="inner_list">
-                            <a href="<%=request.getContextPath() %>/review.do">숙박후기</a>
+                            <a href="#">숙박후기</a>
                         </li>
                     </ul>
                 </div>
