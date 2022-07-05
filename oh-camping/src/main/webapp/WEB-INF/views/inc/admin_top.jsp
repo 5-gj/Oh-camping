@@ -24,7 +24,7 @@
 </head>
 <body>
     <!-- 메뉴바(header) -->
-    <div class="fixed-top border-bottom admin_header">
+    <div class="fixed-top border-bottom admin_header bg-white">
       	<nav class="bg-light border-bottom">
           	<div class="container nav1"><!-- d-flex flex-wrap -->
              	<ul class=""> <!-- nav -->
