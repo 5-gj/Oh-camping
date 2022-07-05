@@ -18,6 +18,7 @@
 
 input { border-color: #F2F2F2; border-width: 1px; border-style: solid;}
 
+.admin_header {background: #fff;}
 .admin_header .nav1 {text-align: right;}
 .admin_header .nav1 a {font-size: 14px;}
 .admin_header .nav2 ul li a {padding: 0.5rem 0.7rem;}

@@ -75,6 +75,9 @@
                         <li class="inner_list">
                             <a href="<%=request.getContextPath()%>/about.do">펜션소개</a>
                         </li>
+                        <li class="inner_list">
+                            <a href="<%=request.getContextPath()%>/camp_staff.do">직원소개</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="menu_list">
