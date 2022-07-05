@@ -177,3 +177,29 @@ a.btn_facil {
     background-color: #dfb99a;
     transition: opacity 300ms;
 }
+
+.top h1 {
+    position: relative;
+    padding: 50px 0 0px 0;
+    font-size: 50px;
+    font-family: "Poiret One";
+        font-weight: bold;
+}
+
+.top h3 {
+    padding: 30px 0;
+    color: #dfb99a;
+}
+
+.top_sub h1 {
+    position: relative;
+    padding: 50px 0 0px 0;
+    font-size: 50px;
+    font-family: "Poiret One";
+        font-weight: bold;
+}
+
+.top_sub h3 {
+    padding: 30px 0;
+    color: #dfb99a;
+}

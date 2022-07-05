@@ -140,6 +140,7 @@ ul{
     font-size: 40px;
     font-family: 'Poiret One', cursive;
     color: #cd996f;
+        font-weight: bold;
 }
 
 .facil_detail_txt p {
@@ -165,6 +166,7 @@ ul{
     font-size: 35px;
     font-family: "Poiret One";
     color: #c4c2c0;
+        font-weight: bold;
 }
 
 .facil_detail.style2 .wrap_facil_img {
@@ -195,6 +197,7 @@ ul{
 
 .about_tit h1 {
     position: relative;
+    font-weight: bold;
 }
 
 .about_tit h3 {

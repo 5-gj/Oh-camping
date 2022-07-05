@@ -22,6 +22,15 @@ ul{
 	
 }
 
+.room_comment {
+    margin: 50px 30px 0 0;
+    font-size: 40px;
+    font-family: "Poiret One";
+    text-align: right;
+    color: #c4c2c0;
+    font-weight: bold;
+}
+
 .bigroom1{
 	background-image: url("../images/bigroom1.jpg");
 }
@@ -328,7 +337,53 @@ position: absolute;
     margin-top: 50px;
     height: 700px;
 }
+
+.about_tit {
+	position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    font-family: "Poiret One";
+    font-weight: 100;
+    
+}
+
+.about_tit h1 {
+    position: relative;
+}
 	
+	
+	.prevsub {
+    content: '';
+    position: absolute; /*부모 요소에는 position: relative를 주어야 한다.*/
+    background-color: #ebb68c;
+    height: 2px; /*밑줄 굵기*/
+
+    width: 0; /*초기에 보이지 않도록*/
+    bottom: 0; /*a태그 아래에 위치시키기*/
+    transition: 0.7s; /*애니메이션 동작 실행 시간 정의*/
+
+    /*가상 요소를 가운데로 이동시키기*/
+    transform: translateX(-50%) ;
+}
+
+.nextsub {
+    content: '';
+    position: absolute; /*부모 요소에는 position: relative를 주어야 한다.*/
+    background-color: #ebb68c;
+    height: 2px; /*밑줄 굵기*/
+
+    width: 93px; /*초기에 보이지 않도록*/
+    bottom: 0; /*a태그 아래에 위치시키기*/
+    transition: 0.7s; /*애니메이션 동작 실행 시간 정의*/
+
+    /*가상 요소를 가운데로 이동시키기*/
+    transform: translateX(-50%) ;
+}
 
 
 

@@ -36,7 +36,11 @@
 			</div>
 		</div>
 		<div class="big-slick bigroom">
-			<div class="bigroom1 roomimage"></div>
+			<div class="bigroom1 roomimage">
+			<div class="about_tit">
+					<h1>대형 1~4 </h1>
+				</div>
+			</div>
 			<div class="bigroom2 roomimage"></div>
 			<div class="bigroom3 roomimage"></div>
 			<div class="bigroom4 roomimage"></div>
@@ -125,10 +129,14 @@
 <section>
 
 		<div align="center">
-			<div class="roombtn">
-				<a type="button" class="nextbtn">계곡1,2,3,4</a> <a type="button"
-					class="prevbtn">대형1,2,3,4</a>
-			</div>
+					<div class="roombtn">
+						<a type="button" class="nextbtn">계곡1,2,3,4
+							<div><span class="nextsub"></span></div>
+						</a> <a type="button"
+							class="prevbtn">대형1,2,3,4
+							<div><span class="prevsub"></span></div>
+							</a>
+					</div>
 		</div>
 
 	<div class="main-btn">
@@ -218,6 +226,14 @@
 			$('.nextbtn').css("color", "#ebb68c");
 
 			$('.prevbtn').css("color", "black");
+			
+			$('.prevsub').css("width", "0");
+			
+			$('.nextsub').css("width", "93px");
+			
+			
+			
+			
 		});
 
 		$('.prevbtn').click(function() {
@@ -227,6 +243,11 @@
 			$('.prevbtn').css("color", "#ebb68c");
 
 			$('.nextbtn').css("color", "black");
+			
+			$('.prevsub').css("width", "93px");
+			
+			$('.nextsub').css("width", "0");
+			
 		});
 
 		$('.next, .prev').click(function() {

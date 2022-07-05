@@ -130,7 +130,7 @@
                     <a href="<%=request.getContextPath()%>/location.do">Location</a>
                 </div>
                 <div class="menu_list">
-                    <a href="<%=request.getContextPath()%>/calendar_iframe7.do" class="link_reser">Reservation</a>
+                    <a href="<%=request.getContextPath()%>/calendar_iframe7.do">Reservation</a>
                     <ul class="menu_inner">
                         <li class="inner_list">
                             <a href="<%=request.getContextPath()%>/calendar_iframe7.do">실시간 예약</a>

@@ -20,6 +20,19 @@
 	background-image: url("../images/bigroom1.jpg");
 }
 
+.top2 h1 {
+    position: relative;
+    padding: 50px 0 0px 0;
+    font-size: 50px;
+    font-family: "Poiret One";
+        font-weight: bold;
+}
+
+.top2 h3 {
+    padding: 30px 0;
+    color: #dfb99a;
+}
+
 .roomtxt{
 	float: right;
     position: relative;
