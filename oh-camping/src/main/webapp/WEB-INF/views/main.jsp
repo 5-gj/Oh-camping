@@ -141,7 +141,7 @@
                     </ul>
                 </div>
                 <div class="menu_list">
-                    <a href="#">Community</a>
+                    <a href="<%=request.getContextPath() %>/camp_notice.do">Community</a>
                     <ul class="menu_inner">
                         <li class="inner_list">
                             <a href="<%=request.getContextPath() %>/camp_notice.do">공지사항</a>
@@ -150,7 +150,7 @@
                             <a href="<%=request.getContextPath() %>/camp_qa.do">이용문의</a>
                         </li>
                         <li class="inner_list">
-                            <a href="#">숙박후기</a>
+                            <a href="<%=request.getContextPath() %>/review.do">숙박후기</a>
                         </li>
                     </ul>
                 </div>

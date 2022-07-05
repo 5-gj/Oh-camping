@@ -38,7 +38,7 @@
                 <ul class="mid_menu">
                     <li><a href="<%=request.getContextPath() %>/camp_notice.do"><i class="fa fa-caret-right"></i>공지사항</a></li>                  
                     <li><a href="<%=request.getContextPath() %>/camp_qa.do" class="nav_on"><i class="fa fa-caret-right"></i>이용문의</a></li>
-                    <li><a href="#">숙박후기</a></li> <!-- -->
+                    <li><a href="<%=request.getContextPath() %>/review.do">숙박후기</a></li> <!-- -->
                 </ul>
             </div>
         </div>
