@@ -99,8 +99,11 @@ public class PopupController {
 		
 		boolean isUpload = false;
 		
-		String uploadPath = "C:\\Users\\hwach\\OneDrive\\문서\\Oh-camping\\oh-camping\\src\\main\\webapp\\resources\\img\\";
+		//String uploadPath = "C:\\Users\\hwach\\OneDrive\\문서\\Oh-camping\\oh-camping\\src\\main\\webapp\\resources\\img\\";
 		
+		//String uri = mRequest.getRequestURI();
+		String uploadPath = mRequest.getContextPath()+"/resources/img";
+		System.out.println("URI >>> " + uploadPath);
 		
 		// 업로드된 파일들의 이름 목록을 제공하는 메서드.
 		Iterator<String> iterator = mRequest.getFileNames();
@@ -116,7 +119,9 @@ public class PopupController {
 			
 			// 실제 폴더를 만들어 보자.
 			// ........\\resources\\upload\\2022-05-30
-			String homedir = uploadPath + "pop";
+			String homedir = uploadPath +"/" + "pop";
+			
+			System.out.println(homedir);
 
 			File path1 = new File(homedir);
 			

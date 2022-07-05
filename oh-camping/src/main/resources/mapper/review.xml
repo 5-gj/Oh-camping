@@ -11,6 +11,10 @@
 		select count(*) from camp_review
 	</select>
 	
+	<select id="getDeleteReviewListCount" resultType="int">
+		select count(*) from camp_review_delete
+	</select>
+	
 		<select id="getReviewList" parameterType="reviewpagedto" resultType="reviewdto">
 		<![CDATA[
 			select * from
@@ -21,6 +25,20 @@
 	    
 	   
 	</select>
+	
+			<select id="getDeleteReviewList" parameterType="reviewpagedto" resultType="reviewdto">
+		<![CDATA[
+			select * from
+				(select b.*, row_number() 
+					over(order by review_no desc) rnum from camp_review_delete b)
+					where rnum >= #{startNo} and rnum <= #{endNo}
+	    ]]>
+	    
+	   
+	</select>
+	
+	
+	
 	<select id="getReviewCont" parameterType="int" resultType="reviewdto">
 		select * from camp_review where review_no = #{no}
 	</select>
@@ -44,7 +62,16 @@
 		insert into camp_review values(#{review_no} + 1,
 			#{review_id}, #{review_roomname}, 
 				#{review_title}, #{review_cont},
-				sysdate,#{review_orderdate}, 0)
+				to_char(sysdate,'yyyy-mm-dd hh24:mi'),#{review_orderdate}, 0)
+	</insert>
+	
+	<!-- 삭제된 리뷰에 등록 -->
+	<insert id="insertDeleteReview" parameterType="reviewdto">
+				
+		insert into camp_review_delete values(#{review_no},
+			#{review_id}, #{review_roomname}, 
+				#{review_title}, #{review_cont},
+				#{review_date},#{review_orderdate}, #{views})
 	</insert>
 	
 	<delete id="deleteReview" parameterType="int">
@@ -124,6 +151,26 @@
 	</select>
 	
 	
+		<update id="updateResetSequence" parameterType="int">
+		update camp_review set review_no = review_no+1 where review_no >= #{no}
+	</update>
+	
+	
+	<select id="getDeleteReviewCont" parameterType="int" resultType="reviewdto">
+		select * from camp_review_delete where review_no = #{no}
+	</select>
+	
+		<insert id="insertReview2" parameterType="reviewdto">
+				
+		insert into camp_review values(#{review_no},
+			#{review_id}, #{review_roomname}, 
+				#{review_title}, #{review_cont},
+				#{review_date},#{review_orderdate}, #{views})
+	</insert>
+	
+		<delete id="deleteDeleteReview" parameterType="int">
+		delete from camp_review_delete where review_no = #{no}
+	</delete>
 	
 
 </mapper>
