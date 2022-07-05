@@ -11,19 +11,32 @@
 <script src="<%=request.getContextPath() %>/resources/SHIM/js/member.js?8"></script>
 </head>
 <body>
-	<header class="header">
-		<jsp:include page="../include/header.jsp" />
-	</header>
-		
-	<div id="body">
-		<aside>
-			<jsp:include page="../include/aside.jsp" />
-		</aside>
-		
-		<main id="main">
-			<div>회원 목록</div>
+    <jsp:include page="../../inc/admin_top.jsp" /> 
+    <c:set var="list" value="${List }" />
+	<c:set var="paging" value="${Paging }" /> 
+    <div id="admin_wrap" class="container webfont">
+        <!-- 왼쪽 메뉴 -->
+        <div id="aside">
+            <div class="leftmenu">
+                <h3 id="left_menu_head">회원</h3>
+                <ul class="left_menu_ul">
+                    <li class="nav_on">
+                        <a href="<%=request.getContextPath() %>/main.do">
+                            <i class="fa fa-caret-right"></i> 회원관리
+                        </a>
+                    </li>                  
+
+                </ul>
+            </div>
+        </div>
+        <!-- // 왼쪽 메뉴 -->
 			
-			<section id="section">
+			<section id="section" style="clear: none;">
+			
+			            <!-- 본문 타이틀 -->
+            <h3 class="admin_title">회원 관리 <span class="sub_title2">member</span></h3>
+
+            <!-- 본문 내용 시작 -->
 				<div class="head">
 		<%-- ----------------------- 정렬 부분 ----------------------- --%>
 					<div class="sort_block">
@@ -85,5 +98,7 @@
 		<div class="modify"></div>		
 			
 	</div>
+	
+	<jsp:include page="../../inc/admin_bottom.jsp" />
 </body>
 </html>
