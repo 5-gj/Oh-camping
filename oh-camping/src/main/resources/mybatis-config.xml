@@ -36,5 +36,22 @@
 		<typeAlias type="com.pro.ogjmodel.ReviewDTO" alias="reviewdto"/>
 		<typeAlias type="com.pro.ogjmodel.ReviewPageDTO" alias="reviewpagedto"/>
 		<typeAlias type="com.pro.ogjmodel.ReviewSubDTO" alias="reviewsubdto"/>
+		
+		<!-- 심규복 -->
+		<!-- 회원 관리 -->
+		<typeAlias type="com.pro.shim.model.member.CampMemberDAO" alias="memberDao" />
+		<typeAlias type="com.pro.shim.model.member.CampMemberDTO" alias="memberDto" />
+		<typeAlias type="com.pro.shim.model.CampPageDTO" alias="pageDto" />
+		
+		<!-- 매출 관리 -->
+		<typeAlias type="com.pro.shim.model.sales.CampSalesDAO" alias="salesDao" />
+		<typeAlias type="com.pro.shim.model.sales.CampSalesDTO" alias="salesDto" />
+		
+		<!-- 예약 관리 -->
+		<typeAlias type="com.pro.shim.model.reserve.CampReserveDAO" alias="reserveDao" />
+		<typeAlias type="com.pro.shim.model.reserve.CampReserveDTO" alias="reserveDto" />
+		
+		<!-- 문의 관리  -->
+		<typeAlias type="com.pro.shim.model.member.CampInquiryDTO" alias="inquiryDto" />
   	</typeAliases>
   </configuration>
