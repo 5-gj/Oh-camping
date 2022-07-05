@@ -28,7 +28,40 @@
 		pricebutton.classList.toggle('on');
 		
 	}
-	
+		
+
+ 	$(document).ready(function() {
+			var now = new Date();
+
+			var date = now.getDate();
+			//var date = "18";
+			
+						
+			
+			
+			
+			for(var i=1; i<date; i++){
+				$("div").filter(function() {
+				    return $(this).text() === String(i);
+				}).parent().parent().attr('class', 'blockday');
+				
+				
+				
+				//$('div:contains('+i+')').parent().parent().attr('class', 'blockday');
+			}
+			
+			$("div").filter(function() {
+			    return $(this).text() === date;
+			}).parent().parent().attr('class', 'today');
+			
+			$(".blockday").empty();
+			
+			$(".blockday").text("예약마감")
+			
+			//$('div:contains('+test+')').parent().parent().attr('class', 'today');
+
+		});
+
 	
 </script>
 <style type="text/css">
@@ -252,7 +285,7 @@
 		text-align: center;
 		font-size: 12px;
 		padding: 12px 0px;
-		border: 1px solid #e6e5e5;
+		/* border: 1px solid #e6e5e5; */
 		border-right: 0px;
 	}
 	
@@ -265,7 +298,7 @@
 	}
 	
 	.cal_table tr th.last_child {
-		border-right: 1px solid #e6e5e5;
+		/* border-right: 1px solid #e6e5e5; */
 	}
 	
 	tr {
@@ -279,7 +312,7 @@
 	    text-align: center;
 	    font-size: 12px;
 	    padding: 4px 8px 6px 8px;
-	    border: 1px solid #E6E5E5;
+	    /* border: 1px solid #E6E5E5; */
 	    border-right: 0px;
 	    border-top: 0px;
 	    vertical-align: middle;
@@ -459,6 +492,11 @@
 		background-position: -81px -27px;
 	}
 	
+	table {
+	 border-collapse: collapse;
+    border: 1px solid #e6e5e5;
+	}
+	
 	
 
 	
@@ -541,7 +579,7 @@
 	</div> <!-- cal_header end -->
 	
 	<div class="cal_calendar">
-		<table cellpadding="0" cellspacing="0" class="cal_table">
+		<table cellspacing="0" class="cal_table"  border="1">
 			<tr>
 				<th class="sunday">일요일</th>
 				<th>월요일</th>
@@ -558,8 +596,8 @@
 				<td class="blockday"></td>
 				<td class="blockday"></td>
 				<td class="blockday"></td>
-				<td class="blcokday">에약종료</td>
-				<td class="blcokday last_child">에약종료</td>
+				<td class="blockday">에약종료</td>
+				<td class="blockday last_child">에약종료</td>
 			</tr>
 			
 			<tr>
