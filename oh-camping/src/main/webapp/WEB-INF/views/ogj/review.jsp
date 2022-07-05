@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Oh Camping</title>
+<title>Oh Camping</title> 
 <!-- CSS only -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -192,8 +192,8 @@
 					<div class="ext_paging" style="margin-top: 20px;">
 						<%-- 페이징 처리 부분 --%>
 						<c:if test="${paging.getPage() > paging.getBlock() }">
-							<a href="camp_notice.do?page=1">◀◀</a>
-							<a href="camp_notice.do?page=${paging.getStartBlock() - 1 }">
+							<a href="review.do?page=1">◀◀</a>
+							<a href="review.do?page=${paging.getStartBlock() - 1 }">
 								&lt;<span class="page_s">이전</span> |
 							</a>&nbsp;
 					   </c:if>
@@ -201,19 +201,19 @@
 						<c:forEach begin="${paging.getStartBlock() }"
 							end="${paging.getEndBlock() }" var="i">
 							<c:if test="${i == paging.getPage() }">
-								<b> <a href="camp_notice.do?page=${i }">[${i }]</a></b>
+								<b> <a href="review.do?page=${i }">[${i }]</a></b>
 							</c:if>
 
 							<c:if test="${i != paging.getPage() }">
-								<a href="camp_notice.do?page=${i }">[${i }]</a>
+								<a href="review.do?page=${i }">[${i }]</a>
 							</c:if>
 						</c:forEach>
 
 						<c:if test="${paging.getEndBlock() < paging.getAllPage() }">&nbsp;
-					      <a href="camp_notice.do?page=${paging.getEndBlock() + 1 }">
+					      <a href="review.do?page=${paging.getEndBlock() + 1 }">
 								| <span class="page_s">다음</span>&gt;
 							</a>
-							<a href="camp_notice.do?page=${paging.getAllPage() }">▶▶</a>
+							<a href="review.do?page=${paging.getAllPage() }">▶▶</a>
 						</c:if>
 					</div>
 

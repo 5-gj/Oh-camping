@@ -34,7 +34,7 @@ public class reviewController {
 	@Autowired
 	private ReviewDAO dao;
 
-	private final int rowsize = 3;
+	private final int rowsize = 6;
 	private int totalRecord = 0;
 
 	@RequestMapping("review.do")
@@ -280,6 +280,116 @@ public class reviewController {
 		return "ogj/review_search";
 		
 	}
+	
+	@RequestMapping("admin_review.do")
+	public String admin_review(HttpServletRequest request, Model model) {
+		
+		int page; // 현재 페이지 변수
+		if (request.getParameter("page") != null) {
+			page = Integer.parseInt(request.getParameter("page"));
+		} else {
+			page = 1; // 처음으로 게시물 전체 목록 태그 선택시
+		}
+
+		// DB상의 전체 게시물의 수를 확인하는 메서드.
+		totalRecord = this.dao.getListCount();
+
+		ReviewPageDTO dto = new ReviewPageDTO(page, rowsize, totalRecord);
+
+		// 페이지에 해당하는 게시물을 가져오는 메서드 호출
+
+		List<ReviewDTO> list = this.dao.getReviewList(dto);
+
+		model.addAttribute("List", list);
+
+		model.addAttribute("Paging", dto);
+		
+		return "ogj/admin_review";
+
+	}
+	
+	
+	  @RequestMapping("admin_delete_review.do") 
+	  public String admin_review_delete(HttpServletRequest request, Model model) {
+	  
+	  int page; // 현재 페이지 변수 
+	  if (request.getParameter("page") != null) { page =
+	  Integer.parseInt(request.getParameter("page")); } else { page = 1; 
+	  // 처음으로 게시물 전체 목록 태그 선택시 
+	  }
+	  
+	  // DB상의 전체 게시물의 수를 확인하는 메서드.
+	  totalRecord = this.dao.getDeleteListCount();
+	  
+	  ReviewPageDTO dto = new ReviewPageDTO(page, rowsize, totalRecord);
+	  
+	  // 페이지에 해당하는 게시물을 가져오는 메서드 호출
+	  
+	  List<ReviewDTO> list = this.dao.getDeleteReviewList(dto);
+	  
+	  model.addAttribute("List", list);
+	  
+	  model.addAttribute("Paging", dto);
+	  
+	  return "ogj/admin_review_delete";
+	  
+	  }
+	 
+	
+    @RequestMapping("admin_review_delete.do")
+    public void adminReviewDelete(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    	
+    	response.setContentType("text/html; charset=UTF-8");
+		
+            
+        String[] ajaxMsg = request.getParameterValues("valueArr");
+        int size = ajaxMsg.length;
+        int check = 0;
+        
+        for(int i=0; i<size; i++) {
+        	int no = Integer.parseInt(ajaxMsg[i]);
+        	
+        	ReviewDTO deletedto = this.dao.ReviewCont(no);
+        	this.dao.insertDeleteReview(deletedto);
+        	
+        	check = this.dao.deleteReview(no);
+        	
+        	if (check > 0) {
+        		this.dao.updateSequence(no);;
+			}
+        }
+
+    }
+    
+    @RequestMapping("admin_review_reset.do")
+    public void adminReviewReset(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    	
+    	response.setContentType("text/html; charset=UTF-8");
+		
+            
+        String[] ajaxMsg = request.getParameterValues("valueArr");
+        int size = ajaxMsg.length;
+        
+        for(int i=0; i<size; i++) {
+        	int no = Integer.parseInt(ajaxMsg[i]);
+        	
+        	//기존 review 테이블 번호 한칸식 위로
+        	this.dao.updateResetSequence(no);
+        	
+        	// 해당 delete 리뷰 데이터 가져오기
+        	ReviewDTO deletedto = this.dao.getDeleteReviewCont(no);
+        	
+        	// 가져온 데이터 review 로 넣어주기
+        	int a = this.dao.insertReview2(deletedto);
+        	
+        	if(a > 0) {
+        		//delete review 에 데이터 삭제하기
+        		int b =  this.dao.deleteDeleteReview(no);
+        	}
+
+        }  
+
+    }
 	
 	
 	

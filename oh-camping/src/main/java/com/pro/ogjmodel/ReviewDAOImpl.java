@@ -91,6 +91,48 @@ public class ReviewDAOImpl implements ReviewDAO {
 		return this.sqlSession.selectList(dto.getField()+"1", dto);
 	}
 
+	@Override
+	public int insertDeleteReview(ReviewDTO dto) {
+		// TODO Auto-generated method stub
+		return this.sqlSession.insert("insertDeleteReview", dto);
+	}
+
+	@Override
+	public int getDeleteListCount() {
+		// TODO Auto-generated method stub
+		return this.sqlSession.selectOne("getDeleteReviewListCount");
+	}
+
+	@Override
+	public List<ReviewDTO> getDeleteReviewList(ReviewPageDTO dto) {
+		// TODO Auto-generated method stub
+		return this.sqlSession.selectList("getDeleteReviewList",dto);
+	}
+
+	@Override
+	public void updateResetSequence(int no) {
+		this.sqlSession.update("updateResetSequence", no);
+		
+	}
+
+	@Override
+	public ReviewDTO getDeleteReviewCont(int no) {
+		// TODO Auto-generated method stub
+		return this.sqlSession.selectOne("getDeleteReviewCont",no);
+	}
+
+	@Override
+	public int insertReview2(ReviewDTO dto) {
+		// TODO Auto-generated method stub
+		return this.sqlSession.insert("insertReview2", dto);
+	}
+
+	@Override
+	public int deleteDeleteReview(int no) {
+		// TODO Auto-generated method stub
+		return this.sqlSession.delete("deleteDeleteReview", no);
+	}
+
 
 
 }
