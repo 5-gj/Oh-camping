@@ -145,7 +145,7 @@
 
                 </div>
                 <div class="menu_list">
-                    <a href="#">Community</a>
+                    <a href="<%=request.getContextPath() %>/camp_notice.do">Community</a>
                     <ul class="menu_inner">
                         <li class="inner_list">
                             <a href="<%=request.getContextPath() %>/camp_notice.do">공지사항</a>
