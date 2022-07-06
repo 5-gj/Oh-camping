@@ -15,79 +15,99 @@
 
 </head>
 <body>
-	
+    
    <section class="wrap_staff ">
          <div class="wrapper"> 
             <jsp:include page="../inc/oh_camping_top.jsp" />   
          </div>
          <div id="sub_wrap" class="webfont"> 
             <div id="sub_contents">
-            	<h1>Staff Introduction</h1>
-            	<div class="staff">
-                	<div class="row">
-                		<!-- 직원소개1 -->
-                    	<div class="col-4">                        
-                        	<div class="img_box">
-                            	<img class="img-responsive" src="<%=request.getContextPath() %>/resources/img/staff/staff01.jpg" width="100%" alt=""/>
-                        	</div>
-                        	<div class="stitle_v1_black sm-margin-bottom-10 staff_title"><i class="fa fa-chevron-circle-right marjin_right5"></i> 오 경 종 <span>(<span>사장</span> 조장</span>)</div>
-                        	<p class="text-muted staff_txt">“코딩이 미래다”</p>
-                    	</div>
-                    	<!-- // 직원소개1 -->
-                    	
-                    	<!-- 직원소개2 -->
-                    	<div class="col-4">
-                        	<div class="img_box">
-                            	<img class="img-responsive" src="<%=request.getContextPath() %>/resources/img/staff/staff02.jpg" width="100%" alt=""/>
-                        	</div>
-                        	<div class="stitle_v1_black sm-margin-bottom-10 staff_title"><i class="fa fa-chevron-circle-right marjin_right5"></i> 김 동 찬</div>
-                        	<p class="text-muted staff_txt">소개</p>
-                    	</div>
-                    	<!-- // 직원소개2 -->
-                    	
-                    	<!-- 직원소개3 -->
-                    	<div class="col-4">
-                        	<div class="img_box">
-                            	<img class="img-responsive" src="<%=request.getContextPath() %>/resources/img/staff/staff03.jpg" width="100%" alt=""/>
-                        	</div>
-                        	<div class="stitle_v1_black sm-margin-bottom-10 staff_title"><i class="fa fa-chevron-circle-right marjin_right5"></i> 김 유 나</div>
-                        	<p class="text-muted staff_txt">소개</p>
-                    	</div>
-                    	<!-- // 직원소개3 -->
-                	</div>
-                	
-                	
-                	<div class="row">
-                		<!-- 직원소개4 -->
-                    	<div class="col-4">                        
-                        	<div class="img_box">
-                            	<img class="img-responsive" src="<%=request.getContextPath() %>/resources/img/staff/staff04.jpg" width="100%" alt=""/>
-                        	</div>
-                        	<div class="stitle_v1_black sm-margin-bottom-10 staff_title"><i class="fa fa-chevron-circle-right marjin_right5"></i> 심 규 복</div>
-                        	<p class="text-muted staff_txt"><span>사장</span> 조장</p>
-                    	</div>
-                    	<!-- // 직원소개4 -->
-                    	
-                    	<!-- 직원소개5 -->
-                    	<div class="col-4">
-                        	<div class="img_box">
-                            	<img class="img-responsive" src="<%=request.getContextPath() %>/resources/img/staff/staff05.jpg" width="100%" alt=""/>
-                        	</div>
-                        	<div class="stitle_v1_black sm-margin-bottom-10 staff_title"><i class="fa fa-chevron-circle-right marjin_right5"></i> 최 동 아</div>
-                        	<p class="text-muted staff_txt">"항상 최선을 다하자"</p>
-                    	</div>
-                    	<!-- // 직원소개5 -->
-                    	
-                	</div>
-            	</div>
-			</div end-sub_contents>
+                <h1>Staff Introduction</h1>
+                <div class="staff">
+                    <div class="row">
+                        <!-- 직원소개1 -->
+                        <div class="col-4">
+                            <div class="staff_in">                        
+                                <div class="img_box">
+                                    <img class="img-responsive" src="<%=request.getContextPath() %>/resources/img/staff/staff01.jpg" width="100%" alt=""/>
+                                </div>
+                                <div class="stitle_v1_black sm-margin-bottom-10 staff_title">
+                                    <i class="fa fa-user marjin_right5"></i> 오경종 <span>(<span>사장</span> 조장</span>)
+                                </div>
+                                <p class="text-muted staff_txt">“코딩이 미래다”</p>
+                            </div>
+                        </div>
+                        <!-- // 직원소개1 -->
+                        
+                        <!-- 직원소개2 -->
+                        <div class="col-4">
+                            <div class="staff_in">
+                                <div class="img_box">
+                                    <img class="img-responsive" src="<%=request.getContextPath() %>/resources/img/staff/staff02.jpg" width="100%" alt=""/>
+                                </div>
+                                <div class="stitle_v1_black sm-margin-bottom-10 staff_title">
+                                    <i class="fa fa-user marjin_right5"></i> 김동찬
+                                </div>
+                                <p class="text-muted staff_txt">"모두 고생하셨습니다!!"</p>
+                            </div>
+                        </div>
+                        <!-- // 직원소개2 -->
+                        
+                        <!-- 직원소개3 -->
+                        <div class="col-4">
+                            <div class="staff_in">
+                                <div class="img_box">
+                                    <img class="img-responsive" src="<%=request.getContextPath() %>/resources/img/staff/staff03.jpg" width="100%" alt=""/>
+                                </div>
+                                <div class="stitle_v1_black sm-margin-bottom-10 staff_title">
+                                    <i class="fa fa-user marjin_right5"></i> 김유나
+                                </div>
+                                <p class="text-muted staff_txt">"열심히, 즐겁게"</p>
+                            </div>
+                        </div>
+                        <!-- // 직원소개3 -->
+                    </div>
+                    
+                    
+                    <div class="row">
+                        <!-- 직원소개4 -->
+                        <div class="col-4">
+                            <div class="staff_in">                        
+                                <div class="img_box">
+                                    <img class="img-responsive" src="<%=request.getContextPath() %>/resources/img/staff/staff04.jpg" width="100%" alt=""/>
+                                </div>
+                                <div class="stitle_v1_black sm-margin-bottom-10 staff_title">
+                                    <i class="fa fa-user marjin_right5"></i> 심규복
+                                </div>
+                                <p class="text-muted staff_txt">"다들 감사합니다"</p>
+                            </div>
+                        </div>
+                        <!-- // 직원소개4 -->
+                        
+                        <!-- 직원소개5 -->
+                        <div class="col-4">
+                            <div class="staff_in">    
+                                <div class="img_box">
+                                    <img class="img-responsive" src="<%=request.getContextPath() %>/resources/img/staff/staff05.jpg" width="100%" alt=""/>
+                                </div>
+                                <div class="stitle_v1_black sm-margin-bottom-10 staff_title">
+                                    <i class="fa fa-user marjin_right5"></i> 최동아
+                                </div>
+                                <p class="text-muted staff_txt">"항상 최선을 다하자"</p>
+                            </div>
+                        </div>
+                        <!-- // 직원소개5 -->
+                        
+                    </div>
+                </div>
+            </div end-sub_contents>
             
             <div class="clear"></div>
          </div sub_wrap>
     </section>  
     
     <div class="footer_no_margin">
-    	<jsp:include page="../inc/oh_camping_bottom.jsp" />
+        <jsp:include page="../inc/oh_camping_bottom.jsp" />
     </div>
     
 </body>
