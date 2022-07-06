@@ -10,6 +10,8 @@ pom.properties
 .classpath
 MANIFEST.MF
 
+PopupController.java
+
 ### Eclipse ###
 .metadata
 bin/
