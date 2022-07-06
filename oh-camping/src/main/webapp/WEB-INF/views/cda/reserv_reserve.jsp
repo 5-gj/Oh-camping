@@ -489,14 +489,15 @@
 				
 				$('#'+num).find(".hiddenPrice").css('display','block');
 				
+				
 				//console.log(formatNumber(people_adult));
+				$('#'+num).find(".addPeoplePrice_hidden").empty();
 				$('#'+num).find(".addPeoplePrice_hidden").append(people_adult);			
 				$('#'+num).find(".addPeoplePrice").append(formatNumber(people_adult)+'원');
 				
-				//	
-				
 			}else{
 				$('#'+num).find(".hiddenPrice").css('display','block');
+				$('#'+num).find(".addPeoplePrice_hidden").empty();
 				$('#'+num).find(".addPeoplePrice").append('0원');
 				$('#'+num).find(".addPeoplePrice_hidden").append(0);	
 			}
