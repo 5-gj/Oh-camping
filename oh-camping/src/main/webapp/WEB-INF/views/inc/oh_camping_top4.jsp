@@ -9,23 +9,20 @@
 
     <!-- CSS Files -->
     <!-- Awesome.css -->
-	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/font.css" rel="stylesheet">
-    <link href="<%=request.getContextPath() %>/resources/css/reset_h.css" rel="stylesheet">
+    <link href="<%=request.getContextPath() %>/resources/css/reset_h2.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/dist/aos.min.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/dist/icon.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/dist/animate.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/common.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/sub_st.css" rel="stylesheet">
+    <link href="<%=request.getContextPath() %>/resources/ogjcss/top2.css" rel="stylesheet">
     
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
     <!-- slick 적용 -->
-   	<link href="<%=request.getContextPath() %>/resources/dist/slick.css" rel="stylesheet">
-   	<link href="<%=request.getContextPath() %>/resources/dist/slick-theme.css" rel="stylesheet">
    	<script src="<%=request.getContextPath() %>/resources/dist/jquery-1.8.3.min.js" type="text/javascript"></script>
-    <script src="<%=request.getContextPath() %>/resources/dist/slick.min.js"></script>
     <script type="text/javascript">
 	    $(document).on('ready', function() {
 	      $(".m_slick").slick({
@@ -43,7 +40,7 @@
             <div id="top_header" class="clearfix">
                 <div id="g_nav">
                     <ul class="clearfix">
-                        <li class="hidden-xs"><a href="/">Home</a></li>
+                        <li class="hidden-xs"><a href="<%=request.getContextPath() %>/camp_main.do">Home</a></li>
                         <% 
                            // 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
                             if(session.getAttribute("sessionID")==null){ 
@@ -67,7 +64,7 @@
          </div>
          <nav id="navwrap_bg" class="wrap_menu">
          	<div class="menu_logo">
-                <a href="<%=request.getContextPath() %>/">
+                <a href="<%=request.getContextPath() %>/camp_main.do">
                     <img src="<%=request.getContextPath() %>/resources/img/logo.png">
                 </a>
             </div>
@@ -83,7 +80,7 @@
                         </li>
                     </ul>
                 </div>
-                              <div class="menu_list">
+                <div class="menu_list">
                     <a href="<%=request.getContextPath()%>/ogj_room.do">Room</a>
                     <ul class="menu_inner">
                         <li class="inner_list">
@@ -153,7 +150,7 @@
                             <a href="<%=request.getContextPath()%>/calendar_iframe7.do">실시간 예약</a>
                         </li>
                         <li class="inner_list">
-                            <a href="<%=request.getContextPath()%>/maininfo.do">예약안내</a>
+                            <a href="#">예약안내</a>
                         </li>
                     </ul>
                 </div>
@@ -174,6 +171,11 @@
             </div>
        </nav>
     </header>
+    
+      <div class="top">
+  <h1>Information</h1>
+			<h3>이용요금 및 정보를 알려드립니다</h3>
+  </div>
     <!-- // 메뉴바(header) -->
 
 </body>

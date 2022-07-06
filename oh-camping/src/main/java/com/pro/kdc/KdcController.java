@@ -55,6 +55,13 @@ public class KdcController {
 		return "kdc/calendar_iframe8";
 	}
 	
+	
+	@RequestMapping("maininfo.do")
+	public String maininfo() {
+		
+		return "kdc/maininfo";
+	}
+	
 
 	
 }
