@@ -116,6 +116,7 @@ function detailShow(data) {
 		$(".card-body").html(res);
 		
 		$('.detail-modal').css('visibility', 'visible');
+		/*
 		$("#aside").css({
 			'filter': "blur(10px)",
 			'pointer-events': "none"
@@ -128,6 +129,7 @@ function detailShow(data) {
 			'filter': "blur(10px)",
 			'pointer-events': "none",
 		});
+		*/
 		
 		$(".card-body").html(res);
 	}
