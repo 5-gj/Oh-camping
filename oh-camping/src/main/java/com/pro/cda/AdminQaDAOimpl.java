@@ -21,7 +21,21 @@ public class AdminQaDAOimpl implements AdminQaDAO{
 		
 	}
 
+
+	@Override
+	public int adminqasearchcount(String field, String keyword) {
+		// TODO Auto-generated method stub
+		return this.sqlSession.selectOne(field, keyword);
+	}
 	
+	@Override
+	public List<AdminQaDTO> getQaSearh(PageDTO dto) {
+		// TODO Auto-generated method stub
+		return this.sqlSession.selectList(dto.getField()+"1", dto);
+	}
+
+
+
 	@Override
 	public int getqacount() {
 		
