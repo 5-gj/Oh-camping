@@ -63,7 +63,7 @@
                     <th>조회수</th>
                  </tr>
                  
-                 <c:set var="qadto"  value="${adminQaDTO }" />
+                 <c:set var="qadto"  value="${adminqasearch }" />
                  <c:set var="paging" value="${pagedto }"/>
                  
                  <c:if test="${!empty qadto }">
@@ -105,45 +105,30 @@
 			 <%-- 페이징 처리 부분 --%>
 			<div class="ext_paging" style="margin-top: 20px;">	      
 			   <c:if test="${paging.getPage() > paging.getBlock() }">
-			      <a href="admin_qa.do?page=1">◀◀</a>
-			      <a href="admin_qa.do?page=${paging.getStartBlock() - 1 }"> &lt;<span class="page_s">이전</span> | </a>&nbsp;
+			      <a href="admin_qasearch.do?page=1&field=${paging.field }&keyword=${paging.keyword}">◀◀</a>
+			      <a href="admin_qasearch.do?page=${paging.getStartBlock() - 1 }&field=${paging.field }&keyword=${paging.keyword}"> &lt;<span class="page_s">이전</span> | </a>&nbsp;
 			   </c:if>
 			   
 			   <c:forEach begin="${paging.getStartBlock() }"
 			          				end="${paging.getEndBlock() }" var="i">
 			      <c:if test="${i == paging.getPage() }">
-			         <b> <a href="admin_qa.do?page=${i }">[${i }]</a></b>
+			         <b> <a href="admin_qasearch.do?page=${i }&field=${paging.field }&keyword=${paging.keyword}">[${i }]</a></b>
 			      </c:if>
 			   
 			   	  <c:if test="${i != paging.getPage() }">
-			         <a href="admin_qa.do?page=${i }">[${i }]</a>
+			         <a href="admin_qasearch.do?page=${i }&field=${paging.field }&keyword=${paging.keyword}">[${i }]</a>
 			      </c:if>
 			   </c:forEach>
 		
 			   <c:if test="${paging.getEndBlock() < paging.getAllPage() }">&nbsp;
-			      <a href="admin_qa.do?page=${paging.getEndBlock() + 1 }"> | <span class="page_s">다음</span>&gt; </a>
-			      <a href="admin_qa.do?page=${paging.getAllPage() }">▶▶</a>
+			      <a href="admin_qasearch.do?page=${paging.getEndBlock() + 1 }&field=${paging.field }&keyword=${paging.keyword}"> | <span class="page_s">다음</span>&gt; </a>
+			      <a href="admin_qasearch.do?page=${paging.getAllPage() }&field=${paging.field }&keyword=${paging.keyword}">▶▶</a>
 			   </c:if>
 		   </div>
-		   
-		   <!-- 검색부분 -->
-		   <div class="ext_search">
-		   	<form mothod="post" action="<%=request.getContextPath() %>/admin_qasearch.do">
-		   		<input type="hidden" name="page" value="${paging.getPage() }">
-		   		
-		   		<select name="field">
-		         	<option value="adminqaTitle">제목</option>
-		         	<option value="adminqaCont">내용</option>
-		         	<option value="adminqaTitle_cont">제목+내용</option>
-		         	<option value="adminqaWriter">작성자</option>
-		      	</select>
-		      	
-		      	<input type="text" name="keyword" class="search_input_text">
-		      	<input type="submit" value="검색"  class="search_input_btn">	
-		   	</form>
-		   
-		   </div>
-			
+			 <div class="list_btn_wrap">
+                	<input type="button" value="목록으로 돌아가기" class="list_btn board_btn"
+	      	 		onclick="location.href='admin_qa.do?page=${paging.page }'">
+            </div>
 			
 			
 		</div>

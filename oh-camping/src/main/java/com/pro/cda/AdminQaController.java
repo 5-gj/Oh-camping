@@ -60,6 +60,22 @@ public class AdminQaController {
 		
 	}
 	
+	//검색 기능
+	@RequestMapping("admin_qasearch.do")
+	public String adminQaSearch(@RequestParam("field") String field,
+			@RequestParam("keyword") String keyword, @RequestParam("page") int nowPage, Model model){
+		
+		totalRecord = this.dao.adminqasearchcount(field, keyword);
+		
+		PageDTO pdto = new PageDTO(nowPage, rowsize, totalRecord, field, keyword);
+		List<AdminQaDTO> adminqasearch = this.dao.getQaSearh(pdto);
+		
+		model.addAttribute("pagedto", pdto);
+		model.addAttribute("adminqasearch", adminqasearch);
+		
+		return "admin/admin_qasearch";
+	}
+	
 	//답글 세부사항
 	@RequestMapping("admin_qa_contnet.do")
 	public String adminqacontent(@RequestParam("no") int no,@RequestParam("page") int page, Model model) {
@@ -186,6 +202,7 @@ public class AdminQaController {
 		}
 		
 	}
+	
 	
 
 }
