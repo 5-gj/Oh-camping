@@ -11,7 +11,7 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="<%=request.getContextPath() %>/resources/SHIM/js/salesTotal.js"></script>
 </head>
-<body>
+<body class="h-100">
 
     <jsp:include page="../../inc/admin_top2.jsp" /> 
     <c:set var="list" value="${List }" />

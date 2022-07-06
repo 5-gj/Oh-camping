@@ -11,7 +11,7 @@
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="<%=request.getContextPath() %>/resources/SHIM/js/reserveList.js?5"></script>
 </head>
-<body>
+<body class="h-100">
     <jsp:include page="../../inc/admin_top3.jsp" /> 
     <c:set var="list" value="${List }" />
 	<c:set var="paging" value="${Paging }" /> 

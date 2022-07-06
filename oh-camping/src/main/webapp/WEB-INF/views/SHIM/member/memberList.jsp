@@ -10,7 +10,7 @@
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="<%=request.getContextPath() %>/resources/SHIM/js/member.js?8"></script>
 </head>
-<body>
+<body class="d-flex flex-column h-100">
     <jsp:include page="../../inc/admin_top.jsp" /> 
     <c:set var="list" value="${List }" />
 	<c:set var="paging" value="${Paging }" /> 

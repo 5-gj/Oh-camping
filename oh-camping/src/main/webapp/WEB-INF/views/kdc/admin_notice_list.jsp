@@ -11,19 +11,38 @@
 
 	#sub_contents { 
 	max-width: 1100px; 
-	margin: auto; 
+	    max-width: 1100px;
+    float: right;
+    width: 80%;
+	/* margin: auto; 
 	overflow-y: hidden; 
-	padding: 300px 15px 55px; 
+	padding: 70px 15px 55px;  */
 	}
 
 </style>
 </head>
 <body>
    <jsp:include page="../inc/admin_top.jsp" />    
-   
+   <div id="admin_wrap" class="container webfont">
+        <!-- 왼쪽 메뉴 -->
+        <div id="aside">
+            <div class="leftmenu">
+                <h3 id="left_menu_head">공지사항</h3>
+                <ul class="left_menu_ul">
+                    <li class="nav_on">
+                        <a href="<%=request.getContextPath() %>/admin_notice_list.do">
+                            <i class="fa fa-caret-right"></i> 공지사항 관리
+                        </a>
+                    </li>                  
+
+                </ul>
+            </div>
+        </div>
+        <!-- // 왼쪽 메뉴 -->
             
             <!-- 본문 시작 -->
-            <div id="sub_contents">        
+            <div id="sub_contents">       
+            <h3 class="admin_title">공지사항 관리 <span class="sub_title2">notice</span></h3> 
                 <div id="table_wrap">
                     <table cellspacing="0" width="100%">
                         <tr>
@@ -116,6 +135,7 @@
         </div>
         <div class="clear"></div>
     </div sub_wrap>
+    </div>
     <jsp:include page="../inc/admin_bottom.jsp" />
 </body>
 </html>
