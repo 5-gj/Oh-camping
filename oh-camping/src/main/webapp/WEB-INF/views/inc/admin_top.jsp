@@ -46,7 +46,7 @@
                   	<li><a href="<%=request.getContextPath() %>/sales/main.do" class="nav-link link-dark">매출관리</a></li>
                   	<li><a href="<%=request.getContextPath() %>/main.do" class="nav-link link-dark">회원관리</a></li>
                   	<li><a href="<%=request.getContextPath() %>/admin_notice_list.do" class="nav-link link-dark">공지사항</a></li>
-                  	<li><a href="#" class="nav-link link-dark">문의답변</a></li>
+                  	<li><a href="<%=request.getContextPath() %>/admin_qa.do" class="nav-link link-dark">문의답변</a></li>
                   	<li><a href="<%=request.getContextPath() %>/admin_popup.do" class="nav-link link-dark">팝업관리</a></li>
                   	<li><a href="<%=request.getContextPath() %>/admin_review.do"" class="nav-link link-dark">리뷰관리</a></li>
               	</ul>
