@@ -95,25 +95,26 @@
                     <div class="ext_paging" style="margin-top: 20px;">
                     	<%-- 페이징 처리 부분 --%>
 					   <c:if test="${paging.getPage() > paging.getBlock() }">
-					      <a href="camp_notice_search.do?page=1">◀◀</a>
-					      <a href="camp_notice_search.do?page=${paging.getStartBlock() - 1 }"> &lt;<span class="page_s">이전</span> | </a>&nbsp;
+					      <a href="camp_notice_search.do?page=1&field=${paging.field }&keyword=${paging.keyword }&page">◀◀</a>
+					      <a href="camp_notice_search.do?page=${paging.startBlock - 1}&field=${paging.field }&keyword=${paging.keyword }"> &lt;<span class="page_s">이전</span> | </a>&nbsp;
 					   </c:if>
 					   
-					   <c:forEach begin="${paging.getStartBlock() }"
-					          				end="${paging.getEndBlock() }" var="i">
-					      <c:if test="${i == paging.getPage() }">
-					         <b> <a href="camp_notice_search.do?page=${i }">[${i }]</a></b>
+					   <c:forEach begin="${paging.startBlock }" end="${paging.endBlock }" var="i">
+					      <c:if test="${i == paging.page }">
+					         <b> <a href="camp_notice_search.do?page=${i }&field=${paging.field }&keyword=${paging.keyword }">[${i }]</a></b>
 					      </c:if>
-					   
-					   	  <c:if test="${i != paging.getPage() }">
-					         <a href="camp_notice_search.do?page=${i }">[${i }]</a>
+					      
+					      <c:if test="${i != paging.page }">
+					         <a href="camp_notice_search.do?page=${i }&field=${paging.field }&keyword=${paging.keyword }">[${i }]</a>
 					      </c:if>
 					   </c:forEach>
+					   
 				
 					   <c:if test="${paging.getEndBlock() < paging.getAllPage() }">&nbsp;
-					      <a href="camp_notice_search.do?page=${paging.getEndBlock() + 1 }"> | <span class="page_s">다음</span>&gt; </a>
-					      <a href="camp_notice_search.do?page=${paging.getAllPage() }">▶▶</a>
+					   		<a href="camp_notice_search.do?page=${paging.endBlock + 1 }&field=${paging.field }&keyword=${paging.keyword }"> | <span class="page_s">다음</span>&gt; </a>
+	      					<a href="camp_notice_search.do?page=${paging.allPage}&field=${paging.field }&keyword=${paging.keyword }">▶▶</a>
 					   </c:if>
+					   <%-- // 페이징 처리 부분 --%>
                     </div>
                     
                     <%-- 검색 부분! --%>
