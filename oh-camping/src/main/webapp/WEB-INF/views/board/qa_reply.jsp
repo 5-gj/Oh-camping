@@ -68,6 +68,7 @@
                     	<input type="hidden" name="qa_type" value="${dto.qa_type }">
                     	<input type="hidden" name="qa_title" value="${dto.qa_title }">
                     	<input type="hidden" name="qa_indent" value="${dto.qa_indent }">
+                    	<input type="hidden" name="qa_group" value="${dto.qa_group }">
 	   	  				<input type="hidden" name="page" value="${Page }"> 
                         <table border="0" cellspacing="0" width="100%" class="table write_table">
                            	<tr>
