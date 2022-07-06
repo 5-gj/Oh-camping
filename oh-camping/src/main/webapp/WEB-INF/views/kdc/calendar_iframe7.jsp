@@ -33,8 +33,8 @@
  	$(document).ready(function() {
 			var now = new Date();
 
-			var date = now.getDate();
-			//var date = "18";
+			//var date = now.getDate();
+			var date = "7";
 			
 						
 			

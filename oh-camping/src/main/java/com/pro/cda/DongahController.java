@@ -92,7 +92,7 @@ public class DongahController {
 	//해당 날짜에 따른 객실 리스트 가져오기
 	//주말 : 10% 할인
 	@RequestMapping("reserve_getInfo_weekend.do")
-	public String getroomWeekend(@RequestParam("calYear") int year,@RequestParam("calMonth") int month,@RequestParam("calDate") int date, Model model) {
+	public String getroomWeekend(@RequestParam("calYear") int year,@RequestParam("calMonth") int month,@RequestParam("calDate") int date, @RequestParam("roomno") int roomno, Model model) {
 		List<CDA_roomDTO> room_list = new ArrayList<CDA_roomDTO>();
 
 		CDA_roomDTO dto = new CDA_roomDTO();
@@ -115,16 +115,16 @@ public class DongahController {
 		
 		System.out.println("room_list>>" + room_list);
 		
-		//model.addAttribute("roomno", roomno);
+		model.addAttribute("roomno", roomno);
 
-		//System.out.println("roomno>>" +roomno);
+		System.out.println("roomno>>" +roomno);
 		return "cda/reserve_roomOfDayList_ajax";	
 
 	}
 	
 	//주중list(30%할인 적용)
 	@RequestMapping("reserve_getInfo_weekday.do")
-	public String getroomWeekday(@RequestParam("calYear") int year,@RequestParam("calMonth") int month,@RequestParam("calDate") int date, Model model) {
+	public String getroomWeekday(@RequestParam("calYear") int year,@RequestParam("calMonth") int month,@RequestParam("calDate") int date, @RequestParam("roomno") int roomno, Model model) {
 		List<CDA_roomDTO> room_list = new ArrayList<CDA_roomDTO>();
 
 		CDA_roomDTO dto = new CDA_roomDTO();
@@ -139,11 +139,13 @@ public class DongahController {
 		  
 		  String dayday = msdf.format(cal.getTime());
 		  
-		
+
 		  
 		room_list = this.dao.cda_getRoomList(dayday);
 
 		model.addAttribute("room_list", room_list);
+		
+		model.addAttribute("roomno", roomno);
 
 		return "cda/reserve_roomOfDayList_weekday_ajax";	
 

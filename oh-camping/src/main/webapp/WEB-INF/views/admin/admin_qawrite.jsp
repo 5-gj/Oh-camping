@@ -77,7 +77,7 @@
                       <tr>
                           <td align="center" colspan="2" class="board_btn">
                               <input type="submit" value="답변등록">&nbsp;&nbsp;
-                              <input type="button" value="목록으로" onclick="location.href='admin_qa.do?page=${Page }'">
+                              <input type="button" value="목록으로" onclick="location.href='admin_qa.do?page=${page }'">
                           </td>
                       </tr>
                   </table>

@@ -74,7 +74,7 @@
 					        
 					        <!-- 답글의 경우 -->
 					        <c:if test="${i.qa_indent !=0 }">
-					        	<td>
+					        	<td class="board_title qa_reply">
 					        		<span>RE</span>
 					        		<a href="<%=request.getContextPath() %>/admin_qa_contnet.do?no=${i.qa_no}&page=${paging.page }">${i.qa_title}</a>
 					        	</td>	        					        
@@ -82,7 +82,7 @@
 					        
 					        <!--  문의글의 경우 -->
 					        <c:if test="${i.qa_indent ==0 }">
-					        	<td>
+					        	<td class="board_title qa_title">
 					        		<a href="<%=request.getContextPath() %>/admin_qa_contnet.do?no=${i.qa_no}&page=${paging.page }">${i.qa_title}</a>
 					        	</td>				        
 					        </c:if>

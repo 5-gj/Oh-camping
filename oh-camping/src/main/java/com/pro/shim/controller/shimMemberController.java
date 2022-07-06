@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,14 +29,19 @@ public class shimMemberController {
 
 	private final int rowsize = 10; // 한 페이지당 보여질 게시물 수
 	private int totalRecord = 0; // DB 상의 전체 게시물의 수
+	private HttpSession session;
 
 	@RequestMapping("home.do")
-	public String home() { // 관리자 홈
+	public String home(HttpServletRequest request) { // 관리자 홈
+		session = request.getSession(); 
+		session.setAttribute("adminName", session.getAttribute("adminName"));
 		return "SHIM/home";
 	}
 	
 	@RequestMapping("main.do")
-	public String main() { // 회원 목록
+	public String main(HttpServletRequest request) { // 회원 목록
+		session = request.getSession(); 
+		session.setAttribute("adminId", session.getAttribute("sessionID"));
 		return "SHIM/member/memberList";
 	}
 

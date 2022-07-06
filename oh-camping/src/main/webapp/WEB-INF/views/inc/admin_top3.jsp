@@ -55,7 +55,6 @@
               	<div class="col-md-3 text-end">
                   	<button type="button" class="btn btn-outline-primary me-2"
                   		onclick="location.href='camp_logout.do'">로그아웃</button>
-                  	<button type="button" class="btn btn-primary">관리자 홈</button>
               	</div>
           	</header>
       	</div>
