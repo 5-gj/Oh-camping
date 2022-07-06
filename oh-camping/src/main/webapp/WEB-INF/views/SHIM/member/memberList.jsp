@@ -15,6 +15,7 @@
     <jsp:include page="../../inc/admin_top.jsp" /> 
     <c:set var="list" value="${List }" />
 	<c:set var="paging" value="${Paging }" /> 
+	<input type="hidden" value="${adminId }" id="adminId" />
     <div id="admin_wrap" class="container webfont">
         <!-- 왼쪽 메뉴 -->
         <div id="aside">
