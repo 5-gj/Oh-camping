@@ -13,6 +13,13 @@
 		insert into camp_notice values(#{notice_no}+1, #{notice_title},
 			#{notice_cont}, #{notice_file}, 0, sysdate)
 	</insert>
+		<insert id="adminNotice2" parameterType="adminNoticeDTO">
+		<selectKey resultType="int" keyProperty="notice_no" order="BEFORE">
+		select max(notice_no) from camp_notice
+		</selectKey>
+		insert into camp_notice values(#{notice_no}+1, #{notice_title},
+			#{notice_cont}, '', 0, sysdate)
+	</insert>
 	
 	<select id="adminNoticeListCount" resultType="int">
 		select count(*) from camp_notice
@@ -41,9 +48,22 @@
 		delete from camp_notice where notice_no = #{no}
 	</delete>
 	
+	<!-- 파일이 그대로일떄 -->
 	<update id="noticeUpdate" parameterType="campNoticeDto">
 		update camp_notice set notice_title = #{notice_title},
 			notice_cont = #{notice_cont} 
+			where notice_no = #{notice_no}
+	</update>
+	<!-- 파일이 삭제됐을떄 -->
+	<update id="noticeUpdate2" parameterType="campNoticeDto">
+		update camp_notice set notice_title = #{notice_title},
+			notice_cont = #{notice_cont} , notice_file = ''
+			where notice_no = #{notice_no}
+	</update>
+	<!-- 파일이 수정됐을떄 -->
+	<update id="noticeUpdate3" parameterType="campNoticeDto">
+		update camp_notice set notice_title = #{notice_title},
+			notice_cont = #{notice_cont} , notice_file = #{notice_file}
 			where notice_no = #{notice_no}
 	</update>
 	

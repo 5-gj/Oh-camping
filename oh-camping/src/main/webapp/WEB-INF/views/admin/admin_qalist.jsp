@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -33,7 +33,7 @@
                 <h3 id="left_menu_head">문의사항</h3>
                 <ul class="left_menu_ul">
                     <li class="nav_on">
-                        <a href="<%=request.getContextPath() %>/main.do">
+                        <a href="<%=request.getContextPath() %>/admin_qa.do">
                             <i class="fa fa-caret-right"></i> 문의사항 관리
                         </a>
                     </li>                  
@@ -149,7 +149,7 @@
 		</div>
 	
 		<div class="clear"></div>
-    </div sub_wrap>
+    </div>
     </div>
 	 <jsp:include page="../inc/admin_bottom.jsp" />
 </body>

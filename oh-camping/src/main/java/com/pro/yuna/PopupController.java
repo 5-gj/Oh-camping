@@ -64,13 +64,13 @@ public class PopupController {
 	
 	@RequestMapping("admin_popup_insert_ok.do")
 	public void popupInsertOk(CampPopupDTO dto, @RequestParam("page") int nowPage,
-			HttpServletResponse response, MultipartHttpServletRequest mRequest) throws IOException {
+			HttpServletResponse response, MultipartHttpServletRequest mRequest, HttpServletRequest req) throws IOException {
 		
 		response.setContentType("text/html; charset=UTF-8");
 		
 		PrintWriter out = response.getWriter();
 		
-		if(this.fileUpload(mRequest)) {
+		if(this.fileUpload(mRequest, req)) {
 			int check = this.dao.insertCampPopup(dto);
 			
 			if (check == 0) {
@@ -95,11 +95,16 @@ public class PopupController {
 	} // admin_popup_insert_ok.do
 	
 	
-	public boolean fileUpload(MultipartHttpServletRequest mRequest) {
+	public boolean fileUpload(MultipartHttpServletRequest mRequest, HttpServletRequest req ) {
 		
 		boolean isUpload = false;
 		
-		String uploadPath = "C:\\NCS\\workspace(spring)\\Oh-camping\\oh-camping\\src\\main\\webapp\\resources\\img\\";
+		//String uploadPath = "C:\\NCS\\workspace(spring)\\Oh-camping\\oh-camping\\src\\main\\webapp\\resources\\img\\";
+		
+		
+		
+		String uploadPath = req.getSession().getServletContext().getRealPath("/").concat("resources")+"\\img\\";
+		
 		
 		
 		// 업로드된 파일들의 이름 목록을 제공하는 메서드.

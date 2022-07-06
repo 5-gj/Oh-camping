@@ -38,7 +38,7 @@
 	        }
 	    }
 	    if (valueArr.length == 0){
-	    	alert("삭제할 팝업리스트를 선택하세요.");
+	    	alert("삭제할 리뷰리스트를 선택하세요.");
 	    }
 	    else{
 			var chk = confirm("삭제 후 '삭제된 리뷰'에서 관리할 수 있습니다.  \n삭제하시겠습니까?");				 
@@ -51,11 +51,11 @@
 			    },
                 success: function(jdata){
                     if(jdata = 1) {
-                        alert("팝업이 삭제되었습니다.");
+                        alert("리뷰가 삭제되었습니다.");
                         location.replace("admin_review.do")
                     }
                     else{
-                        alert("팝업을 삭제하지 못했습니다. 관리자에게 문의하세요");
+                        alert("리뷰를 삭제하지 못했습니다. 관리자에게 문의하세요");
                     }
                 }
 			});

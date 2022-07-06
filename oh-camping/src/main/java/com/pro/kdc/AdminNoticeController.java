@@ -30,10 +30,12 @@ public class AdminNoticeController {
 	@Autowired
 	adminNoticeDAO dao;
 	
+	
+	
 	private final int rowsize = 6;     // 한 페이지당 보여질 게시물의 수
 	private int totalRecord = 0;       // DB 상의 전체 게시물의 수
 	
-	private static final String saveDerectory = "C:\\Users\\user\\OneDrive\\문서\\Oh-camping\\oh-camping\\src\\main\\webapp\\resources\\upload";
+	//private static final String saveDerectory = "C:\\Users\\user\\OneDrive\\문서\\Oh-camping\\oh-camping\\src\\main\\webapp\\resources\\upload";
 	
 	
 	
@@ -73,13 +75,21 @@ public class AdminNoticeController {
 	
 	@RequestMapping("admin_notice_write_ok.do")
 	public void writeOK(MultipartHttpServletRequest mRequest, Model model, MultipartFile imgfile,
-				adminNoticeDTO dto, HttpServletResponse response) throws IOException {
+				adminNoticeDTO dto, HttpServletResponse response, HttpServletRequest req) throws IOException {
 
 		response.setContentType("text/html; charset=UTF-8");
 		
 		PrintWriter out = response.getWriter();
 		
+		int check =0;
+		
+		if(imgfile.isEmpty()) {
+			check = this.dao.insertNotice2(dto);
+		}else {
+		
 		String file_name = imgfile.getOriginalFilename();
+		
+		String saveDerectory = req.getSession().getServletContext().getRealPath("/").concat("resources")+"\\upload";
 		
 		File target = new File(saveDerectory, file_name);
 		
@@ -87,7 +97,7 @@ public class AdminNoticeController {
 
 		dto.setNotice_file(file_name);
 		
-		int check = this.dao.insertNotice(dto);
+		check = this.dao.insertNotice(dto); }
 		
 		if(check > 0) {
 			out.println("<script>");
@@ -115,7 +125,10 @@ public class AdminNoticeController {
 		// 게시글 상세 내역을 조회하는 메서드 호출
 		CampNoticeDTO dto = this.dao.adminNoticeCont(no);
 		
+		String file = dto.getNotice_file();
+		
 		model.addAttribute("adminCont", dto);
+		model.addAttribute("file", file);
 		
 		model.addAttribute("adminPage", nowPage);
 		
@@ -152,8 +165,10 @@ public class AdminNoticeController {
 		
 		// 게시글 상세 내역을 조회하는 메서드 호출
 		CampNoticeDTO dto = this.dao.adminNoticeCont(no);
+		String file = dto.getNotice_file();
 		
 		model.addAttribute("Update", dto);
+		model.addAttribute("file", file);
 		
 		model.addAttribute("Page", nowPage);
 		
@@ -162,14 +177,40 @@ public class AdminNoticeController {
 	
 	
 	@RequestMapping("admin_notice_update_ok.do")
-	public void noticeUpdateOk(adminNoticeDTO dto,
-			@RequestParam("page") int nowPage, HttpServletResponse response) throws IOException {
+	public void noticeUpdateOk(MultipartHttpServletRequest mRequest, Model model, MultipartFile imgfile, 
+			adminNoticeDTO dto, HttpServletResponse response, HttpServletRequest req, @RequestParam("page") int nowPage , @RequestParam("file_check") int file_check) throws IOException {
 		
 		response.setContentType("text/html; charset=UTF-8");
-		
 		PrintWriter out = response.getWriter();
 		
-		int check = this.dao.adminNoticeUpdate(dto);
+		System.out.println(file_check);
+		
+		int check = 0;
+		
+		if(file_check == 1) {
+			check = this.dao.adminNoticeUpdate(dto);
+		}else if(file_check == 2){
+			check = this.dao.adminNoticeUpdate2(dto);
+		}else if(file_check == 3) {
+			
+			String file_name;
+			
+				file_name = imgfile.getOriginalFilename();
+
+			
+			
+			String saveDerectory = req.getSession().getServletContext().getRealPath("/").concat("resources")+"\\upload";
+			
+			File target = new File(saveDerectory, file_name);
+			
+			FileCopyUtils.copy(imgfile.getInputStream(), new FileOutputStream(target));
+			
+			dto.setNotice_file(file_name);
+			
+			check = this.dao.adminNoticeUpdate3(dto);
+		}
+		
+		
 		
 		if(check > 0) {
 			out.println("<script>");
@@ -184,6 +225,7 @@ public class AdminNoticeController {
 		}		
 	}
 	
+
 	
 	
 }

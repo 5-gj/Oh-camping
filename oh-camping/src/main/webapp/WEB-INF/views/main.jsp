@@ -459,36 +459,36 @@
             <h1>호텔식 침구</h1>
             <h2>Lucury Duvet</h2>
           </div>
-          <a href="#" class="btn_service">
+          <!-- <a href="#" class="btn_service">
             View More
-          </a>
+          </a> -->
         </div>
         <div class="list_service img2">
           <div class="service_txt">
             <h1>싱크대</h1>
             <h2>Sink</h2>
           </div>
-          <a href="#" class="btn_service">
+          <!-- <a href="#" class="btn_service">
             View More
-          </a>
+          </a> -->
         </div>
         <div class="list_service img3">
           <div class="service_txt">
             <h1>개별화장실</h1>
             <h2>Private Bathroom</h2>
           </div>
-          <a href="#" class="btn_service">
+          <!-- <a href="#" class="btn_service">
             View More
-          </a>
+          </a> -->
         </div>
         <div class="list_service img4 mb_none">
           <div class="service_txt">
             <h1>샤워용품</h1>
             <h2>Toiletries</h2>
           </div>
-          <a href="#" class="btn_service">
+          <!-- <a href="#" class="btn_service">
             View More
-          </a>
+          </a> -->
         </div>
       </div>
     </section>

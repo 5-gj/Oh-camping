@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 <head>
 <meta charset="UTF-8">
 <title>매출 관리</title>
@@ -11,7 +11,7 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="<%=request.getContextPath() %>/resources/SHIM/js/salesTotal.js"></script>
 </head>
-<body class="h-100">
+<body class="d-flex flex-column h-100">
 
     <jsp:include page="../../inc/admin_top2.jsp" /> 
     <c:set var="list" value="${List }" />

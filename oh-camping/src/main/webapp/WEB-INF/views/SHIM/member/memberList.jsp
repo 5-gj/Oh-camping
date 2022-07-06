@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 <head>
 <meta charset="UTF-8">
 <title>회원 관리</title>
@@ -85,7 +85,7 @@
 		</main>
 	</div>	
 	<%-- ----------------------- 회원 상세 부분 ----------------------- --%>		
-	<div class="card detail-modal">
+	<div class="card detail-modal" style="z-index: 5000">
 	
 		<%-- 회원 정보 --%>
 		<div class="card-body"></div>

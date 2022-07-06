@@ -66,7 +66,9 @@ public class reviewController {
 				for (ReviewSubDTO subdto : sublist) {
 					int pay_no = subdto.getPayment_no();
 					String room_name = this.dao.getReviewSubData2(pay_no);
+					String romm_resdate = this.dao.getReviewSubData3(pay_no);
 					subdto.setRoom_name(room_name);
+					subdto.setRoom_resdate(romm_resdate);
 				}
 				model.addAttribute("subList", sublist);
 			}

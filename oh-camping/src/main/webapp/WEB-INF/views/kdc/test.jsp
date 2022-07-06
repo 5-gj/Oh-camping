@@ -8,7 +8,6 @@
 <meta charset="UTF-8">
 <title>Oh Camping</title>
 
-
 <style type="text/css">
 
 	#sub_contents { 
@@ -22,7 +21,6 @@
 	}
 
 </style>
-
 
 </head>
 <body class="d-flex flex-column h-100">

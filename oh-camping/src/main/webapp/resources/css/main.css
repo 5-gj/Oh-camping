@@ -1026,7 +1026,7 @@ iframe#iframe_pc {
         width:100%; height:100%;
         background-color:rgba(0,0,0,0.3);
     }
-    .list_service:hover::before {
+/*     .list_service:hover::before {
         background-color:rgba(0,0,0,0.5);
     }
     .list_service:hover .service_txt {
@@ -1034,7 +1034,7 @@ iframe#iframe_pc {
     }
     .list_service:hover a.btn_service {
         opacity:1;
-    }
+    } */
 
 
     @media screen and (max-width: 900px) {

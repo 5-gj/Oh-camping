@@ -12,9 +12,12 @@
 
 	#sub_contents { 
 	max-width: 1100px; 
-	margin: auto; 
+	    max-width: 1100px;
+    float: right;
+    width: 80%;
+	/* margin: auto; 
 	overflow-y: hidden; 
-	padding: 300px 15px 55px; 
+	padding: 70px 15px 55px;  */
 	}
 
 </style>
@@ -23,8 +26,27 @@
 
 	<jsp:include page="../inc/admin_top.jsp" /> 
 	
+		    <div id="admin_wrap" class="container webfont">
+        <!-- 왼쪽 메뉴 -->
+        <div id="aside">
+            <div class="leftmenu">
+                <h3 id="left_menu_head">문의사항</h3>
+                <ul class="left_menu_ul">
+                    <li class="nav_on">
+                        <a href="<%=request.getContextPath() %>/admin_qa.do">
+                            <i class="fa fa-caret-right"></i> 문의사항 관리
+                        </a>
+                    </li>                  
+
+                </ul>
+            </div>
+        </div>
+        <!-- // 왼쪽 메뉴 -->
+	
 	<div id="sub_contents">        
-             <div id="board_wrap">  
+             <div id="board_wrap"> 
+             
+              <h3 class="admin_title">문의 사항 <span class="sub_title2">Q&A</span></h3> 
                 <c:set var="qadto" value="${qadto }"/>
 				<c:set var="replydto" value="${replydto }"/>
 				<c:set var="page" value="${page }"/>
@@ -69,9 +91,7 @@
                       <tr>
                           <th>답변하기 </th>
                           <td>
-                              <textarea name="qa_cont">
-                              	${replydto.qa_cont }
-                              </textarea>
+                              <textarea name="qa_cont">${replydto.qa_cont }</textarea>
                           </td>
                       </tr>
 
@@ -89,6 +109,7 @@
               
       <div class="clear"></div>
     </div sub_wrap>
+    </div>
     <jsp:include page="../inc/admin_bottom.jsp" />
 
 </body>

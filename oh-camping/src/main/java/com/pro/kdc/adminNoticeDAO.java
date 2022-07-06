@@ -7,6 +7,7 @@ import com.pro.yuna.CampNoticeDTO;
 public interface adminNoticeDAO {
 
 	public int insertNotice(adminNoticeDTO dto);
+	public int insertNotice2(adminNoticeDTO dto);
 	
 	public List<CampNoticeDTO> getCampNoticeList(noticePageDTO dto);
 
@@ -19,5 +20,7 @@ public interface adminNoticeDAO {
 	public int adminNoticeDelete(int no);
 	
 	public int adminNoticeUpdate(adminNoticeDTO dto);
+	public int adminNoticeUpdate2(adminNoticeDTO dto);
+	public int adminNoticeUpdate3(adminNoticeDTO dto);
 	
 }

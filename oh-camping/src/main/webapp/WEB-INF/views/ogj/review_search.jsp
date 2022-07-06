@@ -53,7 +53,7 @@
 						
 						<c:forEach items="${sublist }" var="s">
 							<input type="radio" name="radio"
-								value="${s.room_name }/${s.payment_orderdate.substring(0, 10) }">&nbsp;&nbsp;${s.room_name }&nbsp;&nbsp;&nbsp;${s.payment_orderdate.substring(0, 10) }</input>
+								value="${s.room_name }/${s.room_resdate.substring(0, 10) }">&nbsp;&nbsp;${s.room_name }&nbsp;&nbsp;&nbsp;${s.room_resdate.substring(0, 10) }</input>
 							<br>
 						</c:forEach>
 
@@ -159,7 +159,7 @@
 
 						<c:if test="${empty list }">
 							<tr>
-								<td colspan="4"><h4>게시글이 없습니다.</h4></td>
+								<td colspan="6"><h4>게시글이 없습니다.</h4></td>
 
 							</tr>
 						</c:if>

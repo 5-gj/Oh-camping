@@ -78,6 +78,11 @@ public class ReviewDAOImpl implements ReviewDAO {
 		// TODO Auto-generated method stub
 		return this.sqlSession.selectOne("getReviewSubData2",pay_no);
 	}
+	@Override
+	public String getReviewSubData3(int pay_no) {
+		// TODO Auto-generated method stub
+		return this.sqlSession.selectOne("getReviewSubData3",pay_no);
+	}
 
 	@Override
 	public int searchReview(String field, String keyword) {
