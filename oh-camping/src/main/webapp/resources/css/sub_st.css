@@ -25,14 +25,17 @@ input {border-color: #F2F2F2; border-width: 1px; border-style: solid; }
 	background-position: top;}
 .wrap_staff h1 { margin-bottom: 20px;
     font-family: "Poiret One"; font-weight: bold;}
-.callout {border-color: rgba(231,231,231,1.00); border-width: 1px 1px 1px 5px; font-family: "Poiret One";
+.callout {border-color: rgba(231,231,231,1.00); border-width: 1px; font-family: "Poiret One";
 	border-style: solid; padding: 20px; margin-bottom: 55px; border-radius: 3px; background: #fff;}
-.stitle_v1_black { padding: 5px 5px 5px 10px; background-color: #434343; border-right: 3px solid #1F1F1F; 
+.stitle_v1_black { padding: 5px 8px 5px 5px;/*5px 5px 5px 10px*/ background-color: #434343; 
 	-webkit-box-shadow: 1px 1px 1px rgb(228 228 228); box-shadow: 1px 1px 1px rgb(228 228 228); 
 	font-size: 16px; color: #FFFFFF; }
-.staff p { padding: 10px; font-size: 16px; border: 1px solid #999; background: #fff; font-size: 15px;}
-.staff_title {font-size: 18px;}
-.staff_title span {font-size: 15px;}
+.staff div {text-align: center;}	
+.staff .staff_in {border: 1px solid #434343; margin: 0 auto 20px;}
+.staff p { margin:0; padding: 10px; font-size: 16px; /*border: 1px solid #999;*/ background: #fff; font-size: 15px;}
+.staff_title {font-size: 16px;}
+.staff_title i {margin-right: 5px;}
+.staff_title span {font-size: 14px;}
 .staff_title span span {text-decoration:line-through; }
 
 /*서브 슬라이드 */
