@@ -406,7 +406,6 @@
 			<div class="headerLink on" onclick="location.href='payinfo.do'">요금안내</div>
 			<label class="linebar">|</label>
 			
-			<div class="admin_button">사장님페이지</div>
 			
 		</div>
 		

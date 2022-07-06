@@ -547,7 +547,6 @@
 			<div class="headerLink" onclick="location.href='payinfo.do'">요금안내</div>
 			<label class="linebar">|</label>
 			
-			<div class="admin_button" onclick="location.href='camp_main.do'">사장님페이지</div>
 			
 		</div>
 		
