@@ -254,7 +254,7 @@
 		let calDate = num3;
 		var calAll= ""+num1+num2+num3;
 		
-		//let roomno = $("#roomno").val();
+		let roomno = $("#roomno").val();
 		
 		
 		$.ajax({
@@ -262,7 +262,7 @@
 			type: "post",
 			url: "reserve_getInfo_weekend.do",
 			dataType: "text",			
-			data: {"calYear":calYear, "calMonth":calMonth, "calDate":calDate},			
+			data: {"calYear":calYear, "calMonth":calMonth, "calDate":calDate, "roomno":roomno},			
 			success: function(data){
 				
 				//alert('성공');
@@ -303,12 +303,14 @@
 		let calDate = num3;
 		var calAll= ""+num1+num2+num3;
 		
+		let roomno = $("#roomno").val();
+		
 		$.ajax({
 			
 			type: "post",
 			url: "reserve_getInfo_weekday.do",
 			dataType: "text",			
-			data: {"calYear":calYear, "calMonth":calMonth, "calDate":calDate},			
+			data: {"calYear":calYear, "calMonth":calMonth, "calDate":calDate, "roomno":roomno},			
 			success: function(data){
 				
 				$('.calendar_calendar').find('td').css('backgroundColor', 'white');
