@@ -696,16 +696,16 @@ $(document).on("propertychange change keyup paste", '#phone3', function() {
 	}
 });
 
-//관리자 비밀번호
+//관리자 아이디
 $(document).on("propertychange change keyup paste", '#adminPwd', function() {
-	if($('#adminPwd').val() == 1234) { // 관리자 임시 비밀번호
+	if($('#adminPwd').val() == $('#adminId').val()) {
 		$('.adminPwd_fail').empty();
-		$('.adminPwd_success').html('수정하려면 확인 버튼을 눌러주세요.');
+		$('.adminPwd_success').html('수정하시려면 확인 버튼을 눌러주세요.');
 		adminPwdCheck = 1;
 		modifyConfirm();
 	} else {
 		$('.adminPwd_success').empty();
-		$('.adminPwd_fail').html('관리자 비밀번호가 일치하지 않습니다.');
+		$('.adminPwd_fail').html('아이디가 일치하지 않습니다.');
 		adminPwdCheck = 0;
 		modifyConfirm();
 	}
@@ -783,7 +783,7 @@ function getModifyMember(data) {
 		res += "<input type='text' id='phone3' name='phone3' value="+data.list.mem_phone.split('-')[2]+" maxlength='4' required/></span>";
 		res += "<div class='phone-success success_confirm'></div>";
 		res += "<div class='phone-fail error_confirm'></div></div>";
-		res += "<h3 class='modify-title'><label for='adminPwd'>관리자 비밀번호</label></h3>";
+		res += "<h3 class='modify-title'><label for='adminPwd'>관리자 아이디</label></h3>";
 		res += "<span><input type='password' id='adminPwd' name='adminPwd' value='' required/></span>";
 		res += "<span class='adminPwd_success success_confirm'></span>";
 		res += "<span class='adminPwd_fail error_confirm'></span></div>";
