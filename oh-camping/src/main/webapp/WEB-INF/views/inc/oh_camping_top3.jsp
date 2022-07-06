@@ -150,7 +150,7 @@
                             <a href="<%=request.getContextPath()%>/calendar_iframe7.do">실시간 예약</a>
                         </li>
                         <li class="inner_list">
-                            <a href="#">예약안내</a>
+                            <a href="<%=request.getContextPath()%>/maininfo.do">예약안내</a>
                         </li>
                     </ul>
                 </div>
