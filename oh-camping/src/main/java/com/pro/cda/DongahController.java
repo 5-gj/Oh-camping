@@ -151,6 +151,34 @@ public class DongahController {
 
 	}
 	
+	//주중list(30%할인 적용)
+		@RequestMapping("reserve_getInfo_weekday1.do")
+		public String getroomWeekdayoff(@RequestParam("calYear") int year,@RequestParam("calMonth") int month,@RequestParam("calDate") int date, Model model) {
+			List<CDA_roomDTO> room_list = new ArrayList<CDA_roomDTO>();
+
+			CDA_roomDTO dto = new CDA_roomDTO();
+
+			System.out.println("weekday>>"+year+"-"+month+"-"+date);	
+			
+			  Calendar cal = Calendar.getInstance();
+			  
+			  cal.set(year,month,date);
+			  
+			  SimpleDateFormat msdf = new SimpleDateFormat("yy/MM/dd");
+			  
+			  String dayday = msdf.format(cal.getTime());
+			  
+
+			  
+			room_list = this.dao.cda_getRoomList(dayday);
+
+			model.addAttribute("room_list", room_list);
+			
+
+			return "cda/reserve_roomOfDayList_weekday_ajax";	
+
+		}
+	
 	
 	//결제 페이지로 이동
 	@RequestMapping("reserve_payment.do")
