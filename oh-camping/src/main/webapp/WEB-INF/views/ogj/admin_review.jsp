@@ -149,7 +149,9 @@
 	                                    <td> ${i.review_orderdate.substring(0, 10)}</td>
 	                                </tr>
 	                                <tr >
-	                                	<td class="${i.review_no }" colspan="6" style="text-align: left; padding: 40px; display: none;">${i.review_cont }</td>
+	                                	<td class="${i.review_no }" colspan="6" style="text-align: left; padding: 40px; display: none;">
+	                                	<textarea rows="7" cols="50">${i.review_cont }</textarea>
+	                                	</td>
 	                                </tr>
 	                            </c:forEach>
 	                        </c:if>
