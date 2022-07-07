@@ -301,7 +301,8 @@
 		let calYear = num1;
 		let calMonth = num2;
 		let calDate = num3;
-		var calAll= ""+num1+num2+num3;
+		var calAll= num1+num2+num3;
+		
 		
 		let roomno = $("#roomno").val();
 		
@@ -327,7 +328,7 @@
 				
 				//정보container에 선택한 날자 저장.
 				$('.selectDay').empty();
-				$('.selectDay').append(num1+'년 '+(num2+1)+'월 '+num3+'일' );
+				$('.selectDay').append(num1+'년 '+num2+'월 '+num3+'일' );
 				
 				//리스트
 				$("#roomofdaylist_main").html(data);							
@@ -392,9 +393,14 @@
 	function getInfoListoff(num1, num2, num3){
 		
 		let calYear = num1;
-		let calMonth = num2;
+		let calMonth = parseInt(num2)+1;
 		let calDate = num3;
 		var calAll= ""+num1+num2+num3;
+<<<<<<< HEAD
+		num2 = parseInt(num2)+1;
+
+=======
+>>>>>>> 0ce0cdab47e116391bb2c43ebb3060dd09c2ad8d
 		
 		$.ajax({
 			
@@ -418,7 +424,11 @@
 				
 				//정보container에 선택한 날자 저장.
 				$('.selectDay').empty();
+<<<<<<< HEAD
+				$('.selectDay').append(num1+'년 '+num2+'월 '+num3+'일');
+=======
 				$('.selectDay').append(num1+'년 '+ 7 + '월 '+num3+'일' );
+>>>>>>> 0ce0cdab47e116391bb2c43ebb3060dd09c2ad8d
 				
 				//리스트
 				$("#roomofdaylist_main").html(data);							
@@ -656,6 +666,7 @@
 	<input type="hidden" value="${today.year }" id="todayyear">
 	<input type="hidden" value="${today.month }" id="todaymonth">
 	<input type="hidden" value="${today.date }" id="todaydate">
+	
 	
 	<input type="hidden" value="${roomday}" id="roomday" >	
 	<input type="hidden" value="${roomno}" id="roomno">

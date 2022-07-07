@@ -122,7 +122,6 @@
 					</div>
 				</div>
 			</section>
-		</main>
 	</div>		
 	
 	<jsp:include page="../../inc/admin_bottom.jsp" />

@@ -116,20 +116,24 @@ function detailShow(data) {
 		$(".card-body").html(res);
 		
 		$('.detail-modal').css('visibility', 'visible');
-		/*
+		
 		$("#aside").css({
 			'filter': "blur(10px)",
 			'pointer-events': "none"
 		});
-		$(".header").css({
+		$(".admin_header").css({
 			'filter': "blur(10px)",
 			'pointer-events': "none"
 		});
-		$("#main").css({
+		$(".footer").css({
 			'filter': "blur(10px)",
 			'pointer-events': "none",
 		});
-		*/
+		$("#admin_wrap").css({
+			'filter': "blur(10px)",
+			'pointer-events': "none",
+		});
+		
 		
 		$(".card-body").html(res);
 	}
@@ -429,14 +433,19 @@ function viewHidden() { /* 취소 클릭 시 숨기기 */
 		'filter': "blur(0px)",
 		'pointer-events': "auto"
 	});
-	$(".header").css({
+	$(".admin_header").css({
 		'filter': "blur(0px)",
 		'pointer-events': "auto"
 	});
-	$("#main").css({
+	$(".footer").css({
 		'filter': "blur(0px)",
-		'pointer-events': "auto",
+		'pointer-events': "auto"
 	});
+	$("#admin_wrap").css({
+		'filter': "blur(0px)",
+		'pointer-events': "auto"
+	});
+	
 };
 /* 회원 상세 정보 - End*/
 
