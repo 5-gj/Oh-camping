@@ -41,7 +41,7 @@ public class AdminController {
 			dto = dao.getAdmin(admin_id);
 			session.setAttribute("adminName", dto.getAdmin_name());
 			session.setAttribute("sessionID", dto.getAdmin_id());
-			response.sendRedirect("camp_main.do");///!!!!!나중에 관리자 메인과 연결!!!!!!!!!
+			response.sendRedirect("main.do");///!!!!!나중에 관리자 메인과 연결!!!!!!!!!
 		}else if (check == -1) {
 			// 비밀번호가 틀린 경우
 			out.println("<script>");
