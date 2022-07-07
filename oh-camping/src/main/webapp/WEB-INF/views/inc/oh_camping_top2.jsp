@@ -40,7 +40,7 @@
             <div id="top_header" class="clearfix">
                 <div id="g_nav">
                     <ul class="clearfix">
-                        <li class="hidden-xs"><a href="<%=request.getContextPath() %>/">Home</a></li>
+                        <li class="hidden-xs"><a href="<%=request.getContextPath() %>/camp_main.do">Home</a></li>
                         <% 
                            // 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
                             if(session.getAttribute("sessionID")==null){ 
@@ -87,7 +87,7 @@
                             <a href="<%=request.getContextPath()%>/ogj_room.do">미리보기</a>
                         </li>
                         <li class="inner_list">
-                            <a href="<%=request.getContextPath()%>/valley.do">계곡 1 ~ 11</a>
+                            <a href="<%=request.getContextPath()%>/valley.do">계곡 1,2,3,4</a>
                         </li>
                         <li class="inner_list">
                             <a href="<%=request.getContextPath()%>/bigroom.do">대형 1,2,3,4</a>

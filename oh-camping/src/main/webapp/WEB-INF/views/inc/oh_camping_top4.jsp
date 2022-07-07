@@ -87,7 +87,7 @@
                             <a href="<%=request.getContextPath()%>/ogj_room.do">미리보기</a>
                         </li>
                         <li class="inner_list">
-                            <a href="<%=request.getContextPath()%>/valley.do">계곡 1 ~ 11</a>
+                            <a href="<%=request.getContextPath()%>/valley.do">계곡 1,2,3,4</a>
                         </li>
                         <li class="inner_list">
                             <a href="<%=request.getContextPath()%>/bigroom.do">대형 1,2,3,4</a>
