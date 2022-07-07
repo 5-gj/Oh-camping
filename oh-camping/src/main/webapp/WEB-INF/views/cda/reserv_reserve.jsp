@@ -339,14 +339,62 @@
 	}//getInfoList(num) end
 	
 
-	//주중 날짜
+	
+	//룸넘버 없는 주말(30%)
+	function getInfoListoff2(num1, num2, num3){
+		
+		let calYear = num1;
+		let calMonth = num2;
+		let calDate = num3;
+		var calAll= ""+num1+num2+num3;
+		
+		
+		$.ajax({
+			
+			type: "post",
+			url: "reserve_getInfo_weekend1.do",
+			dataType: "text",			
+			data: {"calYear":calYear, "calMonth":calMonth, "calDate":calDate,},			
+			success: function(data){
+				
+				//alert('성공');
+				//날짜 클릭하면 해당 날짜 배경 바뀜
+				$('.calendar_calendar').find('td').css('backgroundColor', 'white');
+				$('.calendar_calendar').find('td').css('color','black');
+				$('.calendar_calendar').find('.sunday').css('color','red');
+				$('.calendar_calendar').find('.saturday').css('color','blue');
+				
+				$('.'+calAll).css('backgroundColor', 'black');
+				$('.'+calAll).css('color', 'white');
+				
+				//토요일 일요일
+				$('.'+calAll).find('.sunday').css('color','white');
+				$('.'+calAll).find('.saturday').css('color','white');
+				
+				//정보container에 선택한 날자 저장.
+				$('.selectDay').empty();
+				$('.selectDay').append(num1+'년 '+(num2+1)+'월 '+num3+'일' );
+				
+				//리스트
+				$("#roomofdaylist_main").html(data);							
+			},
+			error : function(request, status, error){
+				alert('error......');								
+			}
+		}); 
+		
+		
+	}//getInfoList(num) end
+	
+	
+	
+	// 룸넘버 없는 주중 날짜
 	function getInfoListoff(num1, num2, num3){
 		
 		let calYear = num1;
 		let calMonth = num2;
 		let calDate = num3;
 		var calAll= ""+num1+num2+num3;
-
 		
 		$.ajax({
 			
@@ -370,7 +418,7 @@
 				
 				//정보container에 선택한 날자 저장.
 				$('.selectDay').empty();
-				$('.selectDay').append(num1+'년 '+(num2+1)+'월 '+num3+'일' );
+				$('.selectDay').append(num1+'년 '+ 7 + '월 '+num3+'일' );
 				
 				//리스트
 				$("#roomofdaylist_main").html(data);							
