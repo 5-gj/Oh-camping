@@ -139,7 +139,8 @@ public class AdminQaController {
 	public String adminqawrite(@RequestParam("no") int no, @RequestParam("page") int page, Model model) {
 		
 		AdminQaDTO qadto =  this.dao.getqacont(no);
-	
+		
+		model.addAttribute("no",no);
 		model.addAttribute("qadto", qadto);
 		model.addAttribute("page",page );
 		
@@ -149,7 +150,7 @@ public class AdminQaController {
 	
 	//답글 작성 완료
 	@RequestMapping("admin_qa_write_ok.do")
-	public void adminqawriteok(AdminQaDTO dto, @RequestParam("page") int page, HttpServletResponse response) throws IOException {
+	public void adminqawriteok(@RequestParam("no") int no, AdminQaDTO dto, @RequestParam("page") int page, HttpServletResponse response) throws IOException {
 		
 		response.setContentType("text/html; charset=UTF-8");
 		
@@ -161,7 +162,7 @@ public class AdminQaController {
 		if(check>0) {
 			out.println("<script>");
 			out.println("alert('답글이 작성되었습니다.')");
-			out.println("location.href='admin_qa_contnet.do?no="+dto.getQa_no()+"&page="+page+"'");
+			out.println("location.href='admin_qa_contnet.do?no="+no+"&page="+page+"'");
 			out.println("</script>");
 		}else {
 			out.println("<script>");

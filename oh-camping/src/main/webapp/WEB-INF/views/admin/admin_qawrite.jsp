@@ -49,6 +49,7 @@
                  <c:set var="page" value="${page }"/>
               <form method="post" action="<%=request.getContextPath()%>/admin_qa_write_ok.do">
               	
+              	<input type="hidden" name="no" value="${no }">
               	<input type="hidden" name="qa_userid" value="admin">
               	<input type="hidden" name="qa_writer" value="관리자">
               	<input type="hidden" name="qa_type" value="${dto.qa_type }">

@@ -160,10 +160,18 @@
 					$('.nextbtn').css("color", "#ebb68c");
 
 					$('.prevbtn').css("color", "black");
+					
+					$('.prevsub').css("width", "0");
+					
+					$('.nextsub').css("width", "93px");
 				} else {
 					$('.prevbtn').css("color", "#ebb68c");
 
 					$('.nextbtn').css("color", "black");
+					
+					$('.prevsub').css("width", "93px");
+					
+					$('.nextsub').css("width", "0");
 				}
 			})
 
