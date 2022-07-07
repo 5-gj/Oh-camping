@@ -44,11 +44,12 @@ public interface ReviewDAO {
 	public int searchReview(String field, String keyword);
 	public List<ReviewDTO> searchReviewList(ReviewPageDTO dto);
 	
-	public List<ReviewSubDTO> getReviewSubData(String id);
+	public List<ReviewSubDTO2> getReviewSubData(String id);
 	
 	
 	public String getReviewSubData2(int pay_no);
 	public String getReviewSubData3(int pay_no);
+	public List<ReviewSubDTO3> getdetail_roomno(int pay_no);
 	
 	// 복구시 기존review 테이블 번호 한칸식 위로
 	public void updateResetSequence(int no);
