@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: ogj
 Build-Jdk: 1.8.0_321
+=======
+Built-By: SHIM
+Build-Jdk: 1.8.0_333
+>>>>>>> 2cb611a16c617da3c7750b323d996d4e42142e44
 Created-By: Maven Integration for Eclipse
 
