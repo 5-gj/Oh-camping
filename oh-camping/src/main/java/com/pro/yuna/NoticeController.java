@@ -57,9 +57,15 @@ public class NoticeController {
 		// 게시글 상세 내역을 조회하는 메서드 호출
 		CampNoticeDTO dto = this.dao.CampNoticeCont(no);
 		
+		String file = dto.getNotice_file();
+		
+		System.out.println(file);
+		
 		model.addAttribute("Cont", dto);
 		
 		model.addAttribute("Page", nowPage);
+		
+		model.addAttribute("file", file);
 		
 		return "board/notice_content";
 	} // camp_notice_content.do 끝

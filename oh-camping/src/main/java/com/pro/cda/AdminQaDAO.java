@@ -8,9 +8,15 @@ public interface AdminQaDAO {
 	
 	//전체 문의 리스트 가져오기
 	public List<AdminQaDTO> getQaList(PageDTO dto);
-	
+
 	//qa 글 수 가져오기
 	public int getqacount();
+	
+	//검색 리스트 가져오기
+	public List<AdminQaDTO> getQaSearh(PageDTO dto);
+	
+	//검색 qa리스트 수
+	public int adminqasearchcount(String field, String keyword);
 	
 	//문의 세부사항 확인.	
 	public AdminQaDTO getqacont(int no);

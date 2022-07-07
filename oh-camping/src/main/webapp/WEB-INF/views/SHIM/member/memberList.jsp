@@ -1,19 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 <head>
 <meta charset="UTF-8">
 <title>회원 관리</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link href="<c:url value="/resources/SHIM/css/member/main.css" />?26" rel="stylesheet">
+<link href="<c:url value="/resources/SHIM/css/member/main.css" />?29" rel="stylesheet">
+<link href="<c:url value="/resources/SHIM/fontello/css/fontello.css" />?3" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="<%=request.getContextPath() %>/resources/SHIM/js/member.js?8"></script>
+<script src="<%=request.getContextPath() %>/resources/SHIM/js/member.js?10"></script>
 </head>
-<body>
+<body class="d-flex flex-column h-100">
     <jsp:include page="../../inc/admin_top.jsp" /> 
     <c:set var="list" value="${List }" />
 	<c:set var="paging" value="${Paging }" /> 
+	<input type="hidden" value="${adminId }" id="adminId" />
     <div id="admin_wrap" class="container webfont">
         <!-- 왼쪽 메뉴 -->
         <div id="aside">
@@ -80,7 +82,6 @@
 					<ul class="list-page pagination justify-content-center"></ul>
 				</nav>	
 			</section>
-		</main>
 	</div>	
 	<%-- ----------------------- 회원 상세 부분 ----------------------- --%>		
 	<div class="card detail-modal">
@@ -100,5 +101,8 @@
 	</div>
 	
 	<jsp:include page="../../inc/admin_bottom.jsp" />
+	
+	
+	
 </body>
 </html>

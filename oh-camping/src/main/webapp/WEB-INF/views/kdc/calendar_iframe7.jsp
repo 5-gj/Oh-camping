@@ -33,8 +33,8 @@
  	$(document).ready(function() {
 			var now = new Date();
 
-			var date = now.getDate();
-			//var date = "18";
+			//var date = now.getDate();
+			var date = "7";
 			
 						
 			
@@ -529,7 +529,7 @@
 			<div class="headerLink" onclick="location.href='payinfo.do'">요금안내</div>
 			<label class="linebar">|</label>
 			
-			<div class="admin_button">사장님페이지</div>
+			
 			
 		</div>
 		

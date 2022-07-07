@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 <head>
 <meta charset="UTF-8">
 <title>예약 관리</title>
@@ -11,7 +11,7 @@
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="<%=request.getContextPath() %>/resources/SHIM/js/reserveList.js?5"></script>
 </head>
-<body>
+<body class="d-flex flex-column h-100">
     <jsp:include page="../../inc/admin_top3.jsp" /> 
     <c:set var="list" value="${List }" />
 	<c:set var="paging" value="${Paging }" /> 
@@ -116,7 +116,6 @@
 					</div>
 				</div>
 			</section>
-		</main>
 	</div>		
 	
 	<jsp:include page="../../inc/admin_bottom.jsp" />

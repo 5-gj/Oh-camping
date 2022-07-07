@@ -3,6 +3,7 @@ package com.pro.ogj;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +22,8 @@ import com.pro.ogjmodel.ReviewDAO;
 import com.pro.ogjmodel.ReviewDTO;
 import com.pro.ogjmodel.ReviewPageDTO;
 import com.pro.ogjmodel.ReviewSubDTO;
+import com.pro.ogjmodel.ReviewSubDTO3;
+import com.pro.ogjmodel.ReviewSubDTO2;
 import com.pro.yuna.CampNoticeDTO;
 import com.pro.yuna.CampQaDTO;
 import com.pro.yuna.PageDTO;
@@ -55,20 +58,32 @@ public class reviewController {
 		// 페이지에 해당하는 게시물을 가져오는 메서드 호출
 
 		List<ReviewDTO> list = this.dao.getReviewList(dto);
+		
+		
 
 		if (session.getAttribute("sessionID") != null) {
 			String id = (String) session.getAttribute("sessionID");
-			List<ReviewSubDTO> sublist = this.dao.getReviewSubData(id);
+			List<ReviewSubDTO2> sublist = this.dao.getReviewSubData(id);
+			List<ReviewSubDTO> subdtolist = new ArrayList<ReviewSubDTO>();
+			
 
 			if (sublist.isEmpty()) {
 				model.addAttribute("subList", null);
 			} else {
-				for (ReviewSubDTO subdto : sublist) {
-					int pay_no = subdto.getPayment_no();
-					String room_name = this.dao.getReviewSubData2(pay_no);
-					subdto.setRoom_name(room_name);
+				for (ReviewSubDTO2 subdto2 : sublist) {
+					int pay_no = subdto2.getPayment_no();
+					List<ReviewSubDTO3> sublist3 = this.dao.getdetail_roomno(pay_no);
+					for(ReviewSubDTO3 subdto3 : sublist3) {
+						ReviewSubDTO subdto = new ReviewSubDTO();
+						String room_name = this.dao.getReviewSubData2(subdto3.getPaymentdetail_roomno());
+						String room_resdate = this.dao.getReviewSubData3(subdto3.getPaymentdetail_roomno());
+						subdto.setRoom_name(room_name);
+						subdto.setRoom_resdate(room_resdate);
+						subdtolist.add(subdto);
+						
+					}
 				}
-				model.addAttribute("subList", sublist);
+				model.addAttribute("subList", subdtolist);
 			}
 
 		}
@@ -262,17 +277,27 @@ public class reviewController {
 		
 		if (session.getAttribute("sessionID") != null) {
 			String id = (String) session.getAttribute("sessionID");
-			List<ReviewSubDTO> sublist = this.dao.getReviewSubData(id);
+			List<ReviewSubDTO2> sublist = this.dao.getReviewSubData(id);
+			List<ReviewSubDTO> subdtolist = new ArrayList<ReviewSubDTO>();
+			
 
 			if (sublist.isEmpty()) {
 				model.addAttribute("subList", null);
 			} else {
-				for (ReviewSubDTO subdto : sublist) {
-					int pay_no = subdto.getPayment_no();
-					String room_name = this.dao.getReviewSubData2(pay_no);
-					subdto.setRoom_name(room_name);
+				for (ReviewSubDTO2 subdto2 : sublist) {
+					int pay_no = subdto2.getPayment_no();
+					List<ReviewSubDTO3> sublist3 = this.dao.getdetail_roomno(pay_no);
+					for(ReviewSubDTO3 subdto3 : sublist3) {
+						ReviewSubDTO subdto = new ReviewSubDTO();
+						String room_name = this.dao.getReviewSubData2(subdto3.getPaymentdetail_roomno());
+						String room_resdate = this.dao.getReviewSubData3(subdto3.getPaymentdetail_roomno());
+						subdto.setRoom_name(room_name);
+						subdto.setRoom_resdate(room_resdate);
+						subdtolist.add(subdto);
+						
+					}
 				}
-				model.addAttribute("subList", sublist);
+				model.addAttribute("subList", subdtolist);
 			}
 
 		}

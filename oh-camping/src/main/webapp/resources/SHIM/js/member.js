@@ -116,18 +116,24 @@ function detailShow(data) {
 		$(".card-body").html(res);
 		
 		$('.detail-modal').css('visibility', 'visible');
+		
 		$("#aside").css({
 			'filter': "blur(10px)",
 			'pointer-events': "none"
 		});
-		$(".header").css({
+		$(".admin_header").css({
 			'filter': "blur(10px)",
 			'pointer-events': "none"
 		});
-		$("#main").css({
+		$(".footer").css({
 			'filter': "blur(10px)",
 			'pointer-events': "none",
 		});
+		$("#admin_wrap").css({
+			'filter': "blur(10px)",
+			'pointer-events': "none",
+		});
+		
 		
 		$(".card-body").html(res);
 	}
@@ -141,11 +147,11 @@ function DateFormat(date) {
 /* 객실 상태 format */
 function roomStatus(date) {
 	var today = new Date();
-	var year = today.getFullYear().toString().slice(2); // 년도
+	var year = today.getFullYear().toString(); // 년도
 	var month = ('0' + (today.getMonth() + 1)).slice(-2); // 월
 	var day = ('0' + today.getDate()).slice(-2); // 일
 	
-	var now = year + '/' + month + '/' + day; // 현재 날짜
+	var now = year + '-' + month + '-' + day; // 현재 날짜
 	
 	var stat = "";
 	if(now <= date) {stat = "사용예정"}
@@ -197,7 +203,7 @@ function getReserveList(data) {
 		$.each(list, function(index, vo) {
 			res += "<tr>";
 			res += "<td>"+ vo["room_no"] +"</td> <td>"+ vo["room_name"] +"</td>";
-			res += "<td>"+ DateFormat(vo["room_resdate"]) +"</td> <td>"+roomStatus(vo["room_resdate"])+"</td>";
+			res += "<td>"+ DateFormat(vo["room_resdate"]).substr(0, 10) +"</td> <td>"+roomStatus(vo["room_resdate"].substr(0, 10))+"</td>";
 			res += "<td><input class='btn-detail cont-reserve' type='button' value='상세보기' onclick='reserveCont("+ page +", \"" + vo["room_no"] + "\", \"" + vo["mem_id"] + "\")'></td>";
 			res += "</tr>";
 		});
@@ -266,8 +272,8 @@ function getReserveCont(data) {
 		res += "<tr><th>객실 이름</th> <td>"+list.room_name+"</td>";
 		res += "<th>결제 가격</th> <td>"+AddComma(list.room_price)+"원</td></tr>";
 		res += "<tr><th>인원 수</th> <td>"+list.room_mpeople+"명</td>";
-		res += "<th>사용 여부</th> <td>"+roomStatus(list.room_resdate)+"</td></tr>";
-		res += "<tr><th colspan='2'>요청사항:</th><th>사용일</th><td>"+DateFormat(list.room_resdate)+"</td></tr>";
+		res += "<th>사용 여부</th> <td>"+roomStatus(list.room_resdate).substr(0, 10)+"</td></tr>";
+		res += "<tr><th colspan='2'>요청사항:</th><th>사용일</th><td>"+DateFormat(list.room_resdate).substr(0, 10)+"</td></tr>";
 		res += "<tr><td colspan='4'><div>";
 		res += "<pre class='reserve-request'>"+list.payment_request+"</pre></div>";
 		res += "<span class='icon-logout reserve-back-btn' onclick='reserveList("+page+", \""+mem_id+"\");'></span>";
@@ -318,7 +324,7 @@ function getInquiryList(data) {
 		var allPage = data.allPage;
 		$.each(list, function(index, vo) {
 			res += "<tr><td>"+vo["qa_no"]+"</td> <td>"+vo["qa_type"]+"</td>";
-			res += "<td>"+vo["qa_title"]+"</td> <td>"+DateFormat(vo["qa_date"])+"</td>";
+			res += "<td>"+vo["qa_title"]+"</td> <td>"+DateFormat(vo["qa_date"]).substr(0, 10)+"</td>";
 			res += "<td><input class='btn-detail del-cont-inquiry' type='button' value='상세보기' onclick='inquiryCont("+ page +", \"" + vo["qa_no"] + "\", \"" + qa_userid + "\")'>";
 			res += "<input class='btn-detail del-cont-inquiry' type='button' value='삭제' onclick='inquiryDel("+ page +", \"" + vo["qa_no"] + "\", \"" + qa_userid + "\")'></td></tr>";
 		});
@@ -381,7 +387,7 @@ function getInquiryCont(data) {
 		res += "<th>No.</th> <th>유 형</th> <th>제 목</th><th>작성일</th> <th colspan='2'></th>";
 		res += "</tr></thead><tbody class='inquiry-body'><tr>";
 		res += "<td>"+list.qa_no+"</td> <td>"+list.qa_type+"</td>";
-		res += "<td>"+list.qa_title+"</td> <td>"+DateFormat(list.qa_date)+"</td>";
+		res += "<td>"+list.qa_title+"</td> <td>"+DateFormat(list.qa_date).substr(0, 10)+"</td>";
 		res += "<td><input class='btn-detail del-cont-inquiry' type='button' value='삭제' onclick='inquiryDel("+ page +", \"" + list.qa_no + "\", \"" + id + "\")'></td></tr>";
 		res += "<tr><td colspan='5'><div>";
 		res += "<pre class='inquiry-cont'>"+list.qa_cont+"</pre></div>";
@@ -427,14 +433,19 @@ function viewHidden() { /* 취소 클릭 시 숨기기 */
 		'filter': "blur(0px)",
 		'pointer-events': "auto"
 	});
-	$(".header").css({
+	$(".admin_header").css({
 		'filter': "blur(0px)",
 		'pointer-events': "auto"
 	});
-	$("#main").css({
+	$(".footer").css({
 		'filter': "blur(0px)",
-		'pointer-events': "auto",
+		'pointer-events': "auto"
 	});
+	$("#admin_wrap").css({
+		'filter': "blur(0px)",
+		'pointer-events': "auto"
+	});
+	
 };
 /* 회원 상세 정보 - End*/
 
@@ -696,16 +707,16 @@ $(document).on("propertychange change keyup paste", '#phone3', function() {
 	}
 });
 
-//관리자 비밀번호
+//관리자 아이디
 $(document).on("propertychange change keyup paste", '#adminPwd', function() {
-	if($('#adminPwd').val() == 1234) { // 관리자 임시 비밀번호
+	if($('#adminPwd').val() == $('#adminId').val()) {
 		$('.adminPwd_fail').empty();
-		$('.adminPwd_success').html('수정하려면 확인 버튼을 눌러주세요.');
+		$('.adminPwd_success').html('수정하시려면 확인 버튼을 눌러주세요.');
 		adminPwdCheck = 1;
 		modifyConfirm();
 	} else {
 		$('.adminPwd_success').empty();
-		$('.adminPwd_fail').html('관리자 비밀번호가 일치하지 않습니다.');
+		$('.adminPwd_fail').html('아이디가 일치하지 않습니다.');
 		adminPwdCheck = 0;
 		modifyConfirm();
 	}
@@ -783,7 +794,7 @@ function getModifyMember(data) {
 		res += "<input type='text' id='phone3' name='phone3' value="+data.list.mem_phone.split('-')[2]+" maxlength='4' required/></span>";
 		res += "<div class='phone-success success_confirm'></div>";
 		res += "<div class='phone-fail error_confirm'></div></div>";
-		res += "<h3 class='modify-title'><label for='adminPwd'>관리자 비밀번호</label></h3>";
+		res += "<h3 class='modify-title'><label for='adminPwd'>관리자 아이디</label></h3>";
 		res += "<span><input type='password' id='adminPwd' name='adminPwd' value='' required/></span>";
 		res += "<span class='adminPwd_success success_confirm'></span>";
 		res += "<span class='adminPwd_fail error_confirm'></span></div>";

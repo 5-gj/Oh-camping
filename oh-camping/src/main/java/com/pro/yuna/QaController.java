@@ -151,6 +151,20 @@ public class QaController {
 		return "board/qa_modify";
 	}
 	
+	@RequestMapping("camp_qa_update.do")
+	public String qaupdate(@RequestParam("no") int no,
+			@RequestParam("page") int nowPage, Model model) {
+		
+		// 게시글 상세 내역을 조회하는 메서드 호출
+		CampQaDTO dto = this.dao.CampQaCont(no);
+		
+		model.addAttribute("modify", dto);
+		
+		model.addAttribute("Page", nowPage);
+		
+		return "board/qa_update";
+	}
+	
 	
 	@RequestMapping("camp_qa_modify_ok.do")
 	public void qaModifyOk(CampQaDTO dto,
@@ -174,6 +188,8 @@ public class QaController {
 			out.println("</script>");
 		}		
 	}
+	
+	
 	
 	
 	@RequestMapping("camp_qa_delete.do")

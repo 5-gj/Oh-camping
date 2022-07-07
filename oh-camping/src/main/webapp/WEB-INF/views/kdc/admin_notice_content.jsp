@@ -11,9 +11,12 @@
 
 	#sub_contents { 
 	max-width: 1100px; 
-	margin: auto; 
+	    max-width: 1100px;
+    float: right;
+    width: 80%;
+	/* margin: auto; 
 	overflow-y: hidden; 
-	padding: 300px 15px 55px; 
+	padding: 70px 15px 55px;  */
 	}
 
 </style>
@@ -21,10 +24,27 @@
 <body>
   	<jsp:include page="../inc/admin_top.jsp" />  
    
-      
-            <!-- 본문 시작 -->
-            <div id="sub_contents">        
-                <div id="board_wrap">
+		    <div id="admin_wrap" class="container webfont">
+        <!-- 왼쪽 메뉴 -->
+        <div id="aside">
+            <div class="leftmenu">
+                <h3 id="left_menu_head">공지사항</h3>
+                <ul class="left_menu_ul">
+                    <li class="nav_on">
+                        <a href="<%=request.getContextPath() %>/admin_notice_list.do">
+                            <i class="fa fa-caret-right"></i> 공지사항 관리
+                        </a>
+                    </li>                 
+
+                </ul>
+            </div>
+        </div>
+        <!-- // 왼쪽 메뉴 -->
+	
+	<div id="sub_contents">        
+             <div id="board_wrap"> 
+             
+              <h3 class="admin_title">공지사항 관리 <span class="sub_title2">notice</span></h3> 
                 	<c:set var="dto" value="${adminCont }" />
                     <table cellspacing="0" width="100%">
 					    <tr>
@@ -48,7 +68,22 @@
 					    </tr>
 					    <tr>
 					        <th>첨부파일</th>
-					        <td> ${dto.notice_file } </td>
+					        <td>
+					        <c:if test="${!empty file }">
+					        <div style="align-items: flex-end;
+    display: flex;">
+					        <img src="<%=request.getContextPath() %>/resources/upload/${file }"  width="200px" height="200px">
+					       <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  🔍
+</button>
+					       </div>
+					         </c:if>
+					         <c:if test="${empty file }">
+					         
+					         첨부파일이 없습니다.
+					         
+					         </c:if>
+					         </td>
 					    </tr>  
 					    <c:if test="${empty dto }">
 					    	<tr>
@@ -77,11 +112,26 @@
       
                 </div>
                     
-            </div>
     
-        </div>
         <div class="clear"></div>
     </div sub_wrap>
+    </div>
+    
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="padding: 0;">
+        <img src="<%=request.getContextPath() %>/resources/upload/${file }" width="100%" height="100%">
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
     <jsp:include page="../inc/admin_bottom.jsp" />
 </body>
 </html>

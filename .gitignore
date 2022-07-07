@@ -10,6 +10,8 @@ pom.properties
 .classpath
 MANIFEST.MF
 
+PopupController.java
+
 ### Eclipse ###
 .metadata
 bin/
@@ -108,3 +110,4 @@ local.properties
 hs_err_pid*
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,java
+Servers/

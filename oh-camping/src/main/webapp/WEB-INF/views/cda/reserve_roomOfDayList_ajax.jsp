@@ -13,6 +13,7 @@
 	<div class="roomword">객실선택</div>
 
 	<c:set var="list" value="${room_list }" />
+	<c:set var="roomno" value="${roomno }" />
 	<c:if test="${!empty list }">
 		<c:forEach var="dto" items="${list }">
 		
@@ -21,7 +22,14 @@
 					<!-- 넘어갈 값 : 룸번호, 추가 인원수-->
 					<div class="checkSe" >
 						<%-- <input type="checkbox" name="chk_lang" value="${dto.room_no }"> --%>
-						<input type="checkbox" name="chk_lang" class="chk_lang" value="${dto.room_no }" onclick="checkclick()">
+						
+							<c:if test="${roomno == dto.room_no }">
+							<input type="checkbox" name="chk_lang" class="chk_lang" value="${dto.room_no }" onclick="checkclick()" checked="checked">
+							</c:if>
+							<c:if test="${roomno != dto.room_no }">
+							<input type="checkbox" name="chk_lang" class="chk_lang" value="${dto.room_no }" onclick="checkclick()">
+							</c:if>
+							
 						<input type="hidden" name="roomno" class="roomno" value="${dto.room_no }">								
 					</div>
 				

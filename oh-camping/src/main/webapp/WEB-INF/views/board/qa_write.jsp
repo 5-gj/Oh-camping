@@ -119,9 +119,7 @@
                             <tr>
                                 <th>글내용</th>
                                 <td>
-                                    <textarea name="qa_cont">
-                                    	${dto.qa_cont }
-                                    </textarea>
+                                    <textarea name="qa_cont"></textarea>
                                 </td>
                             </tr>
 

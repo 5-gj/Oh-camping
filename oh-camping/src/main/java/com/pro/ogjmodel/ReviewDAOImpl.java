@@ -68,7 +68,7 @@ public class ReviewDAOImpl implements ReviewDAO {
 	}
 
 	@Override
-	public List<ReviewSubDTO> getReviewSubData(String id) {
+	public List<ReviewSubDTO2> getReviewSubData(String id) {
 		// TODO Auto-generated method stub
 		return this.sqlSession.selectList("getReviewSubData",id);
 	}
@@ -77,6 +77,17 @@ public class ReviewDAOImpl implements ReviewDAO {
 	public String getReviewSubData2(int pay_no) {
 		// TODO Auto-generated method stub
 		return this.sqlSession.selectOne("getReviewSubData2",pay_no);
+	}
+	@Override
+	public String getReviewSubData3(int room_no) {
+		// TODO Auto-generated method stub
+		return this.sqlSession.selectOne("getReviewSubData3",room_no);
+	}
+	
+	@Override
+	public List<ReviewSubDTO3> getdetail_roomno(int room_no) {
+		// TODO Auto-generated method stub
+		return this.sqlSession.selectList("getReviewSubData4",room_no);
 	}
 
 	@Override
@@ -132,6 +143,8 @@ public class ReviewDAOImpl implements ReviewDAO {
 		// TODO Auto-generated method stub
 		return this.sqlSession.delete("deleteDeleteReview", no);
 	}
+
+
 
 
 

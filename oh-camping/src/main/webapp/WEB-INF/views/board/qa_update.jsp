@@ -55,64 +55,49 @@
                 </div>
             </div>
     
-            <p class="sub_title">이용문의 글 답변<span class="sub_title2">Q&A</span></p>
+            <p class="sub_title">이용문의 글 수정하기<span class="sub_title2">Q&A</span></p>
             
             <!-- 본문 시작 -->
             <div id="sub_contents">        
                 <div id="board_wrap">  
-                    <c:set var="dto" value="${reply }" />
-                    <form method="post" action="<%=request.getContextPath() %>/camp_qa_reply_ok.do" >
+                    <c:set var="dto" value="${modify }" />
+                    <form method="post" action="<%=request.getContextPath() %>/camp_qa_modify_ok.do" >
                     	<input type="hidden" name="qa_no" value="${dto.qa_no }">
                     	<input type="hidden" name="qa_userid" value="${dto.qa_userid }">
-                    	<input type="hidden" name="qa_writer" value="관리자">
-                    	<input type="hidden" name="qa_type" value="${dto.qa_type }">
-                    	<input type="hidden" name="qa_title" value="${dto.qa_title }">
-                    	<input type="hidden" name="qa_indent" value="${dto.qa_indent }">
-                    	<input type="hidden" name="qa_group" value="${dto.qa_group }">
 	   	  				<input type="hidden" name="page" value="${Page }"> 
                         <table border="0" cellspacing="0" width="100%" class="table write_table">
                            	<tr>
-                              	<th>문의 작성자</th>
+                              	<th>작성자</th>
                               	<td>
-                                    ${dto.qa_writer } 님
+                                    <input name="qa_writer" class="input_text"
+                                       value="${dto.qa_writer }" readonly>
                               	</td>
                            	</tr>
                            	<tr>
                                 <th>문의 유형</th>
                                 <td class="qa_select">
-                                	${dto.qa_type }
+                                	<input name="qa_type" class="input_text"
+                                       	value="${dto.qa_type }" readonly>
 	                       		</td>
                             </tr>
                             <tr>
-                                <th>문의 제목</th>
-                                <td>
-                                	${dto.qa_title }
-                               	</td>
-                            </tr>
-                            <tr>
-                                <th>문의 내용</th>
-                                <td>
-                                    ${dto.qa_cont }
-                                </td>
+                                <th>글제목</th>
+                                <td><input class="type_text input_text" name="qa_title" 
+                                		value="${dto.qa_title }" readonly></td>
                             </tr>
                             <tr>
                                 <td colspan="2" class="emp"></td>
                             </tr>
                             <tr>
-                                <td colspan="2" class="center qa_reply">
-                                	<span>RE</span> ${dto.qa_title }
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>답변하기 </th>
+                                <th>글내용</th>
                                 <td>
-                                    <textarea name="qa_cont"></textarea>
+                                    <textarea name="qa_cont">${dto.qa_cont }</textarea>
                                 </td>
                             </tr>
 
                             <tr>
                                 <td align="center" colspan="2" class="board_btn">
-                                    <input type="submit" value="답변하기">&nbsp;&nbsp;
+                                    <input type="submit" value="수정하기">&nbsp;&nbsp;
                                     <input type="button" value="목록" onclick="location.href='camp_qa.do?page=${Page }'">
                                 </td>
                             </tr>

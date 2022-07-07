@@ -19,7 +19,7 @@
                    	 <%  } else{ // 로그인 했을 때 
                 	   		String loginId = (String)session.getAttribute("sessionID");
                 	   		if (loginId.equals("admin")){ // 관리자 %>
-                	   			<li><a href="<%=request.getContextPath() %>/camp_admin.do">관리자</a></li>
+                	   			<li><a href="<%=request.getContextPath() %>/main.do">관리자</a></li>
                                 <li><a href="<%=request.getContextPath() %>/camp_logout.do">로그아웃</a></li> 
                 	  <%  	}else{ // 일반 사용자%>
                 	   			<!--  <li><a href="<%=request.getContextPath() %>/camp_info.do?id=<%=loginId %>">MyPage</a></li>-->

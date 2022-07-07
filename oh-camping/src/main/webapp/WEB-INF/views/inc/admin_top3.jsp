@@ -17,7 +17,7 @@
     <link href="<%=request.getContextPath() %>/resources/css/reset_h.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/common.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/admin_st.css" rel="stylesheet">
-    <link href="<%=request.getContextPath() %>/resources/SHIM/css/reserve/main.css?17" rel="stylesheet">
+    <link href="<%=request.getContextPath() %>/resources/SHIM/css/reserve/main.css?19" rel="stylesheet">
     
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -55,7 +55,6 @@
               	<div class="col-md-3 text-end">
                   	<button type="button" class="btn btn-outline-primary me-2"
                   		onclick="location.href='camp_logout.do'">로그아웃</button>
-                  	<button type="button" class="btn btn-primary">관리자 홈</button>
               	</div>
           	</header>
       	</div>

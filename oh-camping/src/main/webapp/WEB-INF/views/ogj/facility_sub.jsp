@@ -28,9 +28,9 @@
 
  <jsp:include page="../inc/oh_camping_top2.jsp" />
 	<section class="slick-section">
-	<div class="about_tit">
-					<h1>${text}</h1>
-				</div>
+		<div class="about_tit">
+			<h1>${text}</h1>
+		</div>
 		<div class="slick-btn-main">
 			<div class="slick-btn left big-next">
 				<span class="material-symbols-outlined"> chevron_left </span>
@@ -38,19 +38,18 @@
 			<div class="slick-btn right big-prev">
 				<span class="material-symbols-outlined"> chevron_right </span>
 			</div>
-						
-			</div>
+
 		</div>
 		<div class="big-slick bigroom">
-			<div class="roomimage" style="background-image: url('${img}1.jpg')">
+			<div class="roomimage" style="background-image: url('${img}1.jpg')"></div>
 			<div class="roomimage" style="background-image: url('${img}2.jpg')"></div>
 			<div class="roomimage" style="background-image: url('${img}3.jpg')"></div>
 			<div class="roomimage" style="background-image: url('${img}4.jpg')"></div>
 			<div class="roomimage" style="background-image: url('${img}5.jpg')"></div>
 
 		</div>
-</section>
-<script>
+	</section>
+	<script>
 	AOS.init();
 	</script>
 

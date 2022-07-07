@@ -21,6 +21,11 @@ public class adminNoticeDAOImpl implements adminNoticeDAO {
 		return this.sqlSession.insert("adminNotice", dto);
 		
 	}
+	
+	@Override
+	public int insertNotice2(adminNoticeDTO dto) {
+		return this.sqlSession.insert("adminNotice2", dto);
+	}
 
 	@Override
 	public List<CampNoticeDTO> getCampNoticeList(noticePageDTO dto) {
@@ -52,6 +57,18 @@ public class adminNoticeDAOImpl implements adminNoticeDAO {
 	public int adminNoticeUpdate(adminNoticeDTO dto) {
 		return this.sqlSession.update("noticeUpdate", dto);
 	}
+
+	@Override
+	public int adminNoticeUpdate2(adminNoticeDTO dto) {
+		return this.sqlSession.update("noticeUpdate2", dto);
+	}
+
+	@Override
+	public int adminNoticeUpdate3(adminNoticeDTO dto) {
+		return this.sqlSession.update("noticeUpdate3", dto);
+	}
+
+
 
 
 	

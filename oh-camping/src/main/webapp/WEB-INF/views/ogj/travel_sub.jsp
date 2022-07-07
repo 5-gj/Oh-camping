@@ -36,17 +36,18 @@
 				<span class="material-symbols-outlined"> chevron_right </span>
 			</div>
 		</div>
+		
 		<div class="big-slick bigroom">
 			<div class="roomimage" style="background-image: url('${img}.jpg')">
-			<div class="about_tit">
-					<h1>${text} </h1>
-					<h3>${text2} </h3>
+				<div class="about_tit">
+					<h1>${text}</h1>
+					<h3>${text2}</h3>
 				</div>
 			</div>
 
 		</div>
-</section>
-<script>
+	</section>
+	<script>
 	AOS.init();
 	</script>
 

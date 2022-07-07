@@ -50,7 +50,7 @@
                        	<%  } else{ // 로그인 했을 때 
                     	   		String loginId = (String)session.getAttribute("sessionID");
                     	   		if (loginId.equals("admin")){ // 관리자 %>
-                    	   			<li><a href="<%=request.getContextPath() %>/camp_admin.do">관리자</a></li>
+                    	   			<li><a href="<%=request.getContextPath() %>/main.do">관리자</a></li>
                                     <li><a href="<%=request.getContextPath() %>/camp_logout.do">Logout</a></li> 
                     	 <%  	}else{ // 일반 사용자%>
                     	   			<!--  <li><a href="<%=request.getContextPath() %>/camp_info.do?id=<%=(String)session.getAttribute("sessionID") %>">MyPage</a></li>-->
@@ -87,7 +87,7 @@
                             <a href="<%=request.getContextPath()%>/ogj_room.do">미리보기</a>
                         </li>
                         <li class="inner_list">
-                            <a href="<%=request.getContextPath()%>/valley.do">계곡 1 ~ 11</a>
+                            <a href="<%=request.getContextPath()%>/valley.do">계곡 1,2,3,4</a>
                         </li>
                         <li class="inner_list">
                             <a href="<%=request.getContextPath()%>/bigroom.do">대형 1,2,3,4</a>
@@ -150,7 +150,7 @@
                             <a href="<%=request.getContextPath()%>/calendar_iframe7.do">실시간 예약</a>
                         </li>
                         <li class="inner_list">
-                            <a href="#">예약안내</a>
+                            <a href="<%=request.getContextPath()%>/maininfo.do">예약안내</a>
                         </li>
                     </ul>
                 </div>

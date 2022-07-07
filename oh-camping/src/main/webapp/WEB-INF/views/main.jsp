@@ -29,7 +29,7 @@
             <div id="top_header" class="clearfix">
                 <div id="g_nav">
                     <ul class="clearfix">
-                        <li class="hidden-xs"><a href="<%=request.getContextPath() %>/">Home</a></li>
+                        <li class="hidden-xs"><a href="<%=request.getContextPath() %>/camp_main.do">Home</a></li>
                         <% 
                            // 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
                             if(session.getAttribute("sessionID")==null){ 
@@ -39,7 +39,7 @@
                        	<%  } else{ // 로그인 했을 때 
                     	   		String loginId = (String)session.getAttribute("sessionID");
                     	   		if (loginId.equals("admin")){ // 관리자 %>
-                    	   			<li><a href="<%=request.getContextPath() %>/camp_admin.do">관리자</a></li>
+                    	   			<li><a href="<%=request.getContextPath() %>/main.do">관리자</a></li>
                                     <li><a href="<%=request.getContextPath() %>/camp_logout.do">Logout</a></li> 
                     	 <%  	}else{ // 일반 사용자%>
                     	   			<!--  <li><a href="<%=request.getContextPath() %>/camp_info.do?id=<%=(String)session.getAttribute("sessionID") %>">MyPage</a></li>-->
@@ -76,7 +76,7 @@
                             <a href="<%=request.getContextPath()%>/ogj_room.do">미리보기</a>
                         </li>
                         <li class="inner_list">
-                            <a href="<%=request.getContextPath()%>/valley.do">계곡 1 ~ 11</a>
+                            <a href="<%=request.getContextPath()%>/valley.do">계곡 1,2,3,4</a>
                         </li>
                         <li class="inner_list">
                             <a href="<%=request.getContextPath()%>/bigroom.do">대형 1,2,3,4</a>
@@ -459,36 +459,36 @@
             <h1>호텔식 침구</h1>
             <h2>Lucury Duvet</h2>
           </div>
-          <a href="#" class="btn_service">
+          <!-- <a href="#" class="btn_service">
             View More
-          </a>
+          </a> -->
         </div>
         <div class="list_service img2">
           <div class="service_txt">
             <h1>싱크대</h1>
             <h2>Sink</h2>
           </div>
-          <a href="#" class="btn_service">
+          <!-- <a href="#" class="btn_service">
             View More
-          </a>
+          </a> -->
         </div>
         <div class="list_service img3">
           <div class="service_txt">
             <h1>개별화장실</h1>
             <h2>Private Bathroom</h2>
           </div>
-          <a href="#" class="btn_service">
+          <!-- <a href="#" class="btn_service">
             View More
-          </a>
+          </a> -->
         </div>
         <div class="list_service img4 mb_none">
           <div class="service_txt">
             <h1>샤워용품</h1>
             <h2>Toiletries</h2>
           </div>
-          <a href="#" class="btn_service">
+          <!-- <a href="#" class="btn_service">
             View More
-          </a>
+          </a> -->
         </div>
       </div>
     </section>
@@ -764,7 +764,7 @@
                    	 <%  } else{ // 로그인 했을 때 
                 	   		String loginId = (String)session.getAttribute("sessionID");
                 	   		if (loginId.equals("admin")){ // 관리자 %>
-                	   			<li><a href="<%=request.getContextPath() %>/camp_admin.do">관리자</a></li>
+                	   			<li><a href="<%=request.getContextPath() %>/main.do">관리자</a></li>
                                 <li><a href="<%=request.getContextPath() %>/camp_logout.do">로그아웃</a></li> 
                 	  <%  	}else{ // 일반 사용자%>
                 	   			<!--  <li><a href="<%=request.getContextPath() %>/camp_info.do?id=<%=loginId %>">MyPage</a></li>-->

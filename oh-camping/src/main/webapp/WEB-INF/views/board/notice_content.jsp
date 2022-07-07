@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Oh Camping</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
    <jsp:include page="../inc/oh_camping_top.jsp" />   
@@ -60,6 +61,7 @@
             <div id="sub_contents">        
                 <div id="board_wrap">
                 	<c:set var="dto" value="${Cont }" />
+                	<c:set var="file" value="${file }" />
                     <table cellspacing="0" width="100%">
 					    <tr>
 					        <th>글 제목</th>
@@ -81,7 +83,22 @@
 					    </tr>
 					    <tr>
 					        <th>첨부파일</th>
-					        <td> ${dto.notice_file } </td>
+					        <td>
+					        <c:if test="${!empty file }">
+					        <div style="align-items: flex-end;
+    display: flex;">
+					        <img src="<%=request.getContextPath() %>/resources/upload/${file }"  width="200px" height="200px">
+					       <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  🔍
+</button>
+					       </div>
+					         </c:if>
+					         <c:if test="${empty file }">
+					         
+					         첨부파일이 없습니다.
+					         
+					         </c:if>
+					         </td>
 					    </tr>  
 					    <c:if test="${empty dto }">
 					    	<tr>
@@ -105,6 +122,24 @@
         </div>
         <div class="clear"></div>
     </div sub_wrap>
+    
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="padding: 0;">
+        <img src="<%=request.getContextPath() %>/resources/upload/${file }" width="100%" height="100%">
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
     <jsp:include page="../inc/oh_camping_bottom.jsp" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </body>
 </html>
