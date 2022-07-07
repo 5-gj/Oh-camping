@@ -17,7 +17,7 @@
     <link href="<%=request.getContextPath() %>/resources/css/reset_h.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/common.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/admin_st.css" rel="stylesheet">
-    <link href="<%=request.getContextPath() %>/resources/SHIM/css/reserve/main.css?17" rel="stylesheet">
+    <link href="<%=request.getContextPath() %>/resources/SHIM/css/reserve/main.css?19" rel="stylesheet">
     
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
