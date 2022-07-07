@@ -38,13 +38,12 @@
 	.division-table th {
 		background: #b6b6b6;
 		color: #ffffff;
-		width: 7%;
-		padding-left: 15px;
-		font-size: 14px;
+		width: 10%;
+		padding-left: 20px;
 	}
 	
 	.division-table td {
-		width: 35%;
+		width: 30%;
 	}
 
 .radio input[type='radio'] {
@@ -110,7 +109,7 @@
 
 .sales-thead th {
 	text-align: center;
-	width: 6.6em;
+	width: 9.5em;
 }
 	
 .sales-tbody {
@@ -121,7 +120,7 @@
 
 	.sales-tbody td {
 		text-align: center;
-		width: 6.6em;
+		width: 9.5em;
 	}
 	
 .sales-content {
@@ -135,19 +134,16 @@
 
 .content-table .content-thead {
 	border: none;
-	vertical-align: middle;
 }
 
 .content-table .content-thead td {
 	padding-left: 12px;	
-	border-bottom: none;
 }
 
 .content-table .content-thead th {
 	width: 100px;
 	text-align: center;
 	background: #dfdfdf;
-	border-bottom: none;
 }
 
 .tooltip {

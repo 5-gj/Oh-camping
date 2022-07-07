@@ -129,12 +129,12 @@
 	visibility: hidden;
 	/* visibility: visible; */
 	position: absolute;
-	top: -30%;
+	/* top: 50%; */
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 700px;
 	height: auto;
-	z-index: 5000;
+	z-index: 0;
 	background: #f7f7f7;
 }
 

@@ -388,7 +388,7 @@
           <div class="bloxk_2 pre_mb_img1_2"></div>
           <div class="block_intro pre_mb_img1_3">
           <div class="room_pre_txt">
-              <h2>계곡1,2,3,4</h2>
+              <h2>계곡1 ~ 11</h2>
               <p>사랑하는 연인과 함께 하세요</p>
               <a href="/room/room1.php" class="btn_room_mb">
                 View More
